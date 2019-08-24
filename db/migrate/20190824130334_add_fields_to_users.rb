@@ -3,7 +3,6 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :first_name, :string
     add_column :users, :last_name, :string
     add_column :users, :public_key, :string
-    add_reference :users, :aidrop, foreign_key: true
     add_column :users, :admin, :boolean
     add_column :users, :nickname, :string
     add_column :users, :photo, :string

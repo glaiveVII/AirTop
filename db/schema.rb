@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_24_102011) do
+ActiveRecord::Schema.define(version: 2019_08_24_124940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "airdrops", force: :cascade do |t|
+    t.string "title"
+    t.float "amount"
+    t.string "crypto"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "description"
+    t.string "photo"
+    t.string "location"
+    t.string "quote"
+    t.string "link"
+    t.boolean "fix"
+    t.float "min"
+    t.float "max"
+    t.integer "winner"
+    t.boolean "ref_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

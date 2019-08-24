@@ -1,0 +1,2 @@
+class Airdrop < ApplicationRecord
+end

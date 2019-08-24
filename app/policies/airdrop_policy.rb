@@ -5,7 +5,7 @@ class AirdropPolicy < ApplicationPolicy
     end
   end
 
-  def update? # both edit and update
+  def update?
     # ICI C'EST AIRDROP OU PAS ?
     # c'est RECCORD.USER OU RECCORD.AIRDROP
     user.admin || record.user == user
@@ -26,7 +26,6 @@ class AirdropPolicy < ApplicationPolicy
   def register?
     true
   end
-
 
   def destroy?
     user.admin || record.user == user

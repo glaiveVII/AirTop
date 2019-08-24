@@ -23,13 +23,14 @@ require 'faker'
   user.admin = false
   user.public_key = "sadlfgjd;fzgadjgjkls;fgjk"
   user.save!
-  #airdrop = Airdrop.new(
-    # crypto: "bitcoin",
-    #amount: 1
-    # address: Faker::Address.street_address,
-  #)
 
-  #airdrop.save!
+  airdrop = Airdrop.new(
+    crypto: "bitcoin",
+    amount: rand(10)
+    # address: Faker::Address.street_address,
+  )
+
+  airdrop.save!
 end
 
 

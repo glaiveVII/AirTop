@@ -23,15 +23,22 @@ require 'faker'
   user.admin = false
   user.public_key = "sadlfgjd;fzgadjgjkls;fgjk"
   user.save!
-  airdrop = Airdrop.new(
+  #airdrop = Airdrop.new(
     # crypto: "bitcoin",
-    amount: 1
+    #amount: 1
     # address: Faker::Address.street_address,
+  #)
+
+  #airdrop.save!
+end
+
+
+  airdrop = Airdrop.new(
+    crypto: "bitcoin",
+    amount: 1
   )
 
   airdrop.save!
-end
-
 puts 'Seed done for airdrop, user'
 
 User.create!(email: 'airtop@gmail.com', password: 'airtop',

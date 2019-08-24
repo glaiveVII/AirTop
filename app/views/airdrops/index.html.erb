@@ -1,0 +1,13 @@
+<% @airdrops.each do |airdrop| %>
+  <%= link_to airdrop, class: 'card' do %>
+
+      <h3 class="title"><%= airdrop.amount %> <%= airdrop.crypto %></h3>
+
+  <% end %>
+<% end %>
+
+
+<%= link_to " see all airdrops", airdrops_path%> |
+<%= link_to "go home page ", root_path%> |
+<%= link_to "go to donate page", airdrop_donate_path%> |
+<%= link_to "add a new airdrop", new_airdrop_path%> |

@@ -1,0 +1,14 @@
+<!-- form for when you want to register to an airdrop -->
+
+<%= simple_form_for(airdrop) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :nickname %>
+    <%= f.input :email%>
+    <%= f.input :public_key%>
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

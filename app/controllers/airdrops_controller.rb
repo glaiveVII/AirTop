@@ -1,15 +1,8 @@
 class AirdropsController < ApplicationController
-  before_action :set_airdrop, only: [:show, :edit, :update, :destroy]
+  before_action :set_airdrop, only: [:register, :show, :edit, :update, :destroy]
 
   def index
-    @airdrop = policy_scope(Airdrop)
-
-    @markers = @airdrops.map do |airdrop|
-      {
-        lat: airdrop.latitude,
-        lng: airdrop.longitude
-      }
-    end
+    @airdrops = policy_scope(Airdrop)
   end
 
   def new
@@ -19,12 +12,6 @@ class AirdropsController < ApplicationController
 
   def show
     authorize @airdrop
-
-    @markers =
-      [{
-        lat: @airdrop.latitude,
-        lng: @airdrop.longitude
-      }]
   end
 
   def edit
@@ -33,7 +20,7 @@ class AirdropsController < ApplicationController
 
   def create
     @airdrop = Airdrop.new(airdrop_params)
-    @airdrop.owner = current_user
+    @airdrop.airdrop = current_user
     # raise
     authorize @airdrop
     if @airdrop.save
@@ -60,8 +47,13 @@ class AirdropsController < ApplicationController
   end
 
   def donate
-    @airdrop = Airdrop.new
-    authorize @airdrop
+    @x = Airdrop.new
+    authorize @x
+  end
+
+  def register
+    @x = Airdrop.new
+    authorize @x
   end
 
   private

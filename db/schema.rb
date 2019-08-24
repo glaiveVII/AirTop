@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_24_102011) do
+ActiveRecord::Schema.define(version: 2019_08_24_130509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "airdrops", force: :cascade do |t|
+    t.string "title"
+    t.float "amount"
+    t.string "crypto"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "description"
+    t.string "photo"
+    t.string "location"
+    t.string "quote"
+    t.string "link"
+    t.boolean "fix"
+    t.float "min"
+    t.float "max"
+    t.integer "winner"
+    t.boolean "ref_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +43,20 @@ ActiveRecord::Schema.define(version: 2019_08_24_102011) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "public_key"
+    t.boolean "admin"
+    t.string "nickname"
+    t.string "photo"
+    t.integer "age"
+    t.string "affiliate_link"
+    t.string "wallet_balance"
+    t.bigint "airdrop_id"
+    t.index ["airdrop_id"], name: "index_users_on_airdrop_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "users", "airdrops"
 end

@@ -1,5 +1,5 @@
 class AirdropsController < ApplicationController
-  before_action :set_airdrop, only: [:show, :edit, :update, :destroy]
+  before_action :set_airdrop, only: [:register, :show, :edit, :update, :destroy]
 
   def index
     @airdrops = policy_scope(Airdrop)
@@ -47,6 +47,11 @@ class AirdropsController < ApplicationController
   end
 
   def donate
+    @x = Airdrop.new
+    authorize @x
+  end
+
+  def register
     @x = Airdrop.new
     authorize @x
   end

@@ -23,6 +23,11 @@ class AirdropPolicy < ApplicationPolicy
     true
   end
 
+  def register?
+    true
+  end
+
+
   def destroy?
     user.admin || record.user == user
   end

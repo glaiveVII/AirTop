@@ -23,6 +23,7 @@ require 'faker'
   user.admin = false
   user.public_key = "sadlfgjd;fzgadjgjkls;fgjk"
   user.save!
+
   airdrop = Airdrop.new(
     crypto: "bitcoin",
     amount: rand(10)

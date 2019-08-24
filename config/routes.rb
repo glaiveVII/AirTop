@@ -7,8 +7,5 @@ Rails.application.routes.draw do
   resources :airdrops
 
   get 'airdrops/donate', to: 'airdrops#donate', as: :airdrop_donate
-  get 'airdrops/register', to: 'airdrops#register', as: :airdrop_register
-
-
-
+  # get 'airdrops/:airdrop_id/register', to: 'airdrops#register', as: :airdrop_register
 end

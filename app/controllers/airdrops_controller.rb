@@ -1,0 +1,2 @@
+class AirdropsController < ApplicationController
+end

@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   resources :kitties
   # routes to do for later make a funny troll page
 
-  get 'airdrops/donate', to: 'airdrops#donate', as: :airdrop_donate
 
 end

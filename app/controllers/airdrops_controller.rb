@@ -20,7 +20,8 @@ class AirdropsController < ApplicationController
 
   def create
     @airdrop = Airdrop.new(airdrop_params)
-    @airdrop.airdrop = current_user
+    # do i need stg here ? everybody can create a new event !
+    # @airdrop.id = current_user
     # raise
     authorize @airdrop
     if @airdrop.save

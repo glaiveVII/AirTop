@@ -28,10 +28,10 @@ class InvitesController < ApplicationController
     @invite.airdrop = airdrop
     @invite.user = current_user
     # raise
-    # raise
     if @invite.save
       redirect_to airdrops_path
     else
+      # redirect plus add a message to guys
       format.html { redirect_to airdrop_path(airdrop), notice: 'Something went wrong.' }
     end
     authorize @invite

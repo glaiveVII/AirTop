@@ -1,5 +1,5 @@
 class InvitesController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  # before_action :set_booking, only: [:show, :destroy]
 
   # def index
   #   @invites = policy_scope(Invite)
@@ -11,6 +11,12 @@ class InvitesController < ApplicationController
 
   #   authorize @invite
   # end
+
+  def new
+    @invite = Invite.new
+    @airdrop = Airdrop.find(params[:airdrop_id])
+    authorize @invite
+  end
 
   # def show
   #   if @invite.status == ""
@@ -37,12 +43,26 @@ class InvitesController < ApplicationController
     authorize @invite
   end
 
+  def update
+    @invite = Invite.find(params[:id])
+    @airdrop = @invite.airdrop
+    @invite.update(status: params[:status])
+    redirect_to airdrop_path(@airdrop)
+  end
+
   # def destroy
   #   @airdrop = @invite.airdrop
   #   authorize @invite
   #   @invite.destroy
   #   redirect_to airdrop_path(@airdrop)
   # end
+
+  def destroy
+    @invite = Invite.find(params[:id])
+    @airdrop = @invite.airdrop
+    @invite.delete
+    redirect_to airdrop_path(@airdrop)
+  end
 
   private
 

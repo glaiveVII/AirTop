@@ -11,7 +11,19 @@
 <br>
 <br>
 
-<%= link_to "see all airdrops", airdrops_path%> |
-<%= link_to "go home page ", root_path%> |
-<%= link_to "go to donate page", airdrop_donate_path%> |
-<%= link_to "participate to this airdrop", airdrop_register_path%> |
+<%= link_to "see all airdrops", airdrops_path %> |
+<%= link_to "go home page ", root_path %> |
+<%= link_to "go to donate page", airdrop_donate_path %> |
+<%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %> |
+<%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+  <%= hidden_field_tag :user_id, current_user.id %>
+  <%= hidden_field_tag :airdrop_id, @airdrop.id %>
+  <%#= hidden_field_tag :status, "Accepted" %>
+  </div>
+    <%= f.button :submit, "Create invites" %>
+
+<% end %>

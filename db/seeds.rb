@@ -26,7 +26,8 @@ require 'faker'
 
   airdrop = Airdrop.new(
     crypto: "bitcoin",
-    amount: rand(10)
+    amount: rand(10),
+    user_id: User.first.id
     # address: Faker::Address.street_address,
   )
 

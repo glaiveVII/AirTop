@@ -4,9 +4,9 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :crypto%>
-    <%= f.input :amount%>
+    <%= f.input :title  %>
+    <%= f.input :crypto , label: 'the cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one'%>
+    <%= f.input :amount , label: 'the amount of cryptocurrency you want to airdrop', error: 'Amount is mandatory, please specify one'%>
     <%= f.input :description %>
     <%= f.button :submit %>
   </div>

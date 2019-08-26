@@ -3,6 +3,8 @@
 <%#= simple_form_for(user), url:  do |f| %>
 <% #raise %>
 <%#= user.nickname %>
+<!--
+no need of this form anymore we add it in the show page hidden directly  -->
 
 <%= simple_form_for [@airdrop, Invite.new], url: new_airdrop_invite_path(@airdrop) do |f| %>
   <%= f.error_notification %>

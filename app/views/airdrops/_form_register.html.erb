@@ -1,8 +1,10 @@
 <!-- form for when you want to register to an airdrop -->
 
 <%#= simple_form_for(user), url:  do |f| %>
-<% raise %>
-<%= simple_form_for(@airdrop.user_id) do |f| %>
+<% #raise %>
+<%#= user.nickname %>
+
+<%= simple_form_for [@airdrop, Invite.new], url: new_airdrop_invite_path(@airdrop) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 

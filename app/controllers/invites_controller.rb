@@ -7,8 +7,9 @@ class InvitesController < ApplicationController
 
   # def new
   #   @invite = Invite.new
-  #   authorize @invite
   #   @airdrop = Airdrop.find(params[:airdrop_id])
+
+  #   authorize @invite
   # end
 
   # def show
@@ -21,18 +22,20 @@ class InvitesController < ApplicationController
   #   # here need to look the status ?
   # end
 
-  # def create
-  #   @invite = Invite.new(invite_params)
-  #   @invite.Airdrop = Airdrop.find(params[:airdrop_id])
-  #   @invite.user = current_user
-  #   # raise
-  #   if @invite.save
-  #     redirect_to invite_path(@invite)
-  #   else
-  #     render :new
-  #   end
-  #   authorize @invite
-  # end
+  def create
+    @invite = Invite.new
+    airdrop = Airdrop.find(params[:airdrop_id])
+    @invite.airdrop = airdrop
+    @invite.user = current_user
+    # raise
+    # raise
+    if @invite.save
+      redirect_to airdrops_path
+    else
+      format.html { redirect_to airdrop_path(airdrop), notice: 'Something went wrong.' }
+    end
+    authorize @invite
+  end
 
   # def destroy
   #   @airdrop = @invite.airdrop
@@ -41,11 +44,11 @@ class InvitesController < ApplicationController
   #   redirect_to airdrop_path(@airdrop)
   # end
 
-  # private
+  private
 
-  # def invite_params
-  #   params.require(:invite).permit(:status)
-  # end
+  def invite_params
+    params.require(:invite).permit(:status)
+  end
 
   # def set_invite
   #   @invite = Invite.find(params[:id])

@@ -1,0 +1,89 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+html{
+  font-size: 10px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+section{
+  padding: 10rem 0;
+  background-color: #fff;
+}
+
+.heading{
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+.heading::after{
+  content: "";
+  width: 10rem;
+  height: .8rem;
+  background-color: #45e19f;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+}
+
+.card-wrapper{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+
+.card{
+  width: 32rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0px;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+}
+
+.card .card-img{
+  width: 100%;
+  height: 26rem;
+  object-fit: cover;
+  // -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+}
+
+.profile-image{
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: -11rem;
+  z-index: 999;
+  border: 1rem solid #ebeef8;
+}
+
+.card h1{
+  font-size: 2.5rem;
+  color: #333;
+  margin: 1.5rem 0;
+}
+
+.job-title{}

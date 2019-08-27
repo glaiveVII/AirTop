@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  # device_invitable root
+  # devise_for :users, controllers: { invitations: 'users_invitations' }
+  # devise_for :users, controllers: { invitations: 'users/invitations' }
+
   resources :airdrops do
     resources :invites, only: %i[index new create]
   end

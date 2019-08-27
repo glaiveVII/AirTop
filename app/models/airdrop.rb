@@ -1,6 +1,13 @@
 class Airdrop < ApplicationRecord
-  # belongs_to :airdrop, class_name: "User"
-  has_many :users
+  # belongs_to :airdroper, class_name: "User", foreign_key: "user_id"
+
+  # here one important thing is that users table and airdrops
+  # can be acces with two paths : one through invites or directly
+
+  has_many :invites
+
+  # here is through invites
+  has_many :users, through: :invites
   validates :amount, presence: true
   # crypto make a : "ActiveModel::UnknownAttributeError:"
   validates :crypto, presence: true

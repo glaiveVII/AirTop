@@ -16,9 +16,16 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:email, :nickname, :public_key)
+  def invites_user
+    # raise
+    email = params[:invite][:email]
+    User.invite!(email: email)
+    redirect_to airdrop_path(params[:airdrop_id])
   end
+
+  # private
+
+  # def user_params
+  #   params.require(:user).permit(:email, :nickname, :public_key)
+  # end
 end

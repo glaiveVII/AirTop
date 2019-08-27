@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :airdrops do
     resources :invites, only: %i[index new create]
+    post 'invites_user', to: 'users#invites_user', as: :invite_users
+
   end
   resources :invites, only: %i[show destroy]
   get 'airdrops/:id/register', to: 'airdrops#register', as: :airdrop_register

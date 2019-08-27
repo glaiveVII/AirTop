@@ -1,9 +1,9 @@
 # class UsersInvitationsController < ApplicationController
-class Users::InvitationsController < Devise::InvitationsController
+# class Users::InvitationsController < Devise::InvitationsController
 
-  def new
-
-  end
+  # def new
+  #   raise
+  # end
 
 
   # private
@@ -23,4 +23,4 @@ class Users::InvitationsController < Devise::InvitationsController
   #   Analytics.report('invite.accept', resource.id)
   #   resource
   # end
-end
+# end

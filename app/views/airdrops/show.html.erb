@@ -5,7 +5,11 @@
 
 <%#= link_to "participate to this airdrop", airdrop_register_path%> |
 
-<%= link_to "invite person to this airdrop", new_user_invitation_path%>
+<%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
+    <%= f.input :email, placeholder: 'user@domain.com' %>
+    <%= f.button :submit %>
+
+<% end %>
 
 <br>
 <br>

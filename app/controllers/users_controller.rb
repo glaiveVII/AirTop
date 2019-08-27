@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     authorize @user
     redirect_to user_path(current_user)
   end
+  def invites_user
+    raise
+  end
 
   private
 

@@ -11,7 +11,7 @@
            <% @airdrops.each do |airdrop| %>
 
         <div class="crypto-card">
-          <%= link_to airdrop %>
+          <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop) %>
             <img class="card-img" src="/assets/ethereum_blockchain_elix.png">
             <img src="/assets/ethere.jpg" alt="profile image" class="profile-image">
             <h1><%= airdrop.crypto %> </h1>

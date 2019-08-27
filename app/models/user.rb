@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :airdrops
+  has_many :invites
 
   validates :email, presence: true
   validates :public_key, presence: true

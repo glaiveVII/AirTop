@@ -1,15 +1,19 @@
 puts 'Cleaning db'
 
+puts 'Cleaning AIRDROPS'
+Airdrop.destroy_all
 
-
-# puts 'Cleaning AIRDROP'
-# Airdrop.destroy_all
-
-# puts 'Cleaning users'
-# User.destroy_all
+puts 'Cleaning USERS'
+User.destroy_all
 
 require 'faker'
 
+
+quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple',
+        "in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple',
+        "in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple',
+        "in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple',
+        "in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple']
 20.times do |i|
   user = User.new(
     first_name: Faker::Name.first_name ,
@@ -26,8 +30,10 @@ require 'faker'
 
   airdrop = Airdrop.new(
     crypto: "bitcoin",
-    amount: rand(10)
+    amount: rand(10),
+    user_id: User.first.id,
     # address: Faker::Address.street_address,
+    quote: quote[i]
   )
 
   airdrop.save!

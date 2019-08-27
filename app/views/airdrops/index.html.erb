@@ -1,10 +1,25 @@
+
+<h1> All Airdrops </h1>
+<p> Here an expliquative text to say that some are private need to be invited !</p>
 <% @airdrops.each do |airdrop| %>
   <%= link_to airdrop, class: 'card' do %>
 
-      <h3 class="title"><%= airdrop.amount %> <%= airdrop.crypto %></h3>
+  <div class="card-wrapper">
+    <div class="card-product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_JeARHjzjG69lOhVs-vYx3ACoPjVzpQqEXhOsyacKzZgWuoZGzg", style="border-radius:15px;" />
+      <div class="card-product-infos">
+        <h1> <%= airdrop.crypto %>  </h1>
+        <strong> <h2> <%= airdrop.amount %>  </h2> </strong>
+        <p> <%= airdrop.quote %>  </p>
+      </div>
+    </div>
+
+  </div>
 
   <% end %>
 <% end %>
+
+
 
 <br>
 
@@ -17,3 +32,6 @@
 <br>
 <br>
 <br>
+
+
+

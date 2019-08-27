@@ -1,0 +1,18 @@
+
+.airdrop-form {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+.row {
+    max-width: auto;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+}
+.col-lg-6 {
+  -webkit-box-flex: 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+}

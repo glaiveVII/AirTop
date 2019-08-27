@@ -1,30 +1,3 @@
-// .nav-name a {
-//   text-decoration: none;
-//   font-weight: bolder;
-// }
-
-// a:hover {
-//   color: white;
-// }
-
-// .nav-item a {
-//   color: white !important;
-// }
-
-// .avatar-large {
-//   display: block;
-//   width: 70px;
-//   height: 70px;
-//   margin: 1em auto;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: center center;
-//   -webkit-border-radius: 99em;
-//   -moz-border-radius: 99em;
-//   border-radius: 99em;
-//   border: 2px solid #eee;
-//   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-// }
 body {
   margin-top: 100px;
 }
@@ -44,8 +17,12 @@ nav {
   z-index: 1000;
 }
 
+nav a{
+  font-size: 20px;
+}
+
 nav.black {
-  background: rgba(123,105,252, 0.3);
+  background: rgba(123,105,252, 0.9);
   height: 80px;
   padding: 10px 50px;
 
@@ -55,7 +32,7 @@ nav.black {
   }
 
   ul li a {
-    color: rgb(123,105,252);
+    color: white;
   }
 }
 
@@ -85,7 +62,7 @@ nav ul li {
 
 nav ul li a{
   list-height: 80px;
-  color: rgb(123,105,252);
+  color: white;
   padding: 5px 20px;
   text-decoration: none !important;
   text-transform: uppercase;
@@ -98,12 +75,65 @@ nav ul li a{
 
 nav ul li a.active,
 nav ul li a:hover {
-color: rgb(85,137,252);
-border-bottom: 2px solid rgb(123,105,252);
+  color: rgb(85,137,252);
+  border-bottom: 2px solid rgb(123,105,252);
 }
 
 section .sec1{
   width: 100%;
   height: 100vh;
   // background: url()
+}
+
+
+
+/////////////////////////HERO WAVES////////////////////////
+
+.hero-waves{
+  background:purple;
+  color:white;
+  .hero-title{
+    padding:15vh 0 5vh 0;
+    font-size:3.6rem;
+    font-weight:100;
+    text-align:center;
+    text-shadow:rgba(0,0,0,0.2) 0px 4px 5px;
+    small{
+      font-size:0.7em;
+      opacity:0.7;
+    }
+  }
+  svg{
+    display: block;
+    height:40vh;
+    margin-top:-20vh;
+    width: 100%;
+    .layer1{
+      animation: movewave 5s infinite alternate ease-in-out;
+    }
+    .layer2{
+      animation: movewave 13s infinite alternate-reverse ease-in-out;
+    }
+    .layer3{
+      animation: movewave 11s infinite alternate ease-in-out;
+    }
+    .layer4{
+      animation: movewave 7s infinite alternate-reverse ease-in-out;
+    }
+    .layer5{
+      animation: movewave 3s infinite alternate ease-in-out;
+    }
+  }
+}
+.container{
+  max-width:600px;
+  margin:0 auto;
+}
+@keyframes movewave {
+  from {
+    transform: translate(30%,0);
+  }
+  to {
+    transform: translate(-30%,0);
+  }
 }

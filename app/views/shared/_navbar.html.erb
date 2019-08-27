@@ -6,6 +6,10 @@
   <ul>
     <li><%= link_to "Home", :root %></li>
     <li><%= link_to "AirTop", airdrops_path %></li>
+    <li>
+        <% current_user.nickname.capitalize %>
+        <%= link_to current_user.nickname.capitalize, airdrops_path %>
+    </li>
     <li><%= link_to "Donate", airdrop_donate_path%></li>
   </ul>
 </nav>

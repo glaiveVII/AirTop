@@ -9,6 +9,14 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # here you can have create airdrops event
+  # or have airdrops event due to the fact that you have
+  # been invited through the table invite by someone
+  # we could have rename to make things clearer !
+  # alias :created_airdrops :airdrops
+  # alias :invited_airdrops :invites
+
+  # instead of having this to make it more understandable
   has_many :airdrops
   has_many :invites
 

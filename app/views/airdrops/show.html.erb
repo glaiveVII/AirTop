@@ -18,7 +18,7 @@
 <%# if current_user.airdrops.include?(@airdrop) %>
   <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
       <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
-      <%= f.button :submit %>
+      <%= f.button :submit,  :class=>'btn index-button' %>
 
   <% end %>
 <% #end %>
@@ -29,9 +29,9 @@
 <br>
 <br>
 
-<%= link_to "see all airdrops", airdrops_path %>
+<%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
 <br>
-<%= link_to "go home page ", root_path %>
+<%= link_to "Home", root_path ,  :class=>'btn index-button'%>
 
 
 <!--

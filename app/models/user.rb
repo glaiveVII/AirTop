@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   #for device_invitable :
-  devise :database_authenticatable, :confirmable, :invitable
-  devise :database_authenticatable, :confirmable, :invitable, invite_for: 0
+  # devise :database_authenticatable, :confirmable, :invitable
+  # devise :database_authenticatable, :confirmable, :invitable, invite_for: 0
 
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

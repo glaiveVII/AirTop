@@ -1,25 +1,3 @@
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-
-}
-
-html{
-  font-size: 10px;
-  font-family: "Raleway", "Helvetica", "sans-serif";
-}
-
-a{
-  text-decoration: none;
-  color: #fff;
-}
-
-section{
-  padding: 10rem 0;
-  background-color: #fff;
-}
-
 .heading{
   text-transform: uppercase;
   font-size: 3.5rem;
@@ -29,13 +7,25 @@ section{
   text-align: center;
   color: #333;
   position: relative;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.secondary-heading{
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+      margin-right: -3px;
+  margin-bottom: 5rem;
+  text-align: center;
+    color: #333;
+  position: relative;
+  font-family: "Raleway", "Helvetica", "sans-serif";
 }
 
 .heading::after{
   content: "";
   width: 10rem;
   height: .8rem;
-  background-color: #45e19f;
+  background-color: #7b69fc;
   position: absolute;
   bottom: -2rem;
   left: 50%;
@@ -48,11 +38,12 @@ section{
   align-items: center;
   align-content: center;
   flex-direction: column;
+
 }
 
 
-.card{
-  width: 32rem;
+.cards {
+  width: 32rem !important;
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
@@ -60,9 +51,10 @@ section{
   justify-content: center;
   margin: 2rem 0px;
   box-shadow: .5rem .5rem 3rem rgba(0,0,0,2);
+  overflow-x: hidden;
 }
 
-.card .card-img{
+.cards .card-img{
   width: 100%;
   height: 26rem;
   object-fit: cover;
@@ -80,10 +72,122 @@ section{
   border: 1rem solid #ebeef8;
 }
 
-.card h1{
+.cards h1{
   font-size: 2.5rem;
   color: #333;
   margin: 1.5rem 0;
 }
 
-.job-title{}
+.title-name {
+  color: #777;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.about {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: center;
+  color: #333;
+}
+
+.cards .btn {
+  padding: 1rem 2.5rem;
+  background-color: #445ae3;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  color: #eee;
+  font-size: 1.4rem;
+  transition: all .5s;
+}
+
+.cards .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: .5rem .5rem 2rem rgba(0,0,0,.2);
+}
+
+.cards .btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.social-media {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rba(0, 0, 0, .1)
+}
+
+.social-media i {
+  font-size: 3rem;
+  transition: color .5s;
+}
+
+.fa-facebook-square {
+  color: #3b5999;
+}
+
+.fa-twitter-square {
+  color: #55acee;
+}
+
+.fa-instagram {
+  color: #e6683c;
+}
+
+.fa-slack {
+  color: #0f7965;
+}
+
+
+.fa-facebook-square:hover,
+.fa-twitter-square:hover,
+.fa-instagram:hover,
+.fa-slack:hover {
+  color: #45e19f;
+}
+
+
+@media screen and (min-width: 700px){
+  .card-wrapper{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cards{
+    margin: 2rem;
+    transition: transform .5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+    .cards:nth-child(1){
+      animation: fadeIN .5s .5s backwards;
+    }
+     .cards:nth-child(2){
+      animation: fadeIN .5s .1s backwards;
+    }
+     .cards:nth-child(3){
+      animation: fadeIN .5s 1.5s backwards;
+    }
+     .cards:nth-child(4){
+      animation: fadeIN .5s 2s backwards;
+    }
+  .cards:hover{
+    transform: scale(1.05);
+  }
+}
+

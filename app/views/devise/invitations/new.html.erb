@@ -6,7 +6,7 @@
   <% resource.class.invite_key_fields.each do |field| -%>
     <div class="form-inputs">
       <%= f.input field %>
-      <!-- User.invite!(email: 'field') -->
+
     </div>
   <% end -%>
 
@@ -19,8 +19,10 @@
 
 
 
+
 <%= simple_form_for :invite, url: root_path, method: :get do |f| %>
     <%= f.input :email, placeholder: 'user@domain.com' %>
     <%= f.button :submit %>
 
 <% end %>
+

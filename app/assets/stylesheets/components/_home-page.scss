@@ -1,35 +1,30 @@
 
 .home-title {
-
   position: absolute;
-  width: 500px;
-  height: 100px;
-  left: 80px;
-  top: 150px;
+  width: 40%;
+  height: 10%;
+  left: 15%;
+  top: 30%;
 
   font-family: Audiowide;
   font-style: normal;
   font-weight: normal;
   font-size: 50px;
   line-height: 60px;
-
   color: #213248;
 }
 
 .home-p {
-
   position: absolute;
-  width: 500px;
-  height: 70px;
-  left: 80px;
-  top: 350px;
-
+  width: 40%;
+  height: 10%;
+  left: 15%;
+  top: 70%;
   font-family: Arial Unicode MS;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
   line-height: 40px;
-
   color: rgba(33, 50, 72, 0.75);
 }
 
@@ -40,27 +35,28 @@
 .home-svg {
 
   position: absolute;
-  width: 115.67px;
-  height: 155.13px;
-  left: 490.59px;
-  top: 150px;
+  width: 40%;
+  height: 20%;
+  left: 70%;
+  top: 50%;
 
   background: url(adventure-sports.png);
-  transform: rotate(41.4deg);
-  margin-left: 200px;
+  transform: rotate(45deg);
 }
 
 
-
+.button-wraper {
+  display: flex;
+  position: absolute;
+  left: 60%;
+  top: 110%;
+}
 .home-button {
-
-
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
   background: #167efb;
   transition: background 0.3s ease;
-
 }
 .home-button:hover {
   background: #9f2fff;

@@ -1,43 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "https://www.cryptokitties.co", class: "navbar-brand" do %>
-    <%= image_tag "https://media.giphy.com/media/l49JMVDvP8D38LHwI/giphy.gif", style: 'height:70px ; width:70px;' %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link", style: "font-size:30px;" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Airdrops", airdrops_path, class: "nav-link", style: "font-size:30px;"  %>
-        </li>
-        <li class="nav-item">
-          <%= link_to current_user.nickname.capitalize, airdrops_path, class: "nav-link" , style: "font-size:30px;" %>
-          <% current_user.nickname.capitalize %>
-        </li>
-        <br>
-        <li class="nav-item dropdown">
+<nav>
+  <div class="logo">
+      <%= image_tag "logo-1.png", style: 'height: 100%; transition: .5s;' %>
+      <%= link_to "AirTop", :root %>
   </div>
-
-          <%= image_tag "https://media.giphy.com/media/hrvd96KtbV06tqqp8Y/giphy.gif", style: 'height:70px ; width:70px; margin-left: 50px;' %>
-
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+  <ul>
+    <li><%= link_to "Home", :root %></li>
+    <li><%= link_to "AirTop", airdrops_path %></li>
+    <li><%= link_to "Donate", airdrop_donate_path%></li>
+  </ul>
+</nav>

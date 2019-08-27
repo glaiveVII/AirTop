@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(window).on('scroll', function(){
+            if($(window).scrollTop()){
+              $('nav').addClass('black');
+            }
+            else
+            {
+              $('nav').removeClass('black');
+            }
+        })
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Syncopate:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Syncopate:400,700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>AirTop</title>
@@ -11,8 +27,8 @@
   </head>
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <span class="notice"></span>
+    <span class="alert"></span>
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>

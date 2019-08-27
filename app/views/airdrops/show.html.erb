@@ -5,6 +5,8 @@
 
 <%#= link_to "participate to this airdrop", airdrop_register_path%> |
 
+<%= link_to "invite person to this airdrop", new_user_invitation_path%>
+
 <br>
 <br>
 <br>
@@ -13,7 +15,7 @@
 
 <%= link_to "see all airdrops", airdrops_path %> |
 <%= link_to "go home page ", root_path %> |
-<%= link_to "go to donate page", airdrop_donate_path %> |
+
 <%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
 <%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
   <%= f.error_notification %>

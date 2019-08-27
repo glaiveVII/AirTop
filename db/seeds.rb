@@ -57,7 +57,7 @@ end
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
-    photo: "https://hype.codes/sites/default/files/icons_for_articles/purple/crypto/bitcoin.png"
+    photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin"
   )
 
   airdrop.save!

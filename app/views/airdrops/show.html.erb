@@ -1,13 +1,23 @@
-<h1> testtt here is the airdrop </h1>
+<h1> <%= @airdrop.title%>  </h1>
 
 
 <h3 class="title"><%= @airdrop.amount %> <%= @airdrop.crypto %></h3>
 
-<%#= link_to "participate to this airdrop", airdrop_register_path%> |
+<br>
+<br>
+<br>
+<br>
 
+<!-- # here is somehow the way to access the participation but
+# no need for this feature yet -->
+
+<%#= link_to "participate to this airdrop", airdrop_register_path%>
+
+<h3> here is the form to invite people
+</h3>
 <%# if current_user.airdrops.include?(@airdrop) %>
   <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
-      <%= f.input :email, placeholder: 'user@domain.com' %>
+      <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
       <%= f.button :submit %>
 
   <% end %>
@@ -19,19 +29,26 @@
 <br>
 <br>
 
-<%= link_to "see all airdrops", airdrops_path %> |
-<%= link_to "go home page ", root_path %> |
+<%= link_to "see all airdrops", airdrops_path %>
+<br>
+<%= link_to "go home page ", root_path %>
 
-<%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
-<%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-  <%= hidden_field_tag :user_id, current_user.id %>
-  <%= hidden_field_tag :airdrop_id, @airdrop.id %>
-  <%#= hidden_field_tag :status, "Accepted" %>
-  </div>
-    <%= f.button :submit, "Create invites to this airdrop" %>
+<!--
+# don't need this code yet : it's a more difficult feature !
+ -->
+<% if false %>
+  <%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
+  <%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+    <div class="form-inputs">
+    <%= hidden_field_tag :user_id, current_user.id %>
+    <%= hidden_field_tag :airdrop_id, @airdrop.id %>
+    <%#= hidden_field_tag :status, "Accepted" %>
+    </div>
+      <%= f.button :submit, "Create invites to this airdrop" %>
+
+  <% end %>
 <% end %>

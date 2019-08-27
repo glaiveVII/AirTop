@@ -5,11 +5,13 @@
 
 <%#= link_to "participate to this airdrop", airdrop_register_path%> |
 
-<%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
-    <%= f.input :email, placeholder: 'user@domain.com' %>
-    <%= f.button :submit %>
+<%# if current_user.airdrops.include?(@airdrop) %>
+  <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
+      <%= f.input :email, placeholder: 'user@domain.com' %>
+      <%= f.button :submit %>
 
-<% end %>
+  <% end %>
+<% #end %>
 
 <br>
 <br>

@@ -11,13 +11,15 @@
            <% @airdrops.each do |airdrop| %>
 
         <div class="crypto-card">
-          <%= link_to airdrop %>
             <img class="card-img" src="/assets/ethereum_blockchain_elix.png">
-            <img src="/assets/ethere.jpg" alt="profile image" class="profile-image">
+<!--             <img src="/assets/ether-index.png" alt="profile image" class="profile-image" style="background: black;">
+ -->
+            <%= image_tag airdrop.photo, :class=>"profile-image", :style=>'background-color: white;'%>
             <h1><%= airdrop.crypto %> </h1>
             <p class="title name"><%= airdrop.amount %></p>
             <p class="about"><%= airdrop.quote %> </p>
-            <a href="#" class="btn">Participate</a>
+            <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button'%>
+        <!--     <a href="#" class="btn">Participate</a>  -->
             <ul class="social-media">
               <li><a href="#"><i class="fab fa-facebook-square"></i></a> </li>
               <li><a href="#"><i class="fab fa-instagram"></i></a> </li>

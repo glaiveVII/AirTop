@@ -6,10 +6,15 @@
   <ul>
     <li><%= link_to "Home", :root %></li>
     <li><%= link_to "AirTop", airdrops_path %></li>
+    <li><%= link_to "Donate", airdrop_donate_path%></li>
     <li>
+      <% if user_signed_in? %>
+        <%= link_to "sign out" , destroy_user_session_path, method: :delete %>
+
         <% current_user.nickname.capitalize %>
         <%= link_to current_user.nickname.capitalize, airdrops_path %>
+      <% end %>
+
     </li>
-    <li><%= link_to "Donate", airdrop_donate_path%></li>
   </ul>
 </nav>

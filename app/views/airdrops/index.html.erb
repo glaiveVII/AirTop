@@ -13,17 +13,15 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-
       <div class="card-wrapper">
-           <% @airdrops.each do |airdrop| %>
-
-        <div class="crypto-card">
+        <% @airdrops.each do |airdrop| %>
+        <div class="crypto-card" style="border-radius:20px; ">
             <img class="card-img" src="/assets/ethereum_blockchain_elix.png">
 <!--             <img src="/assets/ether-index.png" alt="profile image" class="profile-image" style="background: black;">
  -->
             <%= image_tag airdrop.photo, :class=>"profile-image", :style=>'background-color: white;'%>
             <h1><%= airdrop.crypto %> </h1>
-            <p class="title name"><%= airdrop.amount %></p>
+            <p class="title name"><strong><%= airdrop.amount %></strong></p>
             <p class="about"><%= airdrop.quote %> </p>
             <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button'%>
         <!--     <a href="#" class="btn">Participate</a>  -->
@@ -34,7 +32,7 @@
                 </a>
               </li>
               <li class="twitter-">
-                <a href="https://twitter.com/Wolf_Of_BTC" target="_blank">
+                <a href="https://twitter.com/realDonaldTrump" target="_blank">
                   <i class="fab fa-twitter-square"></i>
                 </a>
               </li>
@@ -50,15 +48,14 @@
               </li>
             </ul>
         </div>
-           <% end %>
-
+        <% end %>
     </div>
 </div>
 
 <br>
 <br>
 <div class="button-wrap-index" style="display:flex;   justify-content: space-around;">
-  <%= link_to "Airdrops", airdrops_path ,  :class=>'btn index-button', :style=>'
+  <%= link_to "GO UP", airdrops_path ,  :class=>'btn index-button', :style=>'
  width: 20%;'%>
 </div>
 

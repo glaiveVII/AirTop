@@ -103,6 +103,10 @@ User.create!(email: 'airtop@gmail.com', password: 'airtop',
     public_key: "sadlfgjd;fzgadjgjkls;fgjk",
     nickname: "Paul")
 
+User.create!(email: 'airtop@hotmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Julien")
+
 puts "Added the Airtop user to make thing easier"
 
 puts 'Every thing is very okay'

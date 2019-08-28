@@ -19,7 +19,9 @@ class UsersController < ApplicationController
   def invites_user
     # raise
     email = params[:invite][:email]
-    User.invite!(email: email)
+    # This will create a user, and send an email for the invite
+    # we dont want to create user until they accept invitation
+    # User.invite!(email: email)
     # create the future user with accepted like that can join the event
     # y = User.create(email: email)
     # raise

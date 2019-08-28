@@ -55,12 +55,9 @@ class AirdropsController < ApplicationController
   def register
     @airdrop = Airdrop.find(params[:id].to_i)
     # raise
-    invite = Invite.find(@airdrop.id)
-
-    if current_user.email == invite.email
-      invite.status = "accepted"
-      redirect_to airdrop_register_path(@airdrop)
-    else
+    invite = Invite.where(airdrop: @airdrop, email: current_user.email)[0]
+    if current_user.email != invite.email
+      # binding.pry
       invite.status = "decline"
       redirect_to airdrop_path(@airdrop)
     end

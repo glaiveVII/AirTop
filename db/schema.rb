@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_101904) do
+ActiveRecord::Schema.define(version: 2019_08_28_095653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(version: 2019_08_27_101904) do
   create_table "invites", force: :cascade do |t|
     t.bigint "airdrop_id"
     t.bigint "user_id"
-    t.string "status", default: "pending"
+    t.string "status", default: "accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
     t.index ["airdrop_id"], name: "index_invites_on_airdrop_id"
     t.index ["user_id"], name: "index_invites_on_user_id"
   end

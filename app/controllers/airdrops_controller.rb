@@ -44,7 +44,7 @@ class AirdropsController < ApplicationController
   def destroy
     authorize @airdrop
     @airdrop.destroy
-    redirect_to airairdrop_path
+    redirect_to airdrop_path
   end
 
   def donate
@@ -53,8 +53,17 @@ class AirdropsController < ApplicationController
   end
 
   def register
-    @x = Airdrop.new
-    authorize @x
+    @airdrop = Airdrop.find(params[:id].to_i)
+    # raise
+    invite = Invite.where(airdrop: @airdrop, email: current_user.email)[0]
+    if current_user.email != invite.email
+      # binding.pry
+      invite.status = "decline"
+      redirect_to airdrop_path(@airdrop)
+    end
+
+    # @x = Airdrop.new
+    # authorize @x
   end
 
   private

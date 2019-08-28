@@ -28,8 +28,6 @@ gem 'devise_invitable', '~> 2.0.0'
 #gem to send mail
 gem 'letter_opener'
 
-
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

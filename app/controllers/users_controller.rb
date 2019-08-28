@@ -6,14 +6,19 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    raise
     authorize @user
   end
 
   def update
-    current_user.update(user_params)
-    @user = current_user
-    authorize @user
-    redirect_to user_path(current_user)
+    raise
+    if current_user.update(user_params)
+      @user = current_user
+      raise
+      redirect_back fallbacklocation: @user
+    else
+      render :edit
+    end
   end
 
   def invites_user

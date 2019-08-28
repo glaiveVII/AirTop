@@ -21,8 +21,10 @@ class UsersController < ApplicationController
     email = params[:invite][:email]
     User.invite!(email: email)
     # create the future user with accepted like that can join the event
-    y = User.create(email: email)
-    y.status = "accepted"
+    # y = User.create(email: email)
+    # raise
+    Invite.create(user_id: current_user.id, email: email, airdrop_id: params[:airdrop_id])
+    # y.status = "accepted"
     redirect_to airdrop_path(params[:airdrop_id])
   end
 

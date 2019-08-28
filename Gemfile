@@ -26,7 +26,7 @@ gem 'faker'
 gem 'devise_invitable', '~> 2.0.0'
 
 #gem to send mail
-gem 'letter_opener'
+gem 'letter_opener', group: :development
 
 group :development do
   gem 'web-console', '>= 3.3.0'

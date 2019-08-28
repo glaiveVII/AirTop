@@ -1,41 +1,61 @@
 <div class="full-container">
+
+
   <h1 class="heading">Airdrops</h1>
+
+  <div class="button-container-index" style="display:flex;   justify-content: space-around;">
+    <%= link_to "Home", root_path ,  :class=>'btn index-button'%>
+    <%= link_to "Create event", new_airdrop_path ,  :class=>'btn index-button'%>
+  </div>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Please note</strong> that some Airdrops are private which will require an invitation to participate!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-
       <div class="card-wrapper">
-           <% @airdrops.each do |airdrop| %>
-
-        <div class="crypto-card">
+        <% @airdrops.each do |airdrop| %>
+        <div class="crypto-card" style="border-radius:20px; ">
             <img class="card-img" src="/assets/ethereum_blockchain_elix.png">
 <!--             <img src="/assets/ether-index.png" alt="profile image" class="profile-image" style="background: black;">
  -->
             <%= image_tag airdrop.photo, :class=>"profile-image", :style=>'background-color: white;'%>
             <h1><%= airdrop.crypto %> </h1>
-            <p class="title name"><%= airdrop.amount %></p>
+            <p class="title name"><strong><%= airdrop.amount %></strong></p>
             <p class="about"><%= airdrop.quote %> </p>
             <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button'%>
         <!--     <a href="#" class="btn">Participate</a>  -->
-            <ul class="social-media">
-              <li><a href="#"><i class="fab fa-facebook-square"></i></a> </li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a> </li>
-              <li><a href="#"><i class="fab fa-twitter-square"></i></a> </li>
-              <li><a href="#"><i class="fab fa-slack"></i></a> </li>
+            <ul class="list-inline social-media">
+              <li class="github-">
+                <a href="https://github.com/PelDoingCode" target="_blank">
+                  <i class="fab fa-github-square"></i>
+                </a>
+              </li>
+              <li class="twitter-">
+                <a href="https://twitter.com/realDonaldTrump" target="_blank">
+                  <i class="fab fa-twitter-square"></i>
+                </a>
+              </li>
+              <li class="instagram-">
+                <a href="https://www.instagram.com/pelgiuliano/?hl=fr" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li class="linkedin-">
+                <a href="https://www.linkedin.com/in/julien-pelegri-448639168/" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </li>
             </ul>
         </div>
-           <% end %>
-
+        <% end %>
     </div>
 </div>
 
 <br>
 <br>
-<br>
+<div class="button-wrap-index" style="display:flex;   justify-content: space-around;">
+  <%= link_to "GO UP", airdrops_path ,  :class=>'btn index-button', :style=>'
+ width: 20%;'%>
+</div>
 
-<%= link_to "Airdrops", airdrops_path ,  :class=>'btn index-button'%> |
-<%= link_to "Home", root_path ,  :class=>'btn index-button'%> |
-<%= link_to "Create event", new_airdrop_path ,  :class=>'btn index-button'%>

@@ -193,3 +193,36 @@
     transform: none;
     transform: translateX(-50%);
 }
+
+
+// code for link of github insta fb etcc just below !!
+
+.github- i:hover {
+  color: #161516;
+}
+.linkedin- i:hover {
+  color: #0077b5;
+}
+.twitter- i:hover {
+  color: #1a91da;
+}
+.instagram- i:hover {
+  color:#fff;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+  color: red;
+}
+
+.list-inline li {
+  display: inline;
+  padding: 10px;
+}
+.list-inline i {
+  font-size: 50px;
+}

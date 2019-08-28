@@ -26,20 +26,28 @@ no need of this form anymore we add it in the show page hidden directly  -->
   <% end %>
 <% end %>
 
-  <%= simple_form_for [user], url: new_airdrop_invite_path(@airdrop) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :nickname %>
-      <!-- here fill already the place with his email since we have acces -->
+<%= simple_form_for [user], url: user_update_path, :method => :put do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <%= f.input :email %>
-      <h1>the crypto used here is : <%= @airdrop.crypto %> </h1>
-      <p> add the good public key </p>
+  <div class="form-inputs">
+    <%= f.input :nickname %>
+    <!-- here fill already the place with his email since we have acces -->
 
-      <%= f.input :public_key %>
-      <%= f.button :submit %>
-    </div>
+    <%= f.input :email %>
+    <h1>the crypto used here is : <%= @airdrop.crypto %> </h1>
+    <p> add the good public key </p>
 
-  <% end %>
+    <%= f.input :public_key,  %>
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
+
+
+<div class="text-center">
+  <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button'%>
+  <%= link_to "Home", root_path,  :class=>'btn index-button'%>
+</div>
+

@@ -30,9 +30,9 @@ class UsersController < ApplicationController
     redirect_to airdrop_path(params[:airdrop_id])
   end
 
-  # private
+  private
 
-  # def user_params
-  #   params.require(:user).permit(:email, :nickname, :public_key)
-  # end
+  def user_params
+    params.require(:user).permit(:email, :nickname, :public_key)
+  end
 end

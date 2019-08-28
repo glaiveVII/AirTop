@@ -66,6 +66,20 @@ class AirdropsController < ApplicationController
     # authorize @x
   end
 
+  def randomise(amount, number)
+    return amount.to_f / number
+  end
+
+
+  def airdrop_release
+    invite = Invite.where(user: current_user.id).first
+    x = invite.airdrop_id
+    amount = Airdrop.where(id: x).first.amount
+
+    raise
+
+  end
+
   private
 
   def set_airdrop

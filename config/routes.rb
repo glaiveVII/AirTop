@@ -10,10 +10,16 @@ Rails.application.routes.draw do
   resources :airdrops do
     resources :invites, only: %i[index new create]
     post 'invites_user', to: 'users#invites_user', as: :invite_users
-
   end
   resources :invites, only: %i[show destroy]
+
   get 'airdrops/:id/register', to: 'airdrops#register', as: :airdrop_register
+  #no need for this root we go directly to the thing generzted by devise_invitable
+  # patch "users", to: "users#update", as: :user_update
+
+  #routes to release the airdrop :
+  get 'airdrops/:id/release', to: 'airdrops#airdrop_release', as: :airdrop_release
+
 
   # routes to do for later make a funny troll page
   get 'airdrops/donate', to: 'airdrops#donate', as: :airdrop_donate

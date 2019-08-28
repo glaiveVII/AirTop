@@ -66,6 +66,23 @@ class AirdropsController < ApplicationController
     # authorize @x
   end
 
+  def randomise(amount, number)
+    return amount.to_f / number
+  end
+
+  def airdrop_release
+    user_invited = Invite.where(user: current_user.id).first
+    id_user_invited = user_invited.user_id
+    x = user_invited.airdrop_id
+    amount = Airdrop.where(id: x).first.amount
+    # for the moment we have only one user but if we want to add multiple
+    # here each loop and we check the status of invite
+    if user_invited.status == "accepted"
+      wallet_amount = randomise(amount, 1)
+      User.where(id: id_user_invited).first.wallet_balance += wallet_amount
+    end
+  end
+
   private
 
   def set_airdrop

@@ -32,16 +32,29 @@
   display : flex;
   justify-content: center;
 }
-.home-svg {
-
+.home-svg1 {
   position: absolute;
   width: 40%;
   height: 20%;
   left: 70%;
   top: 50%;
-
-  background: url(adventure-sports.png);
-  transform: rotate(45deg);
+  transform: rotate(35deg);
+}
+.home-svg2 {
+  position: absolute;
+  width: 25%;
+  height: 15%;
+  left: 50%;
+  top: 63%;
+  transform: rotate(-25deg);
+}
+.home-svg3 {
+  position: absolute;
+  width: 25%;
+  height: 15%;
+  left: 70%;
+  top: 94%;
+  transform: rotate(25deg);
 }
 
 

@@ -23,6 +23,7 @@ class AirdropsController < ApplicationController
     # do i need stg here ? everybody can create a new event !
     # @airdrop.id = current_user
     # raise
+    @airdrop.user = current_user
     authorize @airdrop
     if @airdrop.save
       redirect_to airdrop_path(@airdrop)
@@ -85,8 +86,8 @@ class AirdropsController < ApplicationController
     # here each loop and we check the status of invite
     # raise
     if invite.status == "accepted"
-      # wallet_amount = randomise(amount, 1)
-      invitee.wallet_balance += 4
+      wallet_amount = randomise(amount, 1)
+      invitee.wallet_balance += wallet_amount
       invitee.save!
     end
     redirect_to root_path

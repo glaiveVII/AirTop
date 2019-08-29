@@ -2,6 +2,10 @@ body {
   margin-top: 100px;
 }
 
+#air {
+
+}
+
 nav {
   height: 100px;
   width: 100%;
@@ -32,7 +36,11 @@ nav.black {
   }
 
   ul li a {
-    color: white;
+    color: white !important;
+  }
+
+  .logo a {
+     color: white !important;
   }
 }
 

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_08_28_095653) do
   create_table "invites", force: :cascade do |t|
     t.bigint "airdrop_id"
     t.bigint "user_id"
-    t.string "status", default: "accepted"
+    t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"

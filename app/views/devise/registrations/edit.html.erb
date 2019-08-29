@@ -2,7 +2,7 @@
 <br>
 <br>
 <br>
-<h2>Hello <%= @user.nickname %>, fill the form to participate : </h2>
+<h2> Hello <%= @user.nickname %>, fill the form to participate : </h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -31,10 +31,10 @@
                   input_html: { autocomplete: "current-password" } %>
     <!-- here fill already the place with his email since we have acces -->
 
-    <p> add the good public key :</p>
+    <p class="text-center"> add the good public key !!</p>
 
     <%= f.input :public_key , label: 'Your public key, be careful',  :input_html => { :value => "enter your public key here " }%>
-    <p> your wallet balance for the moment : <%= @user.wallet_balance %></p>
+    <p class="text-center"> your wallet balance for the moment : <%= @user.wallet_balance %></p>
   </div>
 
   <div class="form-actions">

@@ -28,7 +28,7 @@
 
 
 <h3> here is the form to invite people</h3>
-
+<%# raise %>
 <% #if current_user.airdrops.include?(@airdrop) %>
   <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
       <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
@@ -43,22 +43,23 @@
 <br>
 <br>
 
-<% #if current_user.airdrops.include?(@airdrop) %>
+<div class="button-show">
 
-  <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
+  <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
+  <% #if current_user.airdrops.include?(@airdrop) %>
 
-<% #end %>
+    <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
 
-
-
-
-<%=# link_to "enter code", airdrop_enter_code_path(@airdrop)  %>
-<%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
+  <% #end %>
 
 
-<%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
-<br>
-<%= link_to "Home", root_path ,  :class=>'btn index-button'%>
+
+
+  <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
+
+
+  <%= link_to "Home", root_path ,  :class=>'btn index-button'%>
+</div>
 
 
 <!--

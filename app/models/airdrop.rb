@@ -5,7 +5,7 @@ class Airdrop < ApplicationRecord
   # can be acces with two paths : one through invites or directly
 
   has_many :invites
-
+  belongs_to :user
   mount_uploader :photo, PhotoUploader
 
   # here is through invites

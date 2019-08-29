@@ -23,6 +23,7 @@ class AirdropsController < ApplicationController
     # do i need stg here ? everybody can create a new event !
     # @airdrop.id = current_user
     # raise
+    @airdrop.user = current_user
     authorize @airdrop
     if @airdrop.save
       redirect_to airdrop_path(@airdrop)
@@ -53,6 +54,7 @@ class AirdropsController < ApplicationController
   end
 
   def register
+    # raise
     @airdrop = Airdrop.find(params[:id].to_i)
     # raise
     invite = Invite.where(airdrop: @airdrop, email: current_user.email)[0]
@@ -60,27 +62,36 @@ class AirdropsController < ApplicationController
       # binding.pry
       invite.status = "decline"
       redirect_to airdrop_path(@airdrop)
-    end
 
-    # @x = Airdrop.new
-    # authorize @x
+    else
+      invite.status = "accepted"
+      redirect_to airdrop_path(@airdrop)
+    end
   end
 
   def randomise(amount, number)
     return amount.to_f / number
   end
 
+  def enter_code
+    raise
+  end
+
   def airdrop_release
-    user_invited = Invite.where(user: current_user.id).first
-    id_user_invited = user_invited.user_id
-    x = user_invited.airdrop_id
-    amount = Airdrop.find(x).amount
+    invite = Invite.where(airdrop_id: params[:id]).first
+    invitee = User.find_by_email(invite.email)
+    # x = user_invited.airdrop_id
+    amount = Airdrop.find(params[:id]).amount
     # for the moment we have only one user but if we want to add multiple
     # here each loop and we check the status of invite
-    if user_invited.status == "accepted"
+    # raise
+    if invite.status == "accepted"
       wallet_amount = randomise(amount, 1)
-      User.find(id_user_invited).wallet_balance += wallet_amount
+      invitee.wallet_balance += wallet_amount
+      invitee.save!
+      amount = 0
     end
+    redirect_to root_path
   end
 
   private
@@ -90,6 +101,6 @@ class AirdropsController < ApplicationController
   end
 
   def airdrop_params
-    params.require(:airdrop).permit(:amount, :crypto, :title, :description)
+    params.require(:airdrop).permit(:amount, :crypto, :title, :description, :photo)
   end
 end

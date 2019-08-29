@@ -12,6 +12,9 @@
       <%= f.input :crypto , label: 'the cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one'%>
       <%= f.input :amount , label: 'the amount of cryptocurrency you want to airdrop', error: 'Amount is mandatory, please specify one'%>
       <%= f.input :description %>
+      <%= f.input :photo, class: "insert-photo" %>
+      <%= f.input :photo_cache, as: :hidden %>
+
       <div class="text-center">
         <%= f.button :submit  , :class=>'btn index-button'%>
       </div>
@@ -21,3 +24,6 @@
 
   </div>
 </div>
+
+
+

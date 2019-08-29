@@ -39,16 +39,17 @@
         <p class="text-center"> your wallet balance for the moment : <%= @user.wallet_balance %></p>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Participate" %>
+      <div class="form-actions" style="text-align: center;">
+        <%= f.button :submit, "Participate" ,  :class=>'btn index-button'%>
       </div>
     <% end %>
   </div>
 </div>
 
-<div class="button-2IFHGCXZW" style="width:100%; display: flex; justify-content: center;">
 
-  <%= link_to "BACK", :back%>
+<div class="button-2IFHGCXZW" style="width:100%; display: flex; justify-content: center; padding-top: 15px;">
+
+  <%= link_to "BACK", :back,  :class=>'btn index-button'%>
 </div>
 
 

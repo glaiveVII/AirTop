@@ -29,7 +29,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
   airdrop = Airdrop.new(
     crypto: "ethereum",
     amount: rand(1..15),
-    user_id: User.first.id,
+    user_id: User.find_by_nickname("Paul"),
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -58,7 +58,7 @@ end
   airdrop = Airdrop.new(
     crypto: "bitcoin",
     amount: rand(1..5),
-    user_id: User.first.id,
+    user_id: User.find_by_nickname("Paul"),
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -87,7 +87,7 @@ end
   airdrop = Airdrop.new(
     crypto: "ltc",
     amount: rand(1..30),
-    user_id: User.first.id,
+    user_id: User.find_by_nickname("Paul"),
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -115,6 +115,14 @@ User.create!(email: 'airtop@gmail.com', password: 'airtop',
 User.create!(email: 'airtop@hotmail.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Julien")
+
+User.create!(email: 'sam@hotmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Sam")
+
+User.create!(email: 'arthur@hotmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Arthur")
 
 puts "Added the Airtop user to make thing easier"
 

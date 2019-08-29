@@ -3,16 +3,15 @@
  <div class="wrapper">
   <div class="profile-card js-profile-card">
     <div class="profile-card__img">
-      <%= image_tag @airdrop.photo %>
+      <%= cl_image_tag @airdrop.photo %>
     </div>
-
       <div class="profile-card__cnt js-profile-cnt">
-        <div class="profile-card__name"> <%= @airdrop.crypto %> </div>
-        <div class="profile-card__txt"><strong> <%= @airdrop.amount %> </strong></div>
+        <div class="profile-card__name"> <%= @airdrop.crypto.upcase %> </div>
+        <div class="profile-card__txt " style="font-size:40px;"><strong> <%= @airdrop.amount %> </strong></div>
         <div class="profile-card-loc">
 
         <span class="profile-card-loc__txt">
-          <h3 class="show-title"> <%= @airdrop.description %> </h3>
+          <h3 class="show-title"> <em><%= @airdrop.description %></em>  </h3>
         </span>
       </div>
 
@@ -174,58 +173,49 @@
 
 
 
-
 <div class="form-contain">
   <div class="form-show">
-    <h3>Invite people!</h3>
-<% #if current_user.airdrops.include?(@airdrop) %>
-  <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
 
-<% if @airdrop.user_id == current_user.id %>
-  <h3 style="text-align: center;"> here is the form to invite people</h3>
-  <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
-      <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
-      <div class="submit-btn">
-      <%= f.button :submit,  :class=>'btn index-button' %>
-      </div>
-  <% end %>
+    <% if @airdrop.user_id == current_user.id %>
 
+      <h3 style="text-align: center;"> INVITE !</h3>
+      <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+          <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+          <div class="submit-btn">
+          <%= f.button :submit,  :class=>'btn index-button' %>
+          </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
-<%# end %>
-<% #if current_user.airdrops.include?(@airdrop) %>
-<div class="grouped-buttons">
-  <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
-<% #end %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div class="button-show" style="display: flex; justify-content: space-around;">
+<div class="grouped-buttons" style="display: flex; justify-content: space-around;">
 
   <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
 
   <% if @airdrop.user_id == current_user.id %>
+
     <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
   <% end %>
 
 
 
-<% #raise %>
-<!--   here i can't filter people ???????????????????????
-  here i can't filter people ???????????????????????
-  here i can't filter people ???????????????????????
-  here i can't filter people ??????????????????????? -->
 
+  <% @airdrop.invites.each do |user| %>
   <% #raise %>
-  <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
+  <!--   here i can't filter people ???????????????????????
+    here i can't filter people ???????????????????????
+    here i can't filter people ???????????????????????
+    here i can't filter people ??????????????????????? -->
+
+    <% #raise %>
+    <% if user.user_id == current_user.id %>
+      <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
+    <% end %>
+  <% end %>
 
 
-<%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
-</div>
   <%= link_to "Home", root_path ,  :class=>'btn index-button'%>
 </div>
 
@@ -234,18 +224,18 @@
 # don't need this code yet : it's a more difficult feature !
  -->
 
-    <% if false %>
-      <%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
-      <%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<% if false %>
+  <%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
+  <%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-          <div class="form-inputs">
-            <%= hidden_field_tag :user_id, current_user.id %>
-            <%= hidden_field_tag :airdrop_id, @airdrop.id %>
-          <%#= hidden_field_tag :status, "Accepted" %>
-          </div>
-           <%= f.button :submit, "Create invites to this airdrop" %>
-      <% end %>
-    <% end %>
+      <div class="form-inputs">
+        <%= hidden_field_tag :user_id, current_user.id %>
+        <%= hidden_field_tag :airdrop_id, @airdrop.id %>
+      <%#= hidden_field_tag :status, "Accepted" %>
+      </div>
+       <%= f.button :submit, "Create invites to this airdrop" %>
+  <% end %>
+<% end %>
 

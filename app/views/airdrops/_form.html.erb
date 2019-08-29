@@ -3,7 +3,7 @@
 <div class="row airdrop-form d-flex">
   <div class="col-lg-6">
 
-  <%= simple_form_for(airdrop) do |f| %>
+  <%= simple_form_for(airdrop , remote: true) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -12,6 +12,8 @@
       <%= f.input :crypto , label: 'the cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one'%>
       <%= f.input :amount , label: 'the amount of cryptocurrency you want to airdrop', error: 'Amount is mandatory, please specify one'%>
       <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
       <div class="text-center">
         <%= f.button :submit  , :class=>'btn index-button'%>
       </div>

@@ -90,6 +90,6 @@ class AirdropsController < ApplicationController
   end
 
   def airdrop_params
-    params.require(:airdrop).permit(:amount, :crypto, :title, :description)
+    params.require(:airdrop).permit(:amount, :crypto, :title, :description, :photo)
   end
 end

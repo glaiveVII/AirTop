@@ -161,7 +161,7 @@ body {
 */
 
 #shape {
-  stroke-width: 7px;
+  stroke-width: 5px;
   fill: transparent;
   stroke: #167efb;
   stroke-dasharray: 85 400;
@@ -180,6 +180,7 @@ body {
 }
 
 #text a {
+  font-size: 20px !important;
   color: #167efb;
   text-decoration: none;
   font-weight: 100;

@@ -32,6 +32,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
+    description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
     photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
   )
 
@@ -59,6 +60,7 @@ end
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
+    description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
     photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin"
   )
 
@@ -86,6 +88,7 @@ end
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
+    description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
     photo: "https://banner2.kisspng.com/20180805/hql/kisspng-litecoin-bitcoin-cryptocurrency-wallet-digital-wal-bitconnect-wallet-mac-bitcoin-cash-transaction-s-5b667f911cfec0.1647560515334439851188.jpg"
   )
 

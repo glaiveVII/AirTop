@@ -78,7 +78,8 @@ class AirdropsController < ApplicationController
   end
 
   def airdrop_release
-    invite = Invite.where(airdrop_id: params[:id]).first
+    invite = Invite.where(airdrop_id: params[:id])
+    raise
     invitee = User.find_by_email(invite.email)
     # x = user_invited.airdrop_id
     amount = Airdrop.find(params[:id]).amount
@@ -93,6 +94,26 @@ class AirdropsController < ApplicationController
     end
     redirect_to root_path
   end
+
+  # previous version for only one person !!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  # !!!!!!!!!!!!!!! working !!!!!!!!!!!!!!!!!
+  # def airdrop_release
+  #   invite = Invite.where(airdrop_id: params[:id]).first
+  #   invitee = User.find_by_email(invite.email)
+  #   # x = user_invited.airdrop_id
+  #   amount = Airdrop.find(params[:id]).amount
+  #   # for the moment we have only one user but if we want to add multiple
+  #   # here each loop and we check the status of invite
+  #   # raise
+  #   if invite.status == "accepted"
+  #     wallet_amount = randomise(amount, 1)
+  #     invitee.wallet_balance += wallet_amount
+  #     invitee.save!
+  #     amount = 0
+  #   end
+  #   redirect_to root_path
+  # end
 
   private
 

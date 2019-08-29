@@ -9,11 +9,30 @@ User.destroy_all
 require 'faker'
 
 
+puts 'Seed done for airdrop, user'
+
+User.create!(email: 'airtop@gmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgadjgjkls;fgjk",
+    nickname: "Paul")
+
+User.create!(email: 'airtop@hotmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Julien")
+
+User.create!(email: 'sam@hotmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Sam")
+
+User.create!(email: 'arthur@hotmail.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Arthur")
+
+
 quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple', 'btc-eth-ltc = <3']
 
 5.times do |i|
   user = User.new(
-    first_name: Faker::Name.first_name ,
+    first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
   )
   domain = ["gmail", "hotmail", "yahoo"]
@@ -29,7 +48,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
   airdrop = Airdrop.new(
     crypto: "ethereum",
     amount: rand(1..15),
-    user_id: User.find_by_nickname("Paul"),
+    user_id: User.find_by_nickname("Paul").id,
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -58,7 +77,7 @@ end
   airdrop = Airdrop.new(
     crypto: "bitcoin",
     amount: rand(1..5),
-    user_id: User.find_by_nickname("Paul"),
+    user_id: User.find_by_nickname("Paul").id,
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -87,7 +106,7 @@ end
   airdrop = Airdrop.new(
     crypto: "ltc",
     amount: rand(1..30),
-    user_id: User.find_by_nickname("Paul"),
+    user_id: User.find_by_nickname("Paul").id,
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -98,31 +117,6 @@ end
   airdrop.save!
 end
 
-
-
-  # airdrop = Airdrop.new(
-  #   crypto: "bitcoin",
-  #   amount: 1
-  # )
-  # airdrop.save!
-
-puts 'Seed done for airdrop, user'
-
-User.create!(email: 'airtop@gmail.com', password: 'airtop',
-    public_key: "sadlfgjd;fzgadjgjkls;fgjk",
-    nickname: "Paul")
-
-User.create!(email: 'airtop@hotmail.com', password: 'airtop',
-    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
-    nickname: "Julien")
-
-User.create!(email: 'sam@hotmail.com', password: 'airtop',
-    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
-    nickname: "Sam")
-
-User.create!(email: 'arthur@hotmail.com', password: 'airtop',
-    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
-    nickname: "Arthur")
 
 puts "Added the Airtop user to make thing easier"
 

@@ -13,6 +13,20 @@
 
 <%#= link_to "participate to this airdrop", airdrop_register_path%>
 
+
+
+
+
+<!-- do not move or touch anything down ! -->
+
+
+
+
+
+
+
+
+
 <h3> here is the form to invite people</h3>
 
 <% #if current_user.airdrops.include?(@airdrop) %>
@@ -38,7 +52,7 @@
 
 
 
-<%= link_to "enter code", airdrop_enter_code_path(@airdrop)  %>
+<%=# link_to "enter code", airdrop_enter_code_path(@airdrop)  %>
 <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
 
 

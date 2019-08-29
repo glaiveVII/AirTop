@@ -2,10 +2,25 @@
 
 
   <h1 class="heading">Airdrops</h1>
-
   <div class="button-container-index" style="display:flex;   justify-content: space-around;">
-    <%= link_to "Home", root_path ,  :class=>'btn index-button'%>
-    <%= link_to "Create event", new_airdrop_path ,  :class=>'btn index-button'%>
+        <div class="button-wraper" style="width: 100%; justify-content: space-evenly;">
+          <div class="svg-wraper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="150" />
+              <div id="text">
+                <%= link_to "Home", root_path ,  :class=>'spot'%>
+              </div>
+            </svg>
+          </div>
+          <div class="svg-wraper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape" height="40" width="150" />
+              <div id="text">
+                <%= link_to "Create event", new_airdrop_path ,  :class=>'spot'%>
+              </div>
+            </svg>
+          </div>
+        </div>
   </div>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Please note</strong> that some Airdrops are private which will require an invitation to participate!
@@ -51,11 +66,14 @@
         <% end %>
     </div>
 </div>
-
-<br>
-<br>
-<div class="button-wrap-index" style="display:flex;   justify-content: space-around;">
-  <%= link_to "GO UP", airdrops_path ,  :class=>'btn index-button', :style=>'
- width: 20%;'%>
-</div>
-
+<div class="button-container-index" style="display:flex; justify-content: center; margin-top: 40px;">
+      <div class="button-wrap">
+       <div class="svg-wraper">
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150" />
+            <div id="text">
+              <%= link_to "GO UP", airdrops_path ,  :class=>'spot'%>
+            </div>
+          </svg>
+        </div>
+      </div>

@@ -35,10 +35,7 @@
 
 <% #end %>
 
-  <%# raise %>
-<% #if current_user.airdrops.include?(@airdrop) %>
-  <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
-<% #end %>
+<%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
 
 
 <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>

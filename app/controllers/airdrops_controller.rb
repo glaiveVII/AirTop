@@ -69,28 +69,41 @@ class AirdropsController < ApplicationController
     end
   end
 
+  # def randomise(amount, number)
+  #   return amount.to_f / number
+  # end
+
+  # def enter_code
+  #   raise
+  # end
+
+  # new one i need to improve !!!!!
   def randomise(amount, number)
     return amount.to_f / number
-  end
-
-  def enter_code
-    raise
   end
 
   def airdrop_release
     invite = Invite.where(airdrop_id: params[:id])
     raise
-    invitee = User.find_by_email(invite.email)
-    # x = user_invited.airdrop_id
+    participants = []
+    invite.each do |x|
+      # i find each participants
+      participants << User.find_by_email(x.email)
+    end
+    # amount to split
     amount = Airdrop.find(params[:id]).amount
-    # for the moment we have only one user but if we want to add multiple
-    # here each loop and we check the status of invite
     # raise
-    if invite.status == "accepted"
-      wallet_amount = randomise(amount, 1)
-      invitee.wallet_balance += wallet_amount
-      invitee.save!
-      amount = 0
+    number = participants.count
+    # need to improve randomisation algo !!!!!!!
+    # need to improve randomisation algo !!!!!!!
+    # need to improve randomisation algo !!!!!!!
+    won = randomise(amount, number)
+    participants.each do |x|
+      if x.status == "accepted"
+        x.wallet_balance += won
+        x.save!
+        amount -= won
+      end
     end
     redirect_to root_path
   end

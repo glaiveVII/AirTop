@@ -6,12 +6,12 @@
       <%= cl_image_tag @airdrop.photo %>
     </div>
       <div class="profile-card__cnt js-profile-cnt">
-        <div class="profile-card__name"> <%= @airdrop.crypto %> </div>
-        <div class="profile-card__txt"><strong> <%= @airdrop.amount %> </strong></div>
+        <div class="profile-card__name"> <%= @airdrop.crypto.upcase %> </div>
+        <div class="profile-card__txt " style="font-size:40px;"><strong> <%= @airdrop.amount %> </strong></div>
         <div class="profile-card-loc">
 
         <span class="profile-card-loc__txt">
-          <h3 class="show-title"> <%= @airdrop.description %> </h3>
+          <h3 class="show-title"> <em><%= @airdrop.description %></em>  </h3>
         </span>
       </div>
 
@@ -188,6 +188,7 @@
     <% end %>
   </div>
 </div>
+
 
 <div class="grouped-buttons" style="display: flex; justify-content: space-around;">
 

@@ -33,7 +33,7 @@
 
     <p> add the good public key :</p>
 
-    <%= f.input :public_key , label: 'Your public key, be careful'%>
+    <%= f.input :public_key , label: 'Your public key, be careful',  :input_html => { :value => "enter your public key here " }%>
     <p> your wallet balance for the moment : <%= @user.wallet_balance %></p>
   </div>
 

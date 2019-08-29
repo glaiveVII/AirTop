@@ -32,7 +32,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
-    photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
+    remote_photo_url: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
   )
 
   airdrop.save!
@@ -59,7 +59,7 @@ end
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
-    photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin"
+    remote_photo_url: "https://banner2.cleanpng.com/20180802/kvj/kisspng-bitcoin-cash-cryptocurrency-bitcoin-gold-ethereum-chinese-smartphones-5b62cfe23990e0.8995731315332024022358.jpg"
   )
 
   airdrop.save!
@@ -86,7 +86,7 @@ end
     user_id: User.first.id,
     # address: Faker::Address.street_address,
     quote: quote[i],
-    photo: "https://banner2.kisspng.com/20180805/hql/kisspng-litecoin-bitcoin-cryptocurrency-wallet-digital-wal-bitconnect-wallet-mac-bitcoin-cash-transaction-s-5b667f911cfec0.1647560515334439851188.jpg"
+    remote_photo_url: "https://banner2.kisspng.com/20180805/hql/kisspng-litecoin-bitcoin-cryptocurrency-wallet-digital-wal-bitconnect-wallet-mac-bitcoin-cash-transaction-s-5b667f911cfec0.1647560515334439851188.jpg"
   )
 
   airdrop.save!

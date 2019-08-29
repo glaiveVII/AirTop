@@ -6,6 +6,8 @@ class Airdrop < ApplicationRecord
 
   has_many :invites
 
+  mount_uploader :photo, PhotoUploader
+
   # here is through invites
   has_many :users, through: :invites
   validates :amount, presence: true

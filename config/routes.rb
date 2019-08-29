@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :airdrops do
     get "enter_code", to: 'airdrops#enter_code', as: :enter_code
+    # post "submit_code", to: 'airdrops'
     resources :invites, only: %i[index new create]
     post 'invites_user', to: 'users#invites_user', as: :invite_users
   end

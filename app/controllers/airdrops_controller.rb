@@ -89,6 +89,7 @@ class AirdropsController < ApplicationController
       wallet_amount = randomise(amount, 1)
       invitee.wallet_balance += wallet_amount
       invitee.save!
+      amount = 0
     end
     redirect_to root_path
   end

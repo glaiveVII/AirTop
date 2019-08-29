@@ -161,6 +161,10 @@
 
 
 <!-- DO NOT TOUCH ANYTHING -->
+<!-- do not move or touch anything down ! -->
+
+
+
 
 
 
@@ -176,6 +180,10 @@
     <h3>Invite people!</h3>
 <% #if current_user.airdrops.include?(@airdrop) %>
   <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+
+<% if @airdrop.user_id == current_user.id %>
+  <h3 style="text-align: center;"> here is the form to invite people</h3>
+  <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), method: :post do |f| %>
       <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
       <div class="submit-btn">
       <%= f.button :submit,  :class=>'btn index-button' %>
@@ -188,17 +196,33 @@
 <% #if current_user.airdrops.include?(@airdrop) %>
 <div class="grouped-buttons">
   <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
-
 <% #end %>
 
-  <%# raise %>
-<% #if current_user.airdrops.include?(@airdrop) %>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="button-show">
+
+  <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
+
+  <% if @airdrop.user_id == current_user.id %>
+    <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
+  <% end %>
+
+
+
+  <% #raise %>
   <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
-<% #end %>
 
 
 <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
 </div>
+  <%= link_to "Home", root_path ,  :class=>'btn index-button'%>
+</div>
+
 
 <!--
 # don't need this code yet : it's a more difficult feature !

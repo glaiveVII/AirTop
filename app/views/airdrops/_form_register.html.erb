@@ -4,7 +4,42 @@
 <% #raise %>
 <%#= user.nickname %>
 <!--
-no need of this form anymore we add it in the show page hidden directly  -->
+no need of this form anymore we add it in the show page hidden directly
+
+
+everything here is useless but keep it i will refractor it
+
+-->
+
+
+
+<% if false %>
+  <%= simple_form_for [user], url: user_update_path, :method => :put do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :nickname %>
+      <!-- here fill already the place with his email since we have acces -->
+
+      <%= f.input :email %>
+      <h1>the crypto used here is : <%= @airdrop.crypto %> </h1>
+      <p> add the good public key !!!</p>
+
+      <%= f.input :public_key,  %>
+      <%= f.button :submit %>
+    </div>
+
+  <% end %>
+<% end %>
+
+
+<div class="text-center">
+  <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button'%>
+  <%= link_to "Home", root_path,  :class=>'btn index-button'%>
+</div>
+
+
 
 <% if false %>
   <%= simple_form_for [@airdrop, Invite.new], url: new_airdrop_invite_path(@airdrop) do |f| %>
@@ -25,29 +60,3 @@ no need of this form anymore we add it in the show page hidden directly  -->
 
   <% end %>
 <% end %>
-
-
-<%= simple_form_for [user], url: user_update_path, :method => :put do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :nickname %>
-    <!-- here fill already the place with his email since we have acces -->
-
-    <%= f.input :email %>
-    <h1>the crypto used here is : <%= @airdrop.crypto %> </h1>
-    <p> add the good public key </p>
-
-    <%= f.input :public_key,  %>
-    <%= f.button :submit %>
-  </div>
-
-<% end %>
-
-
-<div class="text-center">
-  <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button'%>
-  <%= link_to "Home", root_path,  :class=>'btn index-button'%>
-</div>
-

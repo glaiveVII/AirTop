@@ -21,6 +21,6 @@ class User < ApplicationRecord
   has_many :invites
 
   validates :email, presence: true
-  validates :public_key, presence: true
+  validates_length_of :public_key, minimum: 5, allow_blank: true
   validates :nickname, presence: true
 end

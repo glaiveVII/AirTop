@@ -20,6 +20,10 @@ User.create!(email: 'airtop@hotmail.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Julien")
 
+User.create!(email: 'marco@lewagon.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Marco")
+
 User.create!(email: 'sam@lewagon.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Sam")

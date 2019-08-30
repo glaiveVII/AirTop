@@ -20,14 +20,21 @@ User.create!(email: 'airtop@hotmail.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Julien")
 
-User.create!(email: 'sam@hotmail.com', password: 'airtop',
+User.create!(email: 'sam@lewagon.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Sam")
 
-User.create!(email: 'arthur@hotmail.com', password: 'airtop',
+User.create!(email: 'arthur@lewagon.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Arthur")
 
+User.create!(email: 'marco@lewagon.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "marco")
+
+User.create!(email: 'ssaunier@lewagon.com', password: 'airtop',
+    public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
+    nickname: "Sebastien")
 
 quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple', 'btc-eth-ltc = <3']
 

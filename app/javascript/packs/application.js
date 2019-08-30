@@ -1,7 +1,7 @@
 import "bootstrap";
 
 document.querySelector('.fox-head').addEventListener('click', () => {
-  window.location.href = "https://metamask.io"
+  window.location.href = "https://metamask.iog"
 })
 
 

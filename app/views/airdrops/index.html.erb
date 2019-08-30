@@ -37,8 +37,8 @@
             <% else %>
               <%= image_tag airdrop.photo.url %>
             <% end %>
-            <h1><%= airdrop.crypto %> </h1>
-            <p class="title name"><strong><%= airdrop.amount %></strong></p>
+            <h1><%= airdrop.crypto.upcase %> </h1>
+            <h1 class="title name"><strong><%= airdrop.amount %></strong></h1>
             <p class="about"><%= airdrop.quote %> </p>
             <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button'%>
         <!--     <a href="#" class="btn">Participate</a>  -->
@@ -68,6 +68,7 @@
         <% end %>
     </div>
 </div>
+
 <div class="button-container-index" style="display:flex; justify-content: center; margin-top: 40px;">
       <div class="button-wrap"  style="margin: 50px; padding-bottom: 50px;>
        <div class="svg-wraper">
@@ -77,6 +78,8 @@
               <%= link_to "GO UP", airdrops_path ,  :class=>'spot'%>
             </div>
           </svg>
-        </div>
       </div>
+</div>
+
+
 

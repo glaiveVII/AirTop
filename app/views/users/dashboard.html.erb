@@ -5,10 +5,57 @@
   </div>
 
 
-  <div class="hello-dash">
-    <h1>Hi <%= current_user.nickname %>, welcome back!</h1>
+<div id="sidebar">
 
-  </div>
+<div class="toggle-btn" onclick="toggleSidebar()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="sidebar-header">
+<div class="user-pic">
+<img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
+</div>
+<div class="user-info">
+<span class="user-name">
+<strong class="user-name"><%= current_user.nickname %></strong>
+    <% if current_user.wallet_balance < 2 %>
+      <h1> Wallet balance : <%= current_user.wallet_balance %></h1>
+      <p> You balance is low you need to do AN AIRDROP</p>
+    <% end %>
+</span>
+<span class="user-status">
+<i class="fa fa-circle"></i>
+<span class="status">Online</span>
+</span>
+</div>
+</div>
+
+ <ul>
+  <li>Home</li>
+  <li>About</li>
+  <li>Contact</li>
+  </ul>
+</div>
+
+
+<script>
+  function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  }
+</script>
+
+
+<div class="alert alert-success" role="alert" style="width: 500px;">
+ Welcome back to your dashboard<strong> <%= current_user.nickname %>!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+
+ </div>
   <div class="balance-dash">
     <% if current_user.wallet_balance < 2 %>
       <h1> your wallet balance : <%= current_user.wallet_balance %></h1>
@@ -51,3 +98,7 @@
     </div>
   </div>
 </div>
+
+
+<html>
+  <head>

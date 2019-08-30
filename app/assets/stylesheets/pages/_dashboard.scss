@@ -1,0 +1,86 @@
+#sidebar {
+  position: fixed;
+  width: 15%;
+  height: 100%;
+  background: #151719;
+  left: -15%;
+  transition: all 500ms linear;
+}
+#sidebar.active {
+  left: 0px;
+}
+#sidebar ul li {
+  color: White;
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 105%;
+  top: 10px;
+}
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: #151719;
+  margin: 5px 0px;
+}
+
+.sidebar-header {
+  margin-top: 10px;
+  justify-content: center;
+  display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.img-responsive {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 10px;
+
+}
+
+.user-name {
+  color: white;
+}
+
+.fa-circle {
+  color: #2CCC23;
+}
+.status {
+  color: #2CCC23;
+}
+
+.balance-dash {
+  display: flex;
+  justify-content: center;
+position: relative;
+
+top: -866px;
+flex-direction: column;
+
+  align-items: center;
+ .invites-dash {
+    display: flex;
+  align-items: center;
+ }
+}
+
+.invite-show-dash {
+  display: flex;
+  position: relative;
+  top: -800px;
+  justify-content: center;
+}
+
+.invite-title-dash {
+  display: flex;
+  position: relative;
+  top: -800px;
+  justify-content: center;
+}

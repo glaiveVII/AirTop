@@ -1,3 +1,5 @@
+require 'csv'
+
 class UsersController < ApplicationController
   def show
     current_user
@@ -22,18 +24,29 @@ class UsersController < ApplicationController
   end
 
   def invites_user
-    # raise
-    email = params[:invite][:email]
-    # This will create a user, and send an email for the invite
-    # we dont want to create user until they accept invitation
-    # User.invite!(email: email)
-    # create the future user with accepted like that can join the event
-    # y = User.create(email: email)
-    # raise
-    user = User.find_by_email(params[:invite][:email])
-    @airdrop = Airdrop.find(params[:airdrop_id].to_i)
-    invite = Invite.create(user_id: user.id, email: email, airdrop_id: params[:airdrop_id])
-    invite.update(status: "accepted")
+    if params[:invite][:file]
+      file = params[:invite][:file][:csv].tempfile
+      CSV.foreach(file) do |row|
+        user = User.find_by_email(row[0])
+        next unless user.present?
+
+        @airdrop = Airdrop.find(params[:airdrop_id].to_i)
+        invite = Invite.create(user_id: user.id, email: row[0], airdrop_id: params[:airdrop_id])
+        invite.update(status: "accepted")
+      end
+    else
+      email = params[:invite][:email]
+      # This will create a user, and send an email for the invite
+      # we dont want to create user until they accept invitation
+      # User.invite!(email: email)
+      # create the future user with accepted like that can join the event
+      # y = User.create(email: email)
+      # raise
+      user = User.find_by_email(params[:invite][:email])
+      @airdrop = Airdrop.find(params[:airdrop_id].to_i)
+      invite = Invite.create(user_id: user.id, email: email, airdrop_id: params[:airdrop_id])
+      invite.update(status: "accepted")
+    end
     redirect_to airdrop_path(@airdrop)
   end
 

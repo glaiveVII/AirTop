@@ -13,7 +13,8 @@ puts 'Seed done for airdrop, user'
 
 User.create!(email: 'airtop@gmail.com', password: 'airtop',
     public_key: "sadlfgjd;fzgadjgjkls;fgjk",
-    nickname: "Paul")
+    nickname: "Paul",
+    wallet_balance: 4)
 
 User.create!(email: 'airtop@hotmail.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",

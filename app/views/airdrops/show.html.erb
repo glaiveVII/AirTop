@@ -206,8 +206,8 @@
       </div>
     </svg>
   </div>
-  <% if @airdrop.user_id == current_user.id %>
 
+  <% if @airdrop.user_id == current_user.id %>
     <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
   <% end %>
 
@@ -223,7 +223,14 @@
 
     <% #raise %>
     <% if user.user_id == current_user.id %>
-      <%= link_to "Register", edit_user_registration_path,  :class=>'btn index-button' %>
+      <div class="svg-wraper">
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="40" width="150" />
+          <div id="text">
+            <%= link_to "Register", edit_user_registration_path,  :class=>'spot' %>
+          </div>
+        </svg>
+      </div>
     <% end %>
   <% end %>
 

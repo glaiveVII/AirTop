@@ -1,4 +1,9 @@
 <div class="dashboard-container">
+  <div class="photo-dash" style="margin-left: 50%;">
+
+    <%= cl_image_tag current_user.photo, :style=>"height: 150px; border-radius:50%;" %>
+  </div>
+
 
   <div class="hello-dash">
     <h1>Hi <%= current_user.nickname %>, welcome back!</h1>

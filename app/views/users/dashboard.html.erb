@@ -1,0 +1,48 @@
+<div class="dashboard-container">
+
+  <div class="hello-dash">
+    <h1>Hi <%= current_user.nickname %>, welcome back!</h1>
+
+  </div>
+  <div class="balance-dash">
+    <% if current_user.wallet_balance < 2 %>
+      <h1> your wallet balance : <%= current_user.wallet_balance %></h1>
+      <p> You balance is low you need to do AN AIRDROP</p>
+    <% end %>
+
+    <% if current_user.wallet_balance >= 2 %>
+      <h1> your wallet balance : <%= current_user.wallet_balance %></h1>
+      <h3> MAN YOU ARE RICH </h3>
+      <%= image_tag "https://media.giphy.com/media/lptjRBxFKCJmFoibP3/giphy.gif", style: 'height:150px ; width:150px;' %>
+    <% end %>
+  </div>
+
+  <div class="invites-dash">
+    <div class="invite-title-dash">
+      <h1> YOUR INVITATIONS </h1>
+    </div>
+    <div class="invite-show-dash">
+      <% invite = Invite.where(email: current_user.email) %>
+      <% invite.each do |x| %>
+        <h1> You are participating to the following airdrop : </h1>
+        <%= x.airdrop.crypto %> :
+        <%= x.airdrop.amount %>
+        <%# raise %>
+      <% end %>
+    </div>
+    <div class="invite-title-dash">
+      <h1> YOUR AIRDROPS </h1>
+    </div>
+    <div class="invite-show-dash">
+      <% airdrop = Airdrop.where(user: current_user.id) %>
+        <% #raise %>
+      <% airdrop.each do |x| %>
+        <%= x.title %>
+        <%= x.crypto %>
+        <%= x.amount %>
+        <%= x.description %>
+        <%# raise %>
+      <% end %>
+    </div>
+  </div>
+</div>

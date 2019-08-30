@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   # devise_for :users, controllers: { invitations: 'users_invitations' }
   # devise_for :users, controllers: { invitations: 'users/invitations' }
 
+
+
+  # user dashboard :
+  get 'dashboard', to: 'users#dashboard', as: :dashboard
+
+
   resources :airdrops do
     get "enter_code", to: 'airdrops#enter_code', as: :enter_code
     # post "submit_code", to: 'airdrops'

@@ -6,7 +6,9 @@
       <%= cl_image_tag @airdrop.photo %>
     </div>
       <div class="profile-card__cnt js-profile-cnt">
-        <div class="profile-card__name"> <%= @airdrop.crypto.upcase %> </div>
+        <div class="profile-card__name">
+          <h1><%= @airdrop.crypto.upcase %> </h1>
+        </div>
         <div class="profile-card__txt " style="font-size:40px;"><strong> <%= @airdrop.amount %> </strong></div>
         <div class="profile-card-loc">
 
@@ -185,7 +187,7 @@
             <%= a.input :csv, as: :file %>
           <% end %>
           <div class="submit-btn">
-            <%= f.button :submit,  :class=>'btn index-button' %>
+          <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
           </div>
       <% end %>
     <% end %>
@@ -195,8 +197,15 @@
 
 <div class="grouped-buttons" style="display: flex; justify-content: space-around;">
 
-  <%= link_to "Airdrops", airdrops_path,  :class=>'btn index-button' %>
 
+  <div class="svg-wraper">
+    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+      <rect id="shape" height="40" width="150" />
+      <div id="text">
+        <%= link_to "Airdrops", airdrops_path,  :class=>'spot' %>
+      </div>
+    </svg>
+  </div>
   <% if @airdrop.user_id == current_user.id %>
 
     <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
@@ -218,8 +227,15 @@
     <% end %>
   <% end %>
 
+  <div class="svg-wraper">
+    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+      <rect id="shape" height="40" width="150" />
+      <div id="text">
+        <%= link_to "Home", root_path ,  :class=>'spot'%>
+      </div>
+    </svg>
+  </div>
 
-  <%= link_to "Home", root_path ,  :class=>'btn index-button'%>
 </div>
 
 

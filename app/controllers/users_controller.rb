@@ -50,6 +50,17 @@ class UsersController < ApplicationController
     redirect_to airdrop_path(@airdrop)
   end
 
+  def dashboard
+    # invite = Invite.where(email: current_user.email)
+    # raise
+
+    # @my_airdrop = current_user.plants
+    # # @my_own_plants = Plant.where(user: current_user)
+    # @bookings = policy_scope(Booking).order(created_at: :desc)
+    # @my_wishes = current_user.wishes
+    # @reviews = policy_scope(Review).order(created_at: :desc)
+  end
+
   private
 
   def user_params

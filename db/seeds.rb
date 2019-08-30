@@ -32,9 +32,9 @@ User.create!(email: 'arthur@lewagon.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
     nickname: "Arthur")
 
-User.create!(email: 'marco@lewagon.com', password: 'airtop',
+User.create!(email: 'lucien@lewagon.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",
-    nickname: "marco")
+    nickname: "Lucien")
 
 User.create!(email: 'ssaunier@lewagon.com', password: 'airtop',
     public_key: "sadlfgjd;fzgpdjgjkls;fgjk",

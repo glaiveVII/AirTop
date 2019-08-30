@@ -12,7 +12,7 @@
         <%= link_to "sign out" , destroy_user_session_path, method: :delete %>
 
         <% current_user.nickname.capitalize %>
-        <%= link_to current_user.nickname.capitalize, airdrops_path %>
+        <%= link_to current_user.nickname.capitalize, dashboard_path %>
       <% end %>
 
     </li>

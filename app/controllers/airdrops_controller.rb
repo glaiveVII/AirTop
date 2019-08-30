@@ -84,7 +84,7 @@ class AirdropsController < ApplicationController
 
   def airdrop_release
     invite = Invite.where(airdrop_id: params[:id])
-    raise
+    #raise
     participants = []
     invite.each do |x|
       # i find each participants
@@ -99,12 +99,13 @@ class AirdropsController < ApplicationController
     # need to improve randomisation algo !!!!!!!
     won = randomise(amount, number)
     participants.each do |x|
-      if x.status == "accepted"
+      if invite.find_by_id(x.id).status == "accepted"
         x.wallet_balance += won
         x.save!
         amount -= won
       end
     end
+    # raise
     redirect_to root_path
   end
 

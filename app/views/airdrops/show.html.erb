@@ -182,7 +182,7 @@
       <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
           <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
           <div class="submit-btn">
-          <%= f.button :submit,  :class=>'btn index-button' %>
+          <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
           </div>
       <% end %>
     <% end %>

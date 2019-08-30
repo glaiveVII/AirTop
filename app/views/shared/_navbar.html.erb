@@ -12,10 +12,10 @@
         <%= link_to "sign out" , destroy_user_session_path, method: :delete %>
 
         <% current_user.nickname.capitalize %>
-        <%= link_to current_user.nickname.capitalize, airdrops_path %>
+        <%= link_to current_user.nickname.capitalize, dashboard_path %>
       <% end %>
 
     </li>
   </ul>
-  <%= image_tag "metamask-logo.png", style: 'height: 100%; transition: .5s;' %>
+  <%= image_tag "metamask-logo.png", class: 'fox-head', style: 'height: 100%; transition: .5s;' %>
 </nav>

@@ -29,10 +29,14 @@
       <div class="card-wrapper">
         <% @airdrops.each do |airdrop| %>
         <div class="crypto-card" style="border-radius:20px; ">
-            <img class="card-img" src="/assets/ethereum_blockchain_elix.png">
+            <img class="card-img" src="<%= image_path 'ethereum_blockchain_elix.png'%>">
 <!--             <img src="/assets/ether-index.png" alt="profile image" class="profile-image" style="background: black;">
  -->
-            <%= cl_image_tag airdrop.photo, :class=>"profile-image", :style=>'background-color: white;'%>
+            <% if airdrop.photo.url.match(/cloudinary/) %>
+              <%= cl_image_tag airdrop.photo, :class=>"profile-image", :style=>'background-color: white;'%>
+            <% else %>
+              <%= image_tag airdrop.photo.url %>
+            <% end %>
             <h1><%= airdrop.crypto %> </h1>
             <p class="title name"><strong><%= airdrop.amount %></strong></p>
             <p class="about"><%= airdrop.quote %> </p>

@@ -46,7 +46,7 @@ User.create!(email: 'saunier@lewagon.com', password: 'airtop',
 
 quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl ripple', 'btc-eth-ltc = <3']
 
-5.times do |i|
+2.times do |i|
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -75,7 +75,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
   airdrop.save!
 end
 
-5.times do |i|
+2.times do |i|
   user = User.new(
     first_name: Faker::Name.first_name ,
     last_name: Faker::Name.last_name,
@@ -104,7 +104,7 @@ end
   airdrop.save!
 end
 
-5.times do |i|
+2.times do |i|
   user = User.new(
     first_name: Faker::Name.first_name ,
     last_name: Faker::Name.last_name,

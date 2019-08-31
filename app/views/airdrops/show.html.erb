@@ -16,29 +16,7 @@
           <h3 class="show-title"> <em><%= @airdrop.description %></em>  </h3>
         </span>
       </div>
-
-      <div class="profile-card-inf">
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">1598</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">65</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">123</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">85</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-      </div>
-
+<!--
       <div class="profile-card-social">
         <a href="https://www.facebook.com/iaMuhammedErdem" class="profile-card-social__item facebook" target="_blank">
           <span class="icon-font">
@@ -64,13 +42,36 @@
           </span>
         </a>
 
-      </div>
+      </div> -->
 
-      <div class="profile-card-ctr">
-        <button class="profile-card__button button--blue js-message-btn">Participate</button>
-      </div>
+    <div class="boutton-show" style="display: flex; justify-content: space-around;">
+
+      <% @airdrop.invites.each do |user| %>
+        <% if user.user_id == current_user.id %>
+          <div class="profile-card-ctr">
+            <button class="profile-card__button button--blue js-message-btn">
+              <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
+            </button>
+          </div>
+        <% end %>
+      <% end %>
+
+
+
+      <% if @airdrop.user_id == current_user.id %>
+        <div class="profile-card-ctr">
+          <button class="profile-card__button button--blue js-message-btn">
+            <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;"%>
+          </button>
+        </div>
+
+      <% end %>
+
+    </div>
     </div>
 
+
+<!--
     <div class="profile-card-message js-message">
       <form class="profile-card-form">
         <div class="profile-card-form__container">
@@ -89,12 +90,32 @@
       </form>
 
       <div class="profile-card__overlay js-message-close"></div>
-    </div>
+    </div> -->
+
+      <div class="form-contain">
+        <div class="form-show">
+
+          <% if @airdrop.user_id == current_user.id %>
+
+            <h3 style="text-align: center;"> INVITE !</h3>
+            <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+                <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+                <%= f.simple_fields_for :file do |a| %>
+                  <%= a.input :csv, as: :file %>
+                <% end %>
+                <div class="submit-btn">
+                <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
+                </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
 
   </div>
 
 </div>
-
+<!--
 <svg hidden="hidden">
   <defs>
 
@@ -134,14 +155,7 @@
     </symbol>
   </defs>
 </svg>
-
-
-
-
-
-
-
-
+ -->
 
 
 
@@ -174,94 +188,79 @@
 
 
 
+<% if false %>
 
-<div class="form-contain">
-  <div class="form-show">
+
+  <div class="grouped-buttons" style="display: flex; justify-content: space-around;">
+
+
+    <div class="svg-wraper">
+      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+        <rect id="shape" height="40" width="150" />
+        <div id="text">
+          <%= link_to "Airdrops", airdrops_path,  :class=>'spot' %>
+        </div>
+      </svg>
+    </div>
+
 
     <% if @airdrop.user_id == current_user.id %>
+      <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
+    <% end %>
 
-      <h3 style="text-align: center;"> INVITE !</h3>
-      <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
-          <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
-          <%= f.simple_fields_for :file do |a| %>
-            <%= a.input :csv, as: :file %>
-          <% end %>
-          <div class="submit-btn">
-          <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
-          </div>
+
+
+
+    <% @airdrop.invites.each do |user| %>
+    <% #raise %>
+    <!--   here i can't filter people ???????????????????????
+      here i can't filter people ???????????????????????
+      here i can't filter people ???????????????????????
+      here i can't filter people ??????????????????????? -->
+
+      <% #raise %>
+      <% if user.user_id == current_user.id %>
+        <div class="svg-wraper">
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150" />
+            <div id="text">
+              <%= link_to "Register", edit_user_registration_path,  :class=>'spot' %>
+            </div>
+          </svg>
+        </div>
       <% end %>
     <% end %>
-  </div>
-</div>
 
+    <div class="svg-wraper">
+      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+        <rect id="shape" height="40" width="150" />
+        <div id="text">
+          <%= link_to "Home", root_path ,  :class=>'spot'%>
+        </div>
+      </svg>
+    </div>
 
-<div class="grouped-buttons" style="display: flex; justify-content: space-around;">
-
-
-  <div class="svg-wraper">
-    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-      <rect id="shape" height="40" width="150" />
-      <div id="text">
-        <%= link_to "Airdrops", airdrops_path,  :class=>'spot' %>
-      </div>
-    </svg>
   </div>
 
-  <% if @airdrop.user_id == current_user.id %>
-    <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>
-  <% end %>
 
+  <!--
+  # don't need this code yet : it's a more difficult feature !
+   -->
 
+  <% if false %>
+    <%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
+    <%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-
-  <% @airdrop.invites.each do |user| %>
-  <% #raise %>
-  <!--   here i can't filter people ???????????????????????
-    here i can't filter people ???????????????????????
-    here i can't filter people ???????????????????????
-    here i can't filter people ??????????????????????? -->
-
-    <% #raise %>
-    <% if user.user_id == current_user.id %>
-      <div class="svg-wraper">
-        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-          <rect id="shape" height="40" width="150" />
-          <div id="text">
-            <%= link_to "Register", edit_user_registration_path,  :class=>'spot' %>
-          </div>
-        </svg>
-      </div>
+        <div class="form-inputs">
+          <%= hidden_field_tag :user_id, current_user.id %>
+          <%= hidden_field_tag :airdrop_id, @airdrop.id %>
+        <%#= hidden_field_tag :status, "Accepted" %>
+        </div>
+         <%= f.button :submit, "Create invites to this airdrop" %>
     <% end %>
   <% end %>
 
-  <div class="svg-wraper">
-    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-      <rect id="shape" height="40" width="150" />
-      <div id="text">
-        <%= link_to "Home", root_path ,  :class=>'spot'%>
-      </div>
-    </svg>
-  </div>
-
-</div>
-
-
-<!--
-# don't need this code yet : it's a more difficult feature !
- -->
-
-<% if false %>
-  <%#= link_to "participate to this airdrop", airdrop_register_path(@airdrop) %>
-  <%= simple_form_for [@airdrop, Invite.new], url: airdrop_invites_path(@airdrop) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-      <div class="form-inputs">
-        <%= hidden_field_tag :user_id, current_user.id %>
-        <%= hidden_field_tag :airdrop_id, @airdrop.id %>
-      <%#= hidden_field_tag :status, "Accepted" %>
-      </div>
-       <%= f.button :submit, "Create invites to this airdrop" %>
-  <% end %>
 <% end %>
 

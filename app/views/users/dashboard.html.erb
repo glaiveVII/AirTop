@@ -1,7 +1,42 @@
 <div class="dashboard-container">
+  <strong class="user-name", style="color: black;"> Hello, <%= current_user.nickname %> ! </strong>
   <div class="photo-dash" style="margin-left: 45%;">
-
     <%= cl_image_tag current_user.photo, :style=>"height: 150px; border-radius:50%;" %>
+  </div>
+
+  <div >
+    <h1> Your invitations :  </h1>
+    <% invite = Invite.where(email: current_user.email) %>
+    <% invite.each do |x| %>
+      <%= x.airdrop.crypto %> :
+      <%= x.airdrop.amount %>
+      <div class="profile-card-ctr">
+        <button class="profile-card__button button--blue js-message-btn">
+          <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
+        </button>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <h1> YOUR AIRDROPS </h1>
+  </div>
+  <div>
+    <% airdrop = Airdrop.where(user: current_user.id) %>
+    <% airdrop.each do |x| %>
+      <div>
+        <%= x.title %>
+      </div>
+      <div>
+        <%= x.crypto %>
+      </div>
+      <div>
+        <%= x.amount %>
+      </div>
+      <div>
+        <%= x.description %>
+      </div>
+    <% end %>
   </div>
 
 <br>
@@ -34,6 +69,7 @@
 <br>
 <br>
 
+<% if false %>
 
 <div class="sidebar-header">
 <div class="user-pic">
@@ -41,7 +77,6 @@
 </div>
 <div class="user-info">
 <span class="user-name">
-<strong class="user-name"><%= current_user.nickname %></strong>
     <% if current_user.wallet_balance < 2 %>
       <h1> Wallet balance : <%= current_user.wallet_balance %></h1>
       <p> You balance is low you need to do AN AIRDROP</p>
@@ -115,3 +150,4 @@
     </div>
   </div>
 
+    <% end %>

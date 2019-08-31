@@ -44,6 +44,7 @@
 
       </div> -->
 
+    <div class="boutton-show" style="display: flex; justify-content: space-around;">
 
       <% @airdrop.invites.each do |user| %>
         <% if user.user_id == current_user.id %>
@@ -54,10 +55,23 @@
           </div>
         <% end %>
       <% end %>
+
+
+
+      <% if @airdrop.user_id == current_user.id %>
+        <div class="profile-card-ctr">
+          <button class="profile-card__button button--blue js-message-btn">
+            <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;"%>
+          </button>
+        </div>
+
+      <% end %>
+
+    </div>
     </div>
 
 
-
+<!--
     <div class="profile-card-message js-message">
       <form class="profile-card-form">
         <div class="profile-card-form__container">
@@ -76,12 +90,32 @@
       </form>
 
       <div class="profile-card__overlay js-message-close"></div>
-    </div>
+    </div> -->
+
+      <div class="form-contain">
+        <div class="form-show">
+
+          <% if @airdrop.user_id == current_user.id %>
+
+            <h3 style="text-align: center;"> INVITE !</h3>
+            <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+                <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+                <%= f.simple_fields_for :file do |a| %>
+                  <%= a.input :csv, as: :file %>
+                <% end %>
+                <div class="submit-btn">
+                <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
+                </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
 
   </div>
 
 </div>
-
+<!--
 <svg hidden="hidden">
   <defs>
 
@@ -121,14 +155,7 @@
     </symbol>
   </defs>
 </svg>
-
-
-
-
-
-
-
-
+ -->
 
 
 
@@ -162,24 +189,6 @@
 
 
 
-<div class="form-contain">
-  <div class="form-show">
-
-    <% if @airdrop.user_id == current_user.id %>
-
-      <h3 style="text-align: center;"> INVITE !</h3>
-      <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
-          <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
-          <%= f.simple_fields_for :file do |a| %>
-            <%= a.input :csv, as: :file %>
-          <% end %>
-          <div class="submit-btn">
-          <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
-          </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
 
 
 <div class="grouped-buttons" style="display: flex; justify-content: space-around;">
@@ -193,6 +202,7 @@
       </div>
     </svg>
   </div>
+
 
   <% if @airdrop.user_id == current_user.id %>
     <%= link_to "Release Airdrop", airdrop_release_path(@airdrop),  :class=>'btn index-button' %>

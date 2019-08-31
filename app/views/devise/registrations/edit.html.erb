@@ -33,24 +33,24 @@
                       input_html: { autocomplete: "current-password" } %>
         <!-- here fill already the place with his email since we have acces -->
 
-        <p class="text-center"> add the good public key !!</p>
+        <p class="text-center"> Be carefull when you add your public key </p>
+        <%= f.input :public_key , label: 'Your public key : ',  :input_html => { :value => "paste_your_public_key_here" }%>
+        <p class="text-center"> Your wallet balance : <%= @user.wallet_balance %></p>
+      </div>
+        <div class="boutton-show" style="display: flex; justify-content: space-around;">
+        <div class="form-actions" style="text-align: center;">
+          <%= f.button :submit, "Participate" ,  :class=>'btn index-button'%>
+        </div>
+        <div class="button-2IFHGCXZW" >
 
-        <%= f.input :public_key , label: 'Your public key, be careful',  :input_html => { :value => "enter your public key here " }%>
-        <p class="text-center"> your wallet balance for the moment : <%= @user.wallet_balance %></p>
+          <%= link_to "BACK", :back,  :class=>'btn index-button'%>
+        </div>
       </div>
 
-      <div class="form-actions" style="text-align: center;">
-        <%= f.button :submit, "Participate" ,  :class=>'btn index-button'%>
-      </div>
     <% end %>
   </div>
 </div>
 
-
-<div class="button-2IFHGCXZW" style="width:100%; display: flex; justify-content: center; padding-top: 15px;">
-
-  <%= link_to "BACK", :back,  :class=>'btn index-button'%>
-</div>
 
 
 

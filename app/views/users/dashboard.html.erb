@@ -4,6 +4,7 @@
     <%= cl_image_tag current_user.photo, :style=>"height: 150px; border-radius:50%;" %>
   </div>
 
+
   <div >
     <h1> Your invitations :  </h1>
     <% invite = Invite.where(email: current_user.email) %>

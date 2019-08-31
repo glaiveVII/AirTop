@@ -22,6 +22,10 @@ gem 'pundit'
 #faker
 gem 'faker'
 
+#meta tags
+gem 'meta-tags-helpers', '~> 0.2.0'
+
+
 #device_invitable gem
 gem 'devise_invitable', '~> 2.0.0'
 

@@ -1,0 +1,5 @@
+meta_product_name: "Airtop"
+meta_title: "Airtop - We help people automate their cryptocurrency airdrops"
+meta_description: "Airtop"
+meta_image: "logo-1.png" # should exist in `app/assets/images/`
+twitter_account: "@airtop_twitter_account"   # required for Twitter Cards

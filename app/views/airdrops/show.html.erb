@@ -16,29 +16,7 @@
           <h3 class="show-title"> <em><%= @airdrop.description %></em>  </h3>
         </span>
       </div>
-
-      <div class="profile-card-inf">
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">1598</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">65</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">123</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-
-        <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">85</div>
-          <div class="profile-card-inf__txt">Random</div>
-        </div>
-      </div>
-
+<!--
       <div class="profile-card-social">
         <a href="https://www.facebook.com/iaMuhammedErdem" class="profile-card-social__item facebook" target="_blank">
           <span class="icon-font">
@@ -64,12 +42,21 @@
           </span>
         </a>
 
-      </div>
+      </div> -->
 
-      <div class="profile-card-ctr">
-        <button class="profile-card__button button--blue js-message-btn">Participate</button>
-      </div>
+
+      <% @airdrop.invites.each do |user| %>
+        <% if user.user_id == current_user.id %>
+          <div class="profile-card-ctr">
+            <button class="profile-card__button button--blue js-message-btn">
+              <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
+            </button>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+
+
 
     <div class="profile-card-message js-message">
       <form class="profile-card-form">

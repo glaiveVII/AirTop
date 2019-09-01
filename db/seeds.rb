@@ -64,7 +64,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
   airdrop = Airdrop.new(
     crypto: "ethereum",
     amount: rand(1..15),
-    user_id: User.find_by_nickname("Paul").id,
+    user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -93,7 +93,7 @@ end
   airdrop = Airdrop.new(
     crypto: "bitcoin",
     amount: rand(1..5),
-    user_id: User.find_by_nickname("Paul").id,
+    user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -122,7 +122,7 @@ end
   airdrop = Airdrop.new(
     crypto: "ltc",
     amount: rand(1..30),
-    user_id: User.find_by_nickname("Paul").id,
+    user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -133,6 +133,15 @@ end
   airdrop.save!
 end
 
+Invite.create!(airdrop_id: Airdrop.first.id,
+               user_id: User.find_by_nickname("Julien").id,
+               status: "accepted"
+               )
+
+Invite.create!(airdrop_id: Airdrop.last.id,
+               user_id: User.find_by_nickname("Julien").id,
+               status: "accepted"
+               )
 
 puts "Added the Airtop user to make thing easier"
 

@@ -2,7 +2,11 @@ class AirdropsController < ApplicationController
   before_action :set_airdrop, only: [:register, :show, :edit, :update, :destroy]
 
   def index
-    @airdrops = policy_scope(Airdrop)
+    if params[:query].present?
+      @airdrops = Airdrop.where(crypto: params[:query].downcase)
+    else
+      @airdrops = policy_scope(Airdrop)
+    end
   end
 
   def new

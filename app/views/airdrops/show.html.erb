@@ -4,9 +4,6 @@
   <% if @airdrop.user_id == current_user.id %>
     <div class="boutton-show" style="display: flex; justify-content: space-around;">
       <div class="profile-card-ctr">
-        <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
-          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;"%>
-        </button>
       </div>
       <div class="form-contain">
         <div class="form-show">
@@ -16,15 +13,43 @@
             <%= f.simple_fields_for :file do |a| %>
               <%= a.input :csv, as: :file %>
             <% end %>
-            <div class="submit-btn">
-              <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
-            </div>
+            <div class="show-button">
+              <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
+              <%= f.button :submit, 'Invite' %>
+            </button>
+            <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
+          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;"%>
+        </button>
+        </div>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <% if false %>
 

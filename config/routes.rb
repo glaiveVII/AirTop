@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # devise_for :users
 
-  devise_for :users do
+  devise_for :users, controllers: { registrations: :registrations } do
      #  get "/users/login", :to => "devise/sessions#new", as: :log_in_session
       get '/users/sign_out', :to => 'devise/sessions#destroy'
   end

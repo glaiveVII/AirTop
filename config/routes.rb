@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+
+  devise_for :users do
+     #  get "/users/login", :to => "devise/sessions#new", as: :log_in_session
+      get '/users/sign_out', :to => 'devise/sessions#destroy'
+  end
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

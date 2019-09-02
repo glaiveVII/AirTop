@@ -1,3 +1,13 @@
+
+#index-cards {
+  margin-bottom: 100px;
+}
+
+.ind-but {
+  margin: 20px;
+}
+
+
 .heading{
   text-transform: uppercase;
   font-size: 3.5rem;
@@ -33,10 +43,9 @@
   border-radius: 2rem;
 }
 
-.card-wrapper{
-  display: flex;
-  align-items: center;
-  align-content: center;
+.profile-card__img {
+  background-color: white;
+
 }
 
 .crypto-card {
@@ -50,6 +59,7 @@
   box-shadow: 2px 1px 15px #333;
   overflow-x: hidden;
   height: 10%;
+  margin-bottom: 250px;
 }
 
 .crypto-card .card-img{

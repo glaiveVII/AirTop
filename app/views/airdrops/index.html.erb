@@ -1,25 +1,4 @@
 <div class="full-container">
-  <h1 class="heading" style="padding-top: 50px;">Airdrops</h1>
-  <div class="button-container-index" style="display:flex;   justify-content: space-around; margin-bottom: 60px">
-        <div class="button-wraper" style="width: 100%; justify-content: space-evenly;">
-          <div class="svg-wraper">
-            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape" height="40" width="150" />
-              <div id="text">
-                <%= link_to "Home", root_path ,  :class=>'spot'%>
-              </div>
-            </svg>
-          </div>
-          <div class="svg-wraper">
-            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape" height="40" width="150" />
-              <div id="text">
-                <%= link_to "Create event", new_airdrop_path ,  :class=>'spot'%>
-              </div>
-            </svg>
-          </div>
-        </div>
-  </div>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Please note</strong> that some Airdrops are private which will require an invitation to participate!
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -28,28 +7,15 @@
   </div>
       <div class="card-wrapper">
         <% @airdrops.each do |airdrop| %>
-
-          <div class="profile-card js-profile-card">
-            <div class="profile-card__img">
-              <%= cl_image_tag airdrop.photo %>
-            </div>
-              <div class="profile-card__cnt js-profile-cnt">
-                <div class="profile-card__name">
-                  <h1><%= airdrop.crypto.upcase %> </h1>
-                </div>
-                <div class="profile-card__txt " style="font-size:40px;"><strong> <%= airdrop.amount %> </strong></div>
-                <div class="profile-card-loc">
-
-                <span class="profile-card-loc__txt">
-                  <h3 class="show-title"> <em><%= airdrop.description %></em>  </h3>
-                </span>
-              </div>
-              <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button'%>
-
-
+          <div id="draw" class="airtop-card">
+            <%= cl_image_tag airdrop.photo %>
+            <div class="airtop-card-content">
+              <h1><%= airdrop.crypto.upcase %> </h1>
+              <abbr><%= airdrop.amount %></abbr>
+              <p><%= airdrop.description %></p>
+              <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button ind-but'%>
             </div>
           </div>
-
         <% end %>
     </div>
 </div>

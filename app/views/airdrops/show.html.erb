@@ -1,6 +1,7 @@
 <h1 class="heading" style="padding-top:30px;">EVENTS</h1>
 
  <div class="wrapper">
+
   <div class="profile-card js-profile-card">
     <div class="profile-card__img">
       <%= cl_image_tag @airdrop.photo %>
@@ -17,97 +18,75 @@
         </span>
       </div>
 
-    <div class="boutton-show" style="display: flex; justify-content: space-around;">
-
-      <% @airdrop.invites.each do |user| %>
-        <% if user.user_id == current_user.id %>
-          <div class="profile-card-ctr">
-            <button class="profile-card__button button--blue js-message-btn">
-              <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
-            </button>
-          </div>
-        <% end %>
-      <% end %>
-
-
-
-      <% if @airdrop.user_id == current_user.id %>
-        <div class="profile-card-ctr">
-          <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
-            <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;"%>
-          </button>
-        </div>
-
-      <% end %>
-
+      <ul class="list-inline social-media">
+        <li class="github-">
+          <a href="https://github.com/PelDoingCode" target="_blank">
+            <i class="fab fa-github-square"></i>
+          </a>
+        </li>
+        <li class="twitter-">
+          <a href="https://twitter.com/realDonaldTrump" target="_blank">
+            <i class="fab fa-twitter-square"></i>
+          </a>
+        </li>
+        <li class="instagram-">
+          <a href="https://www.instagram.com/pelgiuliano/?hl=fr" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li class="linkedin-">
+          <a href="https://www.linkedin.com/in/julien-pelegri-448639168/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="list-inline social-media">
-      <li class="github-">
-        <a href="https://github.com/PelDoingCode" target="_blank">
-          <i class="fab fa-github-square"></i>
-        </a>
-      </li>
-      <li class="twitter-">
-        <a href="https://twitter.com/realDonaldTrump" target="_blank">
-          <i class="fab fa-twitter-square"></i>
-        </a>
-      </li>
-      <li class="instagram-">
-        <a href="https://www.instagram.com/pelgiuliano/?hl=fr" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </li>
-      <li class="linkedin-">
-        <a href="https://www.linkedin.com/in/julien-pelegri-448639168/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-    </ul>
   </div>
 
 
-<!--
-    <div class="profile-card-message js-message">
-      <form class="profile-card-form">
-        <div class="profile-card-form__container">
-          <textarea placeholder="Say something..."></textarea>
-        </div>
+  <div class="boutton-show" style="display: flex; justify-content: space-around;">
 
-        <div class="profile-card-form__bottom">
-          <button class="profile-card__button button--blue js-message-close">
-            Send
-          </button>
-
-          <button class="profile-card__button button--gray js-message-close">
-            Cancel
+    <% @airdrop.invites.each do |user| %>
+      <% if user.user_id == current_user.id %>
+        <div class="profile-card-ctr">
+          <button class="profile-card__button button--blue js-message-btn">
+            <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
           </button>
         </div>
-      </form>
+      <% end %>
+    <% end %>
 
-      <div class="profile-card__overlay js-message-close"></div>
-    </div> -->
 
-      <div class="form-contain">
-        <div class="form-show">
 
-          <% if @airdrop.user_id == current_user.id %>
-
-            <h3 style="text-align: center;"> INVITE !</h3>
-            <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
-                <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
-                <%= f.simple_fields_for :file do |a| %>
-                  <%= a.input :csv, as: :file %>
-                <% end %>
-                <div class="submit-btn">
-                <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
-                </div>
-            <% end %>
-          <% end %>
-        </div>
-
+    <% if @airdrop.user_id == current_user.id %>
+      <div class="profile-card-ctr">
+        <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
+          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;"%>
+        </button>
       </div>
 
+    <% end %>
+
+    <div class="form-contain">
+      <div class="form-show">
+
+        <% if @airdrop.user_id == current_user.id %>
+
+          <h3 style="text-align: center;"> INVITE !</h3>
+          <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+              <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+              <%= f.simple_fields_for :file do |a| %>
+                <%= a.input :csv, as: :file %>
+              <% end %>
+              <div class="submit-btn">
+              <%= f.button :submit, 'INVITE',  :class=>'btn index-button' %>
+              </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
+
 
 </div>
 

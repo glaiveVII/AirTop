@@ -106,8 +106,7 @@ class AirdropsController < ApplicationController
         amount -= won
       end
     end
-    # raise
-    redirect_to root_path
+    redirect_to airdrop_path(Airdrop.find(params[:id]).id)
   end
 
   # previous version for only one person !!!!!!!!!!!!!

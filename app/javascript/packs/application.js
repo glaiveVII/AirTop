@@ -5,7 +5,16 @@ document.querySelector('.fox-head').addEventListener('click', () => {
 })
 
 
-import { initSweetalert } from '../plugins/init_sweetalert';
+import Swal from 'sweetalert2'
+
+const initSweetalert = (selector, options = {}) => {
+  const swalButton = document.querySelector(selector);
+  if (swalButton) { // protect other pages
+    swalButton.addEventListener('click', () => {
+      Swal(options);
+    });
+  }
+};
 
 initSweetalert('.sweet-alert-demo', {
   title: "YOUR AIRDROP HAS BEEN SEND",

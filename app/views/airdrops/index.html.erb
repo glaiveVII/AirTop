@@ -6,20 +6,15 @@
     </button>
   </div>
 
+
   <%= form_tag airdrops_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a crypto" %>
+      placeholder: "Find a crypto ! " %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  <section class="webdesigntuts-workshop">
-    <form action="" method="">
-      <input type="search" placeholder="Enter a cryptocurrency !">
-      <button>Search</button>
-    </form>
-  </section>
 
       <div class="card-wrapper">
         <% @airdrops.each do |airdrop| %>

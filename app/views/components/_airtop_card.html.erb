@@ -5,6 +5,7 @@
   <div class="profile-card__cnt js-profile-cnt">
     <div class="profile-card__name">
       <h1><%= airdrop.crypto.upcase %> </h1>
+      <h3> <strong> <%= airdrop.quote.capitalize %> </strong> </h3>
     </div>
 
     <div class="profile-card__txt " style="font-size:40px;">
@@ -19,7 +20,7 @@
 
     <div class="profile-card-loc">
       <span class="profile-card-loc__txt">
-        <h3 class="show-title"> <em><%= airdrop.description %></em>  </h3>
+        <h3 class="show-title"> <%= airdrop.description %>  </h3>
       </span>
     </div>
     <ul class="list-inline social-media">
@@ -57,7 +58,7 @@
     <% end %>
     <div class="profile-card-loc">
       <span class="profile-card-loc__txt">
-        <h3 class="show-title"> Number of people participating : <%= count %> </h3>
+        <h3 class="show-title"> <em> Number of people participating : <%= count %>  </em> </h3>
       </span>
     </div>
   </div>

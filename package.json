@@ -9,6 +9,7 @@
     "popper.js": "^1.15.0",
     "solc": "^0.5.11",
     "sweet-alert": "^2.0.5",
+    "sweetalert": "^2.1.2",
     "sweetalert2": "^8.17.1",
     "web3": "^1.2.1"
   },

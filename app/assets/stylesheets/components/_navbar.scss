@@ -2,9 +2,13 @@ body {
   margin-top: 100px;
 }
 
-#air {
-
+.nav-item {
+  display: flex;
+  position: absolute;
+  left: 700px;
+  top: 26px;
 }
+
 
 nav {
   height: 100px;

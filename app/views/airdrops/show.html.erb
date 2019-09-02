@@ -40,21 +40,22 @@
           </a>
         </li>
       </ul>
+
+      <% @airdrop.invites.each do |user| %>
+        <% if user.user_id == current_user.id %>
+          <div class="profile-card-ctr">
+            <button class="profile-card__button button--blue js-message-btn">
+              <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
+            </button>
+          </div>
+        <% end %>
+      <% end %>
+
     </div>
   </div>
 
 
   <div class="boutton-show" style="display: flex; justify-content: space-around;">
-
-    <% @airdrop.invites.each do |user| %>
-      <% if user.user_id == current_user.id %>
-        <div class="profile-card-ctr">
-          <button class="profile-card__button button--blue js-message-btn">
-            <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
-          </button>
-        </div>
-      <% end %>
-    <% end %>
 
 
 
@@ -99,6 +100,19 @@
 
 
 <!-- do not look after that -->
+<!-- do not look after that -->
+<!-- do not look after that -->
+<!-- do not look after that -->
+<!-- do not look after that -->
+
+
+
+
+
+
+
+
+
 
 
 <!--

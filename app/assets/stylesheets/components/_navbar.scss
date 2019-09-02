@@ -5,14 +5,6 @@ body {
   margin-top: 100px;
 }
 
-.nav-item {
-  display: flex;
-  position: absolute;
-  left: 700px;
-  top: 26px;
-}
-
-
 nav {
   height: 100px;
   width: 100%;
@@ -26,6 +18,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+}
+
+.navbar-display-box {
+
+  .svg-wraper {
+  position: relative;
+  top: -20px;
+ }
 }
 
 nav a{
@@ -103,6 +103,9 @@ section .sec1{
 .navbar-display-box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 1140px;
+  margin: 0 auto;
 }
 
 

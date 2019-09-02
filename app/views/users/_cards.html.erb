@@ -1,0 +1,13 @@
+      <div class="card-wrapper">
+        <% @airdrop.each do |airdrop| %>
+          <div id="draw" class="airtop-card">
+            <%= cl_image_tag airdrop.photo %>
+            <div class="airtop-card-content">
+              <h1><%= airdrop.crypto.upcase %> </h1>
+              <abbr><%= airdrop.amount %></abbr>
+              <p><%= airdrop.description %></p>
+              <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button ind-but'%>
+            </div>
+          </div>
+        <% end %>
+      </div>

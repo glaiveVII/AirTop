@@ -4,7 +4,19 @@
         <%= image_tag "logo-1.png", style: 'height: 100%; transition: .5s;' %>
         <%= link_to "AirTop", :root, id: 'air'%>
     </div>
-    <ul class="nav-item">
+
+    <div class="svg-wraper">
+      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+        <rect id="shape" height="40" width="150" />
+        <div id="text">
+          <%= link_to "Create event", new_airdrop_path ,  :class=>'spot'%>
+        </div>
+      </svg>
+    </div>
+    <div class="nav-item">
+
+
+      <%= link_to "Airdrop", airdrops_path %>
 
       <!-- <li><%= link_to "Home", :root %></li> -->
       <li><%= link_to "Create event", new_airdrop_path%></li>
@@ -16,6 +28,9 @@
           <% current_user.nickname.capitalize %>
           <%= link_to current_user.nickname.capitalize, dashboard_path %>
         <% end %>
+
+
+    </div>
       </li>
     </ul>
     <!--
@@ -23,5 +38,7 @@
     -->
 
   </div>
+
+
 </nav>
 

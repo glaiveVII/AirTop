@@ -5,6 +5,13 @@ body {
   margin-top: 100px;
 }
 
+.nav-item {
+  a {
+    margin-left: 16px;
+  }
+}
+
+
 nav {
   height: 100px;
   width: 100%;
@@ -104,7 +111,6 @@ section .sec1{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1140px;
-  margin: 0 auto;
+  width: 100%;
 }
 

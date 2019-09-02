@@ -51,6 +51,8 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @airdrop = Airdrop.where(user: current_user.id)
+    # @invite = Invite.where(email: current_user.email)
     # invite = Invite.where(email: current_user.email)
     # raise
 
@@ -59,6 +61,16 @@ class UsersController < ApplicationController
     # @bookings = policy_scope(Booking).order(created_at: :desc)
     # @my_wishes = current_user.wishes
     # @reviews = policy_scope(Review).order(created_at: :desc)
+  end
+
+  def toggle
+    if params[:link] == 'airdrops'
+      @airdrop = Airdrop.where(user: current_user.id)
+    elsif params[:link] == 'invitations'
+      @airdrop = current_user.invites.map do |invite|
+        invite.airdrop
+      end
+    end
   end
 
   private

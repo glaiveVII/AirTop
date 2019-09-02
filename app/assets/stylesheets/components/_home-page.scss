@@ -129,29 +129,29 @@ body {
     for the entire div
 */
 
-.spot {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
+// .spot {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+// }
 /*
     This is the outer svg wrapper that the SVG itself will
     fill. Multiple svg-wrapper classes can be put side by side.
 */
 
-.svg-wrapper {
-  margin-top: 0;
-  position: relative;
-  width: 150px;
-  /*make sure to use same height/width as in the html*/
-  height: 40px;
-  display: inline-block;
-  border-radius: 3px;
-  margin-left: 5px;
-  margin-right: 5px
-}
+// .svg-wrapper {
+//   margin-top: 0;
+//   position: relative;
+//   width: 150px;
+//   /*make sure to use same height/width as in the html*/
+//   height: 40px;
+//   display: inline-block;
+//   border-radius: 3px;
+//   margin-left: 5px;
+//   margin-right: 5px
+// }
 /*
   This is where we define the fill, color, thickness,
   and stroke pattern of the SVG when there is no hover.
@@ -174,8 +174,10 @@ body {
 
 #text {
   margin-top: -35px;
+  margin-left: 10px;
   text-align: center;
   position: relative;
+  text-align: left;
 }
 
 #text a {
@@ -190,8 +192,13 @@ body {
     Changing the shape on hover. I change the color of the stroke,
 make it thinner, then set it to again wrap around the entire parent element.
 */
+.svg-wraper {
+  flex: 1;
+  margin-left: 60px;
+  margin-bottom: 10px;
+}
 
-.svg-wraper:hover #shape {
+.svg-wraper:hover  #shape{
   stroke-dasharray: 50 0;
   stroke-width: 5px;
   stroke-dashoffset: 0;

@@ -1,0 +1,9 @@
+document.getElementById('airdrop-cards').innerHTML = "<%= j render 'users/cards' %>"
+
+<% if params[:link] == 'invitations' %>
+  document.getElementById('heading-invitations').classList.add('active');
+  document.getElementById('heading-airdrops').classList.remove('active');
+<% elsif params[:link] == 'airdrops' %>
+  document.getElementById('heading-invitations').classList.remove('active');
+  document.getElementById('heading-airdrops').classList.add('active');
+<% end %>

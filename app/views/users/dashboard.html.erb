@@ -1,5 +1,58 @@
+<div class="wrapper-dash">
+  <h1 class="heading" style="padding-top: 50px;"> Hello, <%= current_user.nickname %> !</h1>
+
+  <div class="card-product">
+    <%= cl_image_tag current_user.photo, :style=>"height: 150px;" %>
+    <div class="card-product-infos">
+      <h2> <% current_user.nickname %></h2>
+      <p>Your wallet balance : <strong><% current_user.wallet_balance %></strong></p>
+    </div>
+  </div>
+
+  <div class="user_invitation-user_airdrop">
+    <div class="user_invitation">
+    <h1 class="heading" style="padding-top: 30px;"> Your invitations : </h1>
+      <% invite = Invite.where(email: current_user.email) %>
+      <% invite.each do |x| %>
+        <%= x.airdrop.crypto %> :
+        <%= x.airdrop.amount %>
+        <div class="profile-card-ctr">
+          <button class="profile-card__button button--blue js-message-btn">
+            <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="user_airdrop">
+    <h1 class="heading" style="padding-top: 30px;"> Your airdrops :</h1>
+    <div>
+      <% airdrop = Airdrop.where(user: current_user.id) %>
+      <% airdrop.each do |x| %>
+        <div>
+          <%= x.title %>
+        </div>
+        <div>
+          <%= x.crypto %>
+        </div>
+        <div>
+          <%= x.amount %>
+        </div>
+        <div>
+          <%= x.description %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<% if false %>
 <div class="dashboard-container">
-  <strong class="user-name", style="color: black;"> Hello, <%= current_user.nickname %> ! </strong>
   <div class="photo-dash" style="margin-left: 45%;">
     <%= cl_image_tag current_user.photo, :style=>"height: 150px; border-radius:50%;" %>
   </div>
@@ -152,3 +205,4 @@
   </div>
 
     <% end %>
+<% end %>

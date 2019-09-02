@@ -69,7 +69,7 @@ quote = ["in btc we trust", "in tech we trust", 'btc to the moon', 'i hodl rippl
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
     # photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
-    remote_photo_url: "https://bittrexblobstorage.blob.core.windows.net/public/7e5638ef-8ca0-404d-b61e-9d41c2e20dd9.png"
+    remote_photo_url: "https://ih0.redbubble.net/image.536846432.7858/flat,550x550,075,f.u1.jpg"
   )
 
   airdrop.save!
@@ -127,7 +127,7 @@ end
     quote: quote[i],
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
     # photo: "https://banner2.kisspng.com/20180805/hql/kisspng-litecoin-bitcoin-cryptocurrency-wallet-digital-wal-bitconnect-wallet-mac-bitcoin-cash-transaction-s-5b667f911cfec0.1647560515334439851188.jpg"
-    remote_photo_url: "https://cryptoclothing.cc/logos/litecoin-ltc-logo.png"
+    remote_photo_url: "http://cdn.onlinewebfonts.com/svg/img_103118.png"
   )
 
   airdrop.save!

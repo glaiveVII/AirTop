@@ -6,13 +6,20 @@
     </button>
   </div>
 
+<!-- <div class=
+"container">
+  <input id="searchBar" class="searchbar" type="text" placeholder="Search...">
+  <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
+</div> -->
 
-  <%= form_tag airdrops_path, method: :get do %>
+  <%= form_tag airdrops_path, method: :get, :class => 'magic-bean-garden' do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "magic-bean-form",
       placeholder: "Find a crypto ! " %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+      <div class="gardener-clothes">
+        <%= submit_tag "", class: "gardener" %>
+      </div>
   <% end %>
 
 

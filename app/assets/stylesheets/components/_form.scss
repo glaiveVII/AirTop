@@ -16,3 +16,39 @@
   flex: 0 0 50%;
   max-width: 50%;
 }
+
+//////////////////////////////////////////
+
+.gardener-clothes {
+  position: relative;
+  &:after{
+    font-family: "FontAwesome";
+    content: "\f002";
+    height: 100%;
+    width: 20px;
+  }
+}
+
+.magic-bean-garden {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.magic-bean-form {
+  width: 200px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  transition: 0.2s ease-in-out;
+  box-shadow: none;
+
+}
+
+.magic-bean-form:focus, .magic-bean-form:active, .magic-bean-form:hover {
+  width: 360px;
+
+}
+

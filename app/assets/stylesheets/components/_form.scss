@@ -15,19 +15,74 @@
   -webkit-box-flex: 0;
   flex: 0 0 50%;
   max-width: 50%;
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+  padding: 30px;
+  border-radius: 10px;
 }
 
+.form-control-label {
+  color: grey;
+}
+
+#airdrop_crypto {
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
+  border: none;
+  border: 1px solid rgba(123, 105, 252, 0.9);
+}
+
+.file {
+  color: grey;
+}
+.btn:hover {
+  color: white !important;
+}
+#airdrop_title {
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
+  border: none;
+  border: 1px solid rgba(123, 105, 252, 0.9);
+}
+
+#airdrop_amount {
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
+  border: none;
+  border: 1px solid rgba(123, 105, 252, 0.9);
+}
+#airdrop_description {
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
+  border: 1px solid rgba(123, 105, 252, 0.9);
+}
+
+.text-center {
+  font-weight: bolder;
+  font-family: 'Lexend Deca', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #167efb;
+}
 //////////////////////////////////////////
 
-.gardener-clothes {
-  position: relative;
-  &:after{
-    font-family: "FontAwesome";
-    content: "\f002";
-    height: 100%;
-    width: 20px;
-  }
+// .gardener-clothes {
+//   position: relative;
+//   &:after{
+//     font-family: "FontAwesome";
+//     content: "\f002";
+//     height: 100%;
+// //     width: 20px;
+//   }
+
+.the-bfg {
+  padding: 60px;
+
 }
+
+.search-butt {
+  background-color: transparent !important;
+  border: none !important;
+  color: #167efb !important;
+  font-size: 20px;
+}
+
 
 .magic-bean-garden {
   display: flex;
@@ -38,10 +93,10 @@
 
 
 .magic-bean-form {
-  width: 200px;
+  width: 150px;
   border: none;
   background-color: transparent;
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid #167efb;
   transition: 0.2s ease-in-out;
   box-shadow: none;
 

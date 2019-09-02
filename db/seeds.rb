@@ -120,7 +120,7 @@ end
   user.save!
 
   airdrop = Airdrop.new(
-    crypto: "ltc",
+    crypto: "litecoin",
     amount: rand(1..30),
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,

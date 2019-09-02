@@ -17,7 +17,7 @@
           <%= link_to current_user.nickname.capitalize, dashboard_path %>
         <% else %>
           <%= link_to 'Sign in', new_user_registration_path %>
-          <%= link_to "Log in", new_session_path(resource_name) %>
+          <%=# link_to "Log in", new_session_path(resource_name) %>
         <% end %>
 
       </li>

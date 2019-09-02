@@ -11,7 +11,14 @@
             <%= cl_image_tag airdrop.photo %>
             <div class="airtop-card-content">
               <h1><%= airdrop.crypto.upcase %> </h1>
-              <abbr><%= airdrop.amount %></abbr>
+              <h3><%= airdrop.title %></h3>
+              <% if airdrop.crypto.downcase == 'bitcoin'%>
+                <abbr> <strong> ₿itcoin <%= airdrop.amount %> </strong> </abbr>
+              <% elsif airdrop.crypto.downcase == 'ethereum' %>
+                <abbr> <strong> Ethereum <%= airdrop.amount %> </strong></abbr>
+              <% elsif airdrop.crypto.downcase == 'litecoin' %>
+                <abbr> <strong>Łitecoin <%= airdrop.amount %></strong></abbr>
+              <% end %>
               <p><%= airdrop.description %></p>
               <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button ind-but'%>
             </div>
@@ -21,14 +28,15 @@
 </div>
 
 <div class="button-container-index" style="display:flex; justify-content: center; margin-top: 40px;">
-      <div class="button-wrap"  style="margin: 50px; padding-bottom: 50px;>
-       <div class="svg-wraper">
+      <div class="button-wrap"  style="margin: 50px; padding-bottom: 50px;">
+        <div class="svg-wraper">
           <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
             <rect id="shape" height="40" width="150" />
             <div id="text" style="  padding-bottom: 150px;">
               <%= link_to "GO UP", airdrops_path ,  :class=>'spot'%>
             </div>
           </svg>
+        </div>
       </div>
 </div>
 

@@ -6,7 +6,17 @@
     <div class="profile-card__name">
       <h1><%= airdrop.crypto.upcase %> </h1>
     </div>
-    <div class="profile-card__txt " style="font-size:40px;"><strong> <%= airdrop.amount %> </strong></div>
+
+    <div class="profile-card__txt " style="font-size:40px;">
+      <% if airdrop.crypto.downcase == 'bitcoin'%>
+        <abbr> <strong><%= airdrop.amount %></strong>  ₿itcoin</abbr>
+      <% elsif airdrop.crypto.downcase == 'ethereum' %>
+        <abbr> <strong><%= airdrop.amount %></strong>  Ethereum</abbr>
+      <% elsif airdrop.crypto.downcase == 'litecoin' %>
+        <abbr> <strong><%= airdrop.amount %></strong>  Łitecoin</abbr>
+      <% end %>
+    </div>
+
     <div class="profile-card-loc">
       <span class="profile-card-loc__txt">
         <h3 class="show-title"> <em><%= airdrop.description %></em>  </h3>
@@ -34,7 +44,9 @@
         </a>
       </li>
     </ul>
+    <% count = 0 %>
     <% airdrop.invites.each do |user| %>
+      <% count += 1 %>
       <% if user.user_id == current_user.id %>
         <div class="profile-card-ctr">
           <button class="profile-card__button button--blue js-message-btn">
@@ -43,6 +55,11 @@
         </div>
       <% end %>
     <% end %>
+    <div class="profile-card-loc">
+      <span class="profile-card-loc__txt">
+        <h3 class="show-title"> Number of people participating : <%= count %> </h3>
+      </span>
+    </div>
   </div>
 </div>
 

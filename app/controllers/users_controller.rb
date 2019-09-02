@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    raise
+    # raise
     authorize @user
   end
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     raise
     if current_user.update(user_params)
       @user = current_user
-      raise
+     # raise
       redirect_back fallbacklocation: @user
     else
       render :edit

@@ -9,13 +9,13 @@
 
     <div class="form-inputs">
       <%= f.input :title  %>
-      <%= f.input :crypto , label: 'the cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one'%>
+      <%= f.input :crypto , label: 'The cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one', collection: ['Bitcoin','Ethereum', 'Litecoin'] %>
       <%= f.input :amount , label: 'the amount of cryptocurrency you want to airdrop', error: 'Amount is mandatory, please specify one'%>
       <%= f.input :description %>
       <%= f.input :photo, class: "insert-photo" %>
       <%= f.input :photo_cache, as: :hidden %>
 
-      <div class="text-center">
+      <div class="text-center" style="padding-top: 25px;">
         <%= f.button :submit  , :class=>'btn index-button sweet-alert-demo'%>
       </div>
     </div>

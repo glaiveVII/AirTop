@@ -1,4 +1,6 @@
- <% #raise %>
+ <% if request.referer.match(/airdrop/) %>
+  <% session[:airdrop_id] = request.referer.match(/(\d+)$/)[1].to_i %>
+ <% end %>
 <br>
 <br>
 <br>

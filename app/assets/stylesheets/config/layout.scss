@@ -1,0 +1,10 @@
+.full-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.card-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3,  1fr);
+  grid-gap: 4em;
+}

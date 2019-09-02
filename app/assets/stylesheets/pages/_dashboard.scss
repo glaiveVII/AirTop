@@ -84,3 +84,61 @@ flex-direction: column;
   top: -800px;
   justify-content: center;
 }
+
+.badge {
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  position: absolute;
+  right: -13px;
+  top: -12px;
+  font-size: 0.6em;
+
+}
+
+.dashboard-header {
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 60px;
+  padding: 8px 16px;
+}
+
+.dashboard-header:hover {
+  a {color: white;
+  }
+  background-color: #3073D3;
+
+}
+
+.header-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+.header-first {
+  width: 50%;
+  display: flex;
+  margin-top: 100px !important;
+  margin: 0px auto;
+  align-items: center;
+}
+
+.dashboard-image {
+  border-radius: 50%;
+  height: 130px;
+}
+
+.dashboard-writing {
+  margin-left: 25px;
+}
+
+.active {
+  background-color: #3073D3;
+  a {color: white;
+  }
+}
+
+.wrapper-dash {
+  padding: 0px 16px;
+}

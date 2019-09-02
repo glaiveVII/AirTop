@@ -3,10 +3,9 @@ body {
 }
 
 .nav-item {
-  display: flex;
-  position: absolute;
-  left: 700px;
-  top: 26px;
+  a {
+    margin-left: 16px;
+  }
 }
 
 
@@ -100,6 +99,8 @@ section .sec1{
 .navbar-display-box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 

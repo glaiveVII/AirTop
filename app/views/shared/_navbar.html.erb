@@ -4,13 +4,20 @@
         <%= image_tag "logo-1.png", style: 'height: 100%; transition: .5s;' %>
         <%= link_to "AirTop", :root, id: 'air'%>
     </div>
-    <ul class="nav-item">
 
-      <!-- <li><%= link_to "Home", :root %></li> -->
-      <li><%= link_to "Airdrop", airdrops_path %></li>
+    <div class="svg-wraper">
+      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+        <rect id="shape" height="40" width="150" />
+        <div id="text">
+          <%= link_to "Create event", new_airdrop_path ,  :class=>'spot'%>
+        </div>
+      </svg>
+    </div>
+    <div class="nav-item">
 
-  <!--     <li><%= link_to "Donate", airdrop_donate_path%></li> -->
-      <li>
+
+      <%= link_to "Airdrop", airdrops_path %>
+
         <% if user_signed_in? %>
           <%= link_to "Logout" , destroy_user_session_path, method: :delete %>
           <% current_user.nickname.capitalize %>
@@ -20,18 +27,9 @@
           <%= link_to "Log in", new_session_path(resource_name) %>
         <% end %>
 
-      </li>
-    </ul>
-    <!--
-    <%= image_tag "metamask-logo.png", class: 'fox-head', style: 'height: 100%; transition: .5s;' %>
-    -->
-    <div class="svg-wraper">
-            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape" height="40" width="150" />
-              <div id="text">
-                <%= link_to "Create event", new_airdrop_path ,  :class=>'spot'%>
-              </div>
-            </svg>
-          </div>
+
+    </div>
   </div>
+
+
 </nav>

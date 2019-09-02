@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # user dashboard :
   get 'dashboard', to: 'users#dashboard', as: :dashboard
+  get 'toggle', to: 'users#toggle', as: :toggle
 
 
   resources :airdrops do

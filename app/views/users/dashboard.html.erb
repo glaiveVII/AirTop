@@ -1,17 +1,17 @@
 <div class="wrapper-dash">
-  <h1 class="heading" style="padding-top: 50px;"> Hello, <%= current_user.nickname %> !</h1>
+  <h1 class="heading-second" style="padding-top: 50px;"> Hello, <%= current_user.nickname %> !</h1>
 
   <div class="card-product">
     <%= cl_image_tag current_user.photo, :style=>"height: 150px;" %>
     <div class="card-product-infos">
       <h2> <% current_user.nickname %></h2>
-      <p>Your wallet balance : <strong><% current_user.wallet_balance %></strong></p>
+      <h2>Your wallet balance : <%= current_user.wallet_balance %></h2>
     </div>
   </div>
 
   <div class="user_invitation-user_airdrop">
     <div class="user_invitation">
-    <h1 class="heading" style="padding-top: 30px;"> Your invitations : </h1>
+    <h1 class="heading-second" style="padding-top: 30px;"> Your invitations : </h1>
       <% invite = Invite.where(email: current_user.email) %>
       <% invite.each do |x| %>
         <%= x.airdrop.crypto %> :
@@ -25,7 +25,7 @@
     </div>
 
     <div class="user_airdrop">
-    <h1 class="heading" style="padding-top: 30px;"> Your airdrops :</h1>
+    <h1 class="heading-second" style="padding-top: 30px;"> Your airdrops :</h1>
     <div>
       <% airdrop = Airdrop.where(user: current_user.id) %>
       <% airdrop.each do |x| %>

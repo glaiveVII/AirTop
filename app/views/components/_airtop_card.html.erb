@@ -9,11 +9,11 @@
 
     <div class="profile-card__txt " style="font-size:40px;">
       <% if airdrop.crypto.downcase == 'bitcoin'%>
-        <abbr> <strong><%= airdrop.amount %></strong>  ₿itcoin</abbr>
+        <abbr> <strong> ₿itcoin <%= airdrop.amount %> </strong> </abbr>
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
-        <abbr> <strong><%= airdrop.amount %></strong>  Ethereum</abbr>
+        <abbr> <strong> Ethereum <%= airdrop.amount %> </strong></abbr>
       <% elsif airdrop.crypto.downcase == 'litecoin' %>
-        <abbr> <strong><%= airdrop.amount %></strong>  Łitecoin</abbr>
+        <abbr> <strong>Łitecoin <%= airdrop.amount %></strong></abbr>
       <% end %>
     </div>
 

@@ -13,11 +13,11 @@
               <h1><%= airdrop.crypto.upcase %> </h1>
               <h3><%= airdrop.title %></h3>
               <% if airdrop.crypto.downcase == 'bitcoin'%>
-                <abbr> <strong><%= airdrop.amount %>  ₿itcoin</strong></abbr>
+                <abbr> <strong> ₿itcoin <%= airdrop.amount %> </strong> </abbr>
               <% elsif airdrop.crypto.downcase == 'ethereum' %>
-                <abbr> <strong><%= airdrop.amount %>  Ethereum</strong></abbr>
+                <abbr> <strong> Ethereum <%= airdrop.amount %> </strong></abbr>
               <% elsif airdrop.crypto.downcase == 'litecoin' %>
-                <abbr> <strong><%= airdrop.amount %>  Łitecoin</strong></abbr>
+                <abbr> <strong>Łitecoin <%= airdrop.amount %></strong></abbr>
               <% end %>
               <p><%= airdrop.description %></p>
               <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button ind-but'%>

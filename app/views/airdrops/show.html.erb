@@ -1,5 +1,5 @@
 <h1 class="heading" style="padding-top:30px;">EVENTS</h1>
-<div class="wrapper">
+<div class="wrapper" id="invite_email">
   <%= render 'components/airtop_card', airdrop: @airdrop %>
   <% if @airdrop.user_id == current_user.id %>
     <div class="boutton-show" style="display: flex; justify-content: space-around;">
@@ -21,7 +21,7 @@
               </button>
             <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
             <button class="profile-card__button button--blue js-message-btn sweet-alert-release">
-          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;", :class=>""%>
+          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white; height: 200px; width: 300px; ", :class=>""%>
         </button>
         </div>
           <% end %>

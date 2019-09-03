@@ -69,7 +69,8 @@ if (button) {
     // console.log(this.value);
     let result = apiCallV2(this.value, document.getElementById('airdrop_crypto').value);
     // console.log(result);
-    document.querySelector(".form-create-price").innerHTML = result;
+    document.querySelector(".form-create-price").innerHTML = "Your airdrop worth" + " " + "$" + " " + Math.floor(result);
+    // document.querySelector(".form-create-price").insertAdjacentHTML("beforeend", "$" + " " + Math.floor(result));
   });
 };
 

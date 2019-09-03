@@ -1,8 +1,8 @@
 import "bootstrap";
 
-document.querySelector('.fox-head').addEventListener('click', () => {
-  window.location.href = "https://metamask.io"
-})
+// document.querySelector('.fox-head').addEventListener('click', () => {
+//   window.location.href = "https://metamask.io"
+// })
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
@@ -20,3 +20,5 @@ initSweetalert('#my-btn', {
   customClass: 'sweet-gif',
   width: '100px'
 });
+
+

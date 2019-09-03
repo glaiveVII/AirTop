@@ -28,6 +28,7 @@
   background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
   border: none;
   border: 1px solid rgba(123, 105, 252, 0.9);
+  color: white;
 }
 
 .file {
@@ -40,18 +41,36 @@
   background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
   border: none;
   border: 1px solid rgba(123, 105, 252, 0.9);
+  color: white;
 }
 
 #airdrop_amount {
   background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
   border: none;
   border: 1px solid rgba(123, 105, 252, 0.9);
+  color: white;
 }
 #airdrop_description {
   background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
   border: 1px solid rgba(123, 105, 252, 0.9);
+  color: white;
 }
 
+#airdrop_quote {
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
+  border: 1px solid rgba(123, 105, 252, 0.9);
+  color: white;
+}
+
+// .home-svg5 {
+//   background-image: url("parachute2.svg");
+//   position: absolute;
+//   width: 40%;
+//   height: 20%;
+//   left: 75%;
+//   top: 50%;
+//   transform: rotate(35deg);
+// }
 .text-center {
   font-weight: bolder;
   font-family: 'Lexend Deca', sans-serif;

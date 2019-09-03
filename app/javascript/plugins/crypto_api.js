@@ -4,7 +4,7 @@ let access_key = 'bf9051bf39b60a1a3bcfe5481621f5b7';
 
 const apiCall = (selector, options = {}) => {
   // const divRates = document.getElementById("rates");
-  const divBTC = document.getElementById("btc-price");
+  const divBTC = document.querySelector("btc-price");
   const divLTC = document.getElementById("ltc-price");
   const divETH = document.getElementById("eth-price");
 

@@ -11,6 +11,7 @@
       <%= f.input :title  %>
       <%= f.input :crypto , label: 'The cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one', collection: ['Bitcoin','Ethereum', 'Litecoin'] %>
       <%= f.input :amount , label: 'the amount of cryptocurrency you want to airdrop', error: 'Amount is mandatory, please specify one'%>
+      <%= f.input :quote %>
       <%= f.input :description %>
       <%= f.input :photo, class: "insert-photo" %>
       <%= f.input :photo_cache, as: :hidden %>
@@ -22,6 +23,7 @@
   <% end %>
 
   </div>
+
 </div>
 
 

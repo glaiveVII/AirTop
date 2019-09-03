@@ -1,0 +1,35 @@
+.falling {
+  animation: fall 7s ease infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(10%) rotate(10deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+}
+
+.climbing {
+  animation: climb 7s ease infinite;
+}
+
+@keyframes climb {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25%) rotate(15deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+}

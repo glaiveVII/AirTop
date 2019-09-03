@@ -16,16 +16,20 @@ function validateEmail(mail)
     return (false)
 }
 
-document.getElementById('invite_email').addEventListener('input', function(e) {
-  if (validateEmail(e.target.value)) {
-    document.querySelector('.email-error').style.display = 'none';
-    document.querySelector('.email-correct').style.display = 'block';
-    document.getElementById('invite-button').disabled = false;
-  } else {
-    document.querySelector('.email-error').style.display = 'block';
-    document.querySelector('.email-correct').style.display = 'none';
-  }
-})
+const email = document.getElementById('invite_email')
+if (email) {
+
+  email.addEventListener('input', function(e) {
+    if (validateEmail(e.target.value)) {
+      document.querySelector('.email-error').style.display = 'none';
+      document.querySelector('.email-correct').style.display = 'block';
+      document.getElementById('invite-button').disabled = false;
+    } else {
+      document.querySelector('.email-error').style.display = 'block';
+      document.querySelector('.email-correct').style.display = 'none';
+    }
+  })
+}
 
 document.getElementById('invite_file_csv').addEventListener('change', function(e) {
   if (e.value != '') {
@@ -42,7 +46,7 @@ initSweetalert('.sweet-alert-demo', {
 
 // homage page initiate search
 initSweetalert('.sweet-alert-release', {
-  icon: "https://media.giphy.com/media/11l5hkwH1zcsBG/giphy.gif",
+  icon: "http://giphygifs.s3.amazonaws.com/media/p1v7773GGUJH2/giphy.gif",
   buttons: false,
   customClass: 'sweet-gif',
   width: '100px'
@@ -50,6 +54,14 @@ initSweetalert('.sweet-alert-release', {
 
 apiCall();
 
+const button = document.querySelector('#clickme');
+const audio = new Audio('sound.mp3');
+
+button.addEventListener('click', (e) => {
+  e.target.classList.add('disabled');
+  e.target.innerText = 'Bingo!';
+  audio.play();
+});
 
 
 

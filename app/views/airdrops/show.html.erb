@@ -10,16 +10,18 @@
           <h3 id="show-h3" style="margin-bottom: 20px;"> Invite people to this Event!</h3>
           <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
             <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+            <div class="email-error" style="display: none;">The email is wrong</div>
+            <div class="email-correct" style="display: none;">The email is correct</div>
             <%= f.simple_fields_for :file do |a| %>
               <%= a.input :csv, as: :file %>
             <% end %>
             <div class="show-button">
-              <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
+              <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" disabled>
                 Invite
               </button>
             <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
-            <button class="profile-card__button button--blue js-message-btn">
-          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;", :class=>"sweet-alert-demo"%>
+            <button class="profile-card__button button--blue js-message-btn sweet-alert-release">
+          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;", :class=>""%>
         </button>
         </div>
           <% end %>

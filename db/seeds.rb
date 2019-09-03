@@ -67,7 +67,7 @@ User.create!(email: 'saunier@lewagon.com', password: 'airtop',
   airdrop = Airdrop.new(
     crypto: "ethereum",
     amount: rand(1..15),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("Pel").id,
     # address: Faker::Address.street_address,
     quote: "Vitalik where is new ETH?",
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -96,7 +96,7 @@ end
   airdrop = Airdrop.new(
     crypto: "litecoin",
     amount: rand(1..30),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("Pel").id,
     # address: Faker::Address.street_address,
     quote: "I hodl ripple, lol",
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -125,7 +125,7 @@ end
   airdrop = Airdrop.new(
     crypto: "bitcoin",
     amount: rand(1..5),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("Pel").id,
     # address: Faker::Address.street_address,
     quote: "in btc we trust",
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -154,7 +154,7 @@ end
   airdrop = Airdrop.new(
     crypto: "litecoin",
     amount: rand(1..30),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("Pel").id,
     # address: Faker::Address.street_address,
     quote: "LTC to the moon",
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -183,7 +183,7 @@ end
   airdrop = Airdrop.new(
     crypto: "bitcoin",
     amount: rand(1..5),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("Pel").id,
     # address: Faker::Address.street_address,
     quote: "In POW we don't trust",
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -212,7 +212,7 @@ end
   airdrop = Airdrop.new(
     crypto: "ethereum",
     amount: rand(1..15),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("Pel").id,
     # address: Faker::Address.street_address,
     quote: "ETH <3",
     description: "Random description about the crypto event, when lambo moon, xrp will replace fiat currency tomorrow",
@@ -224,12 +224,12 @@ end
 end
 
 Invite.create!(airdrop_id: Airdrop.first.id,
-               user_id: User.find_by_nickname("Julien").id,
+               user_id: User.find_by_nickname("Pel").id,
                status: "accepted"
                )
 
 Invite.create!(airdrop_id: Airdrop.last.id,
-               user_id: User.find_by_nickname("Julien").id,
+               user_id: User.find_by_nickname("Pel").id,
                status: "accepted"
                )
 

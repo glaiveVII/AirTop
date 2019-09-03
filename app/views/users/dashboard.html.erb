@@ -1,28 +1,34 @@
 <div class="wrapper-dash">
   <div class="header-first">
-      <%= cl_image_tag current_user.photo, class: "dashboard-image" %>
+    <%= cl_image_tag current_user.photo, class: "dashboard-image border-glow" %>
     <div class="dashboard-writing">
       <h1> Hello, <%= current_user.nickname %> !</h1>
-      <h2>Wallet balance : <%= current_user.wallet_balance %></h2>
-      <h2>Your public key: <%= current_user.public_key %></h2>
+      <p><strong>Wallet balance:</strong> <%= current_user.wallet_balance %></p>
+      <p><strong>Your public key:</strong> <%= current_user.public_key %></p>
+      <%= image_tag("parachute2.svg", {:style => "width:100px;", class: 'climbing climber'}) %>
+      <%= image_tag("parachute2.svg", {:style => "width:50px; ", class: 'falling climber1'}) %>
     </div>
   </div>
-
-
-
-
 
   <div class="user_invitation-user_airdrop">
     <div class="user_airdrop">
       <div class="header-container">
-        <h1 class="btn profile-card__button button--blue js-message-btn sweet-alert-demo" style="background: linear-gradient(135deg, #8254EA 0%, #E86DEC 100%);"; id="heading-airdrops">
-          <%= link_to 'Your airdrops', toggle_path(link: 'airdrops'), remote: true  %>
-          <span class="badge">
-            <%= @airdrop.where(user: current_user.id).count %></h1>
-        <h1 class="btn profile-card__button button--blue js-message-btn sweet-alert-demo" id="heading-invitations"> <%= link_to 'Your invitations', toggle_path(link: 'invitations'), remote: true  %> <span class="badge"><%= current_user.invites.count %></span></h1>
-      </div>
-      <div id="airdrop-cards">
+        <%= link_to toggle_path(link: 'airdrops'), class: 'btn profile-card__button button--blue js-message-btn', remote: true  do %>
+          My airdrops
+          <div class='badge'>
+            <%= @airdrop.where(user: current_user.id).count %>
+          </div>
+        <% end %>
 
+        <%= link_to toggle_path(link: 'invitations'), class: 'btn profile-card__button button--blue js-message-btn', remote: true do %>
+          My invites
+          <div class='badge'>
+            <%= current_user.invites.count %>
+          </div>
+        <% end %>
+      </div>
+
+      <div id="airdrop-cards">
         <%= render 'users/cards' %>
       </div>
     </div>

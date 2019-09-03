@@ -11,16 +11,19 @@
   <input id="searchBar" class="searchbar" type="text" placeholder="Search...">
   <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
 </div> -->
-
-  <%= form_tag airdrops_path, method: :get, :class => 'magic-bean-garden' do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "magic-bean-form",
-      placeholder: "Find a crypto ! " %>
-      <div class="gardener-clothes">
-        <%= submit_tag "", class: "gardener" %>
-      </div>
-  <% end %>
+  <div class="the-bfg">
+    <%= form_tag airdrops_path, method: :get, :class => 'magic-bean-garden' do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "magic-bean-form",
+        placeholder: "Search by crypto! " %>
+        <div class="gardener-clothes">
+          <%= button_tag :submit, :class=>'search-butt' do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
 
 
       <div class="card-wrapper">
@@ -31,10 +34,19 @@
               <h1><%= airdrop.crypto.upcase %> </h1>
               <% if airdrop.crypto.downcase == 'bitcoin'%>
                 <abbr> <strong> ₿itcoin : <%= airdrop.amount %> </strong> </abbr>
+                <div id="btc-price">
+
+                </div>
               <% elsif airdrop.crypto.downcase == 'ethereum' %>
                 <abbr> <strong> Ethereum : <%= airdrop.amount %> </strong></abbr>
+                <div id="eth-price">
+
+                </div>
               <% elsif airdrop.crypto.downcase == 'litecoin' %>
                 <abbr> <strong>Łitecoin : <%= airdrop.amount %></strong></abbr>
+                <div id="ltc-price">
+                  <!-- <p> USD </p> -->
+                </div>
               <% end %>
               <p><%= airdrop.description %></p>
               <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button ind-but'%>

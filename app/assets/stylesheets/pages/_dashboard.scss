@@ -1,6 +1,6 @@
-a {
-  color:white;
-}
+// a {
+//   color:white;
+// }
 
 #sidebar {
   position: fixed;
@@ -15,6 +15,8 @@ a {
 }
 
 .dashboard-container {
+  max-width: 1140px;
+  margin: 0 auto;
   padding: 0 80px;
 }
 #sidebar ul li {
@@ -51,6 +53,21 @@ align-items: center;
   border-radius: 50%;
   margin: 10px;
 
+}
+
+.climber {
+  left: 428px;
+  width: 100px;
+  position: relative;
+  top: -82px;
+}
+
+.climber1 {
+  left: 425px;
+  width: 100px;
+  position: relative;
+  top: -82px;
+  transform: rotate(20deg);
 }
 
 .user-name {
@@ -118,11 +135,10 @@ flex-direction: column;
 }
 
 .header-container {
-  margin-top: 25px;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 100px;
-  padding: 0 600px;
+  max-width: 540px;
+  margin: -43px auto 60px;
 }
 #air {
   color: #167efb;
@@ -134,23 +150,39 @@ flex-direction: column;
   margin-top: 100px !important;
   margin: 0px auto;
   align-items: center;
+  background-color: #ebeef8;
+    border: none;
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid rgba(123, 105, 252, 0.9);
+    color: white;
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+  height: 260px;
+
+  h1 {
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  p {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+
 }
 
 .dashboard-image {
   border-radius: 50%;
   height: 130px;
   display: flex;
+  margin-left: 20px;
   justify-content: center;
+      border: 3px solid rgba(123, 105, 252, 0.9);
 }
 
 .dashboard-writing {
-  margin-left: 25px;
-      background-color: #ebeef8;
-    border: none;
-    border-radius: 10px;
-    padding: 30px;
-    border: 1px solid rgba(123, 105, 252, 0.9);
-    color: rgba(123, 105, 252, 0.9);
+  height: 113px;
+  margin-left: 60px;
 
 }
 
@@ -162,4 +194,21 @@ flex-direction: column;
 
 .wrapper-dash {
   padding: 0px 16px;
+}
+
+.border-glow{
+  height: 150px;
+  width: 150px;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 20px #167efb,
+    inset 20px 0 40px #f0f,
+    inset -20px 0 40px #167efb,
+    inset 20px 0 150px #f0f,
+    inset -20px 0 150px #167efb,
+    0 0 50px #fff,
+    -10px 0 40px #f0f,
+    10px 0 40px #167efb;
 }

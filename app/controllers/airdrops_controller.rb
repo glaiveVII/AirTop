@@ -103,8 +103,8 @@ class AirdropsController < ApplicationController
     # need to improve randomisation algo !!!!!!!
     won = randomise(amount, number)
     participants.each do |x|
-       if invite.find_by_id(x.id).status == "accepted"
-      #if invite.where(user_id: x.id).first.status == "accepted"
+      #if invite.find_by_id(x.id).status == "accepted"
+      if invite.where(user_id: x.id).first.status == "accepted"
         x.wallet_balance += won
         x.save!
         amount -= won
@@ -112,7 +112,6 @@ class AirdropsController < ApplicationController
     end
     x = Airdrop.find(params[:id])
     x.amount = 0
-    raise
     x.save!
     redirect_to airdrop_path(Airdrop.find(params[:id]).id)
   end

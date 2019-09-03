@@ -14,9 +14,8 @@
       <%= f.input :description %>
       <%= f.input :photo, class: "insert-photo" %>
       <%= f.input :photo_cache, as: :hidden %>
-
-      <div class="text-center" style="padding-top: 25px;">
-        <%= f.button :submit  , :class=>'btn index-button sweet-alert-demo'%>
+      <div class="form-butt">
+      <%= f.button :submit  , :class=>'profile-card__button button--blue js-message-btn sweet-alert-demo', style:'  position: relative; display: flex; margin: 0 auto;'%>
       </div>
     </div>
 

@@ -11,16 +11,19 @@
   <input id="searchBar" class="searchbar" type="text" placeholder="Search...">
   <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
 </div> -->
-
-  <%= form_tag airdrops_path, method: :get, :class => 'magic-bean-garden' do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "magic-bean-form",
-      placeholder: "Find a crypto ! " %>
-      <div class="gardener-clothes">
-        <%= submit_tag "", class: "gardener" %>
-      </div>
-  <% end %>
+  <div class="the-bfg">
+    <%= form_tag airdrops_path, method: :get, :class => 'magic-bean-garden' do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "magic-bean-form",
+        placeholder: "Search by crypto! " %>
+        <div class="gardener-clothes">
+          <%= button_tag :submit, :class=>'search-butt' do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
 
 
       <div class="card-wrapper">

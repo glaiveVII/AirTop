@@ -1,0 +1,72 @@
+.event-card {
+  padding: 60px 0 0 ;
+  background: white;
+  box-shadow: 0 1px 15px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+
+  .event-card-content {
+    position: relative;
+    padding: 0 60px 60px;
+    width: 520px;
+
+    span {
+      font-size: 32px;
+      font-weight: 600;
+      background: #eaeaea;
+
+      .crypto-picture {
+        width: 30px;
+      }
+    }
+
+    .event-card-crypto {
+      display: flex;
+      font-size: 21px;
+
+      abbr {
+        margin-right: 8px;
+        font-weight: 600;
+      }
+    }
+
+    p {
+      margin: 16px 0;
+      opacity: 0.6;
+    }
+
+    .social-media {
+      padding: 0;
+      margin: 0;
+      justify-content: flex-start;
+
+      .media-item a {
+        color: black;
+        margin-right: 10px;
+
+        i {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .fliped {
+      position: absolute;
+      top: inherit;
+      bottom: 0;
+      right: -581px;
+      transform: scaleX(-1);
+      filter: FlipH;
+    }
+  }
+
+  .form-show {
+    border-radius: 0 0 6px 6px;
+    width: 100%;
+    top: 0;
+
+    form {
+      width: 560px !important;
+    }
+  }
+}

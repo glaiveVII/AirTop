@@ -56,21 +56,21 @@ var apikey = {
 //     console.log(err);
 // })
 
-// request(
-//   'GET',
-//   'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?CMC_PRO_API_KEY=' + apikey.key
+request(
+  'GET',
+  'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?  CMC_PRO_API_KEY=' + apikey.key,
 
-//   )
-// .then((r1) => {
-//     // var x1 = JSON.parse(r1.target.responseText);
-//     // console.log(x1);
-//     // console.log(r1.target.responseText);
-//     var x = r1.target.responseText;
-//     console.log(r1);
+  )
+.then((r1) => {
+    // var x1 = JSON.parse(r1.target.responseText);
+    // console.log(x1);
+    // console.log(r1.target.responseText);
+    var x = r1.target.responseText;
+    console.log(r1);
 
-// }).catch(err => {
-//     console.log(err);
-// })
+}).catch(err => {
+    console.log(err);
+})
 
 
 function request(method, url) {
@@ -83,29 +83,7 @@ function request(method, url) {
         });
 }
 </script>
-<script>
 
-
-const rp = require('request-promise');
-const requestOptions = {
-  method: 'GET',
-  uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest',
-  qs: {
-    'id': '1'
-  },
-  headers: {
-    'CMC_PRO_API_KEY': '8ff0e1b5-c514-4e72-8c0d-567482f303a6'
-  },
-  json: true,
-  gzip: true
-};
-
-rp(requestOptions).then(response => {
-  console.log('API call response:', response);
-}).catch((err) => {
-  console.log('API call error:', err.message);
-});
-</script>
 
 
 <div id="windSpeed">Wind speed: </div>

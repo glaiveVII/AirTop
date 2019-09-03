@@ -22,7 +22,7 @@ const apiCall = (selector, options = {}) => {
             let constant = element.parentElement.querySelector(".btc-parent").innerHTML;
             // console.log(constant);
             constant = constant*btcPrice;
-            element.insertAdjacentHTML("beforeend", "USD" + " " + Math.floor(constant));
+            element.insertAdjacentHTML("beforeend", "$" + " " + Math.floor(constant));
           })
 
           const ltcPrice = json.rates.LTC;
@@ -31,7 +31,7 @@ const apiCall = (selector, options = {}) => {
             let constant = element.parentElement.querySelector(".ltc-parent").innerHTML;
             // console.log(constant);
             constant = constant*ltcPrice;
-            element.insertAdjacentHTML("beforeend", "USD" + " " + Math.floor(constant));
+            element.insertAdjacentHTML("beforeend", "$" + " " + Math.floor(constant));
           })
 
           const ethPrice = json.rates.ETH;
@@ -40,7 +40,7 @@ const apiCall = (selector, options = {}) => {
             let constant = element.parentElement.querySelector(".eth-parent").innerHTML;
             // console.log(constant);
             constant = constant*ethPrice;
-            element.insertAdjacentHTML("beforeend", "USD" + " " + Math.floor(constant));
+            element.insertAdjacentHTML("beforeend", "$" + " " + Math.floor(constant));
           })
 
           // const ltcPrice = json.rates.LTC;

@@ -7,7 +7,7 @@
       </div>
       <div class="form-contain">
         <div class="form-show">
-          <h3 style="text-align: center;"> INVITE !</h3>
+          <h3 id="show-h3" style="margin-bottom: 20px;"> Invite people to this Event!</h3>
           <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
             <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
             <%= f.simple_fields_for :file do |a| %>

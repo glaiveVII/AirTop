@@ -8,6 +8,13 @@
   margin-top: 180px !important;
   }
 
+#show-h3 {
+  font-weight: bolder;
+  font-family: 'Lexend Deca', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+}
+
 .sub-container {
   position: absolute;
   display: flex;
@@ -24,6 +31,12 @@
   width: 150px;
   }
 
+#invite_email {
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
+  border: none;
+  border: 1px solid rgba(123, 105, 252, 0.9);
+  color: white;
+}
 
 .form-contain {
   position: relative;
@@ -31,8 +44,9 @@
 }
 
 .form-show {
+  border-radius: 10px;
   margin: auto;
-  width: 500px;
+  width: 586px;
   padding: 28px;
   display: flex;
   flex-direction: column;
@@ -40,6 +54,9 @@
   margin-right: 208px;
   top: 210px;
   position: relative;
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+  border: 1px solid rgba(123, 105, 252, 0.9);
+
 }
 
 .grouped-buttons {

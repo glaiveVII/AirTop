@@ -38,7 +38,41 @@
 
 
 
+<% if false %>
 
+<h1 class="heading" style="padding-top:30px;">EVENTS</h1>
+<div class="wrapper" id="invite_email">
+  <%= render 'components/airtop_card', airdrop: @airdrop %>
+  <% if @airdrop.user_id == current_user.id %>
+    <div class="boutton-show" style="display: flex; justify-content: space-around;">
+      <div class="profile-card-ctr">
+      </div>
+      <div class="form-contain">
+        <div class="form-show">
+          <h3 id="show-h3" style="margin-bottom: 20px;"> Invite people to this Event!</h3>
+          <%= simple_form_for :invite, url: airdrop_invite_users_path(@airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+            <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+            <div class="email-error" style="display: none;">The email is wrong</div>
+            <div class="email-correct" style="display: none;">The email is correct</div>
+            <%= f.simple_fields_for :file do |a| %>
+              <%= a.input :csv, as: :file %>
+            <% end %>
+            <div class="show-button">
+              <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" disabled>
+                Invite
+              </button>
+            <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
+            <button class="profile-card__button button--blue js-message-btn sweet-alert-release">
+          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white; height: 200px; width: 300px; ", :class=>""%>
+        </button>
+        </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>
 
 
 

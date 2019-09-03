@@ -15,8 +15,9 @@
             <% end %>
             <div class="show-button">
               <button class="profile-card__button button--blue js-message-btn sweet-alert-demo">
-              <%= f.button :submit, 'Invite' %>
-            </button>
+                Invite
+              </button>
+            <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
             <button class="profile-card__button button--blue js-message-btn">
           <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white;", :class=>"sweet-alert-demo"%>
         </button>

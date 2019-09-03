@@ -5,18 +5,9 @@
         <%= link_to "AirTop", :root, id: 'air'%>
     </div>
 
-    <div class="svg-wraper">
-      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          <%= link_to "Create event", new_airdrop_path ,  :class=>'spot'%>
-        </div>
-      </svg>
-    </div>
-    <div class="nav-item">
+    <ul class="nav-item">
+      <li><%= link_to "Airdrop", airdrops_path %></li>
 
-
-      <%= link_to "Airdrop", airdrops_path %>
 
       <!-- <li><%= link_to "Home", :root %></li> -->
       <li><%= link_to "Create event", new_airdrop_path%></li>
@@ -29,9 +20,9 @@
           <%= link_to current_user.nickname.capitalize, dashboard_path %>
         <% end %>
 
+      </li>
 
     </div>
-      </li>
     </ul>
     <!--
     <%= image_tag "metamask-logo.png", class: 'fox-head', style: 'height: 100%; transition: .5s;' %>

@@ -15,7 +15,10 @@
   <div class="user_invitation-user_airdrop">
     <div class="user_airdrop">
       <div class="header-container">
-        <h1 class="heading-second dashboard-header active" id="heading-airdrops"> <%= link_to 'Your airdrops', toggle_path(link: 'airdrops'), remote: true  %> <span class="badge"><%= current_user.invites.count %></h1>
+        <h1 class="heading-second dashboard-header active" id="heading-airdrops">
+          <%= link_to 'Your airdrops', toggle_path(link: 'airdrops'), remote: true  %>
+          <span class="badge">
+            <%= @airdrop.where(user: current_user.id).count %></h1>
         <h1 class="heading-second dashboard-header" id="heading-invitations"> <%= link_to 'Your invitations', toggle_path(link: 'invitations'), remote: true  %> <span class="badge"><%= current_user.invites.count %></span></h1>
       </div>
       <div id="airdrop-cards">

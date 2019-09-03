@@ -10,7 +10,7 @@
     <div class="form-inputs">
       <%= f.input :title  %>
       <%= f.input :crypto , label: 'The cryptocurrency for your aidrop', error: 'Choosing a cryptocurrency is mandatory, please specify one', collection: ['Bitcoin','Ethereum', 'Litecoin'] %>
-      <%= f.input :amount , label: 'the amount of cryptocurrency you want to airdrop', error: 'Amount is mandatory, please specify one', :id=>"clickme"%>
+      <%= f.input :amount, input_html: { class: "clickme" } %>
       <div class="form-create-price">
 
       </div>

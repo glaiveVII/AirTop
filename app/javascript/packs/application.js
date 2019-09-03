@@ -6,6 +6,7 @@ import "bootstrap";
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { apiCall } from '../plugins/crypto_api';
+import { apiCallV2 } from '../plugins/crypto_api';
 
 function validateEmail(mail)
 {
@@ -16,9 +17,9 @@ function validateEmail(mail)
     return (false)
 }
 
-const email = document.getElementById('invite_email')
-if (email) {
+const email = document.querySelector('#invite_email');
 
+if (email) {
   email.addEventListener('input', function(e) {
     if (validateEmail(e.target.value)) {
       document.querySelector('.email-error').style.display = 'none';
@@ -28,14 +29,19 @@ if (email) {
       document.querySelector('.email-error').style.display = 'block';
       document.querySelector('.email-correct').style.display = 'none';
     }
-  })
-}
+  });
+};
 
-document.getElementById('invite_file_csv').addEventListener('change', function(e) {
-  if (e.value != '') {
-    document.getElementById('invite-button').disabled = false;
-  }
-});
+const invite = document.querySelector('#invite_file_csv');
+
+if (invite) {
+
+  document.getElementById('invite_file_csv').addEventListener('change', function(e) {
+    if (e.value != '') {
+      document.getElementById('invite-button').disabled = false;
+    }
+  });
+};
 
 
 initSweetalert('.sweet-alert-demo', {
@@ -54,69 +60,21 @@ initSweetalert('.sweet-alert-release', {
 
 apiCall();
 
-const button = document.querySelector('#clickme');
-const audio = new Audio('sound.mp3');
+const button = document.querySelector('.clickme');
 
-button.addEventListener('click', (e) => {
-  e.target.classList.add('disabled');
-  e.target.innerText = 'Bingo!';
-  audio.play();
-});
+if (button) {
 
-
-
-
-
-
+  button.addEventListener('input', function(e) {
+    // console.log(document.getElementById('airdrop_crypto').value);
+    // console.log(this.value);
+    let result = apiCallV2(this.value, document.getElementById('airdrop_crypto').value);
+    // console.log(result);
+    document.querySelector(".form-create-price").innerHTML = result;
+  });
+};
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// do not look after this !!!!!!!!!
-// do not look after this !!!!!!!!!
-// do not look after this !!!!!!!!!
-// do not look after this !!!!!!!!!
-// do not look after this !!!!!!!!!
-
-// let endpoint = 'live'
-// let access_key = 'bf9051bf39b60a1a3bcfe5481621f5b7';
-
-
-//   $.ajax({
-//     url: 'http://api.coinlayer.com/api/' + endpoint + '?access_key=' + access_key,
-//     dataType: 'jsonp',
-//     success: function(json) {
-
-//         const btcRate = json.rates.BTC
-//         divRates.insertAdjacentHTML("beforeend", btcRate);
-//         // // exchange rata data is stored in json.rates
-
-
-//         // // target currency is stored in json.target
-//         // alert(json.target);
-
-//         // // timestamp can be accessed in json.timestamp
-//         // alert(json.timestamp);
-//         console.log(json.rates.BTC);
-//         console.log(json.rates.LTC);
-//         console.log(json.rates.ETH);
-
-//     }
-//   });
 

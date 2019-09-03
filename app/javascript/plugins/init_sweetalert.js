@@ -1,4 +1,3 @@
-
 import swal from 'sweetalert';
 
 const initSweetalert = (selector, options = {}) => {

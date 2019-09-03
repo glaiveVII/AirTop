@@ -16,9 +16,12 @@
       <li>
         <% if user_signed_in? %>
           <%= link_to "Logout" , destroy_user_session_path, method: :delete %>
-          <%# current_user.nickname.capitalize %>
-          <%# link_to current_user.nickname.capitalize, dashboard_path %>
-          <%= link_to "My account", dashboard_path %>
+            <%# current_user.nickname.capitalize %>
+            <%# link_to current_user.nickname.capitalize, dashboard_path %>
+            <%= link_to "My account", dashboard_path %>
+          <% else %>
+            <%= link_to "Log in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
         <% end %>
 
       </li>

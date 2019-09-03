@@ -1,76 +1,84 @@
-<div class="profile-card js-profile-card">
-  <div class="profile-card__img">
-    <%= cl_image_tag airdrop.photo %>
-  </div>
-  <div class="profile-card__cnt js-profile-cnt">
-    <div class="profile-card__name">
-      <h1><%= airdrop.crypto.upcase %> </h1>
-      <h3> <strong> <%= airdrop.quote.capitalize %> </strong> </h3>
-    </div>
+<div class="event-card">
+  <div class="event-card-content">
+    <span>
+      <%= cl_image_tag airdrop.photo, class: 'crypto-picture' %>
+      <%= airdrop.crypto.upcase %>
+    </span>
+    <p><%= airdrop.quote.capitalize %></p>
 
-    <div class="profile-card__txt " style="font-size:40px;">
+    <div class="event-card-crypto">
       <% if airdrop.crypto.downcase == 'bitcoin'%>
-        <abbr> <strong > ₿itcoin : <span class="btc-parent"> <%= airdrop.amount %> </span>  </strong> </abbr>
-        <div class="btc-price">
-
-        </div>
+        <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
+        (<div class="btc-price"></div>)
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
-        <abbr> <strong> Ethereum : <span class="eth-parent"> <%= airdrop.amount %> </span> </strong></abbr>
-        <div class="eth-price">
-
-        </div>
+        <abbr>Ethereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
+        (<div class="eth-price"></div>)
       <% elsif airdrop.crypto.downcase == 'litecoin' %>
-        <abbr> <strong>Łitecoin : <span class="ltc-parent"> <%= airdrop.amount %> </span> </strong></abbr>
-        <div class="ltc-price">
-
-        </div>
+        <abbr><i>Łitecoin: <span class="ltc-parent"><%= airdrop.amount %></i></abbr>
+        (<div class="ltc-price"></div>)
       <% end %>
     </div>
 
-    <div class="profile-card-loc">
-      <span class="profile-card-loc__txt">
-        <h3 class="show-title"> <%= airdrop.description %>  </h3>
-      </span>
-    </div>
-    <ul class="list-inline social-media">
-      <li class="github-">
-        <a href="https://github.com/PelDoingCode" target="_blank">
+    <p class="event-card-vanity"><%= airdrop.description %></p>
+
+    <ul class="social-media">
+      <li class="media-item">
+        <%= link_to "https://github.com/PelDoingCode", target: '_blank' do %>
           <i class="fab fa-github-square"></i>
-        </a>
+        <% end %>
       </li>
-      <li class="twitter-">
-        <a href="https://twitter.com/realDonaldTrump" target="_blank">
+      <li class="media-item">
+        <%= link_to "https://twitter.com/realDonaldTrump", target: '_blank' do %>
           <i class="fab fa-twitter-square"></i>
-        </a>
+        <% end %>
       </li>
-      <li class="instagram-">
-        <a href="https://www.instagram.com/pelgiuliano/?hl=fr" target="_blank">
+      <li class="media-item">
+        <%= link_to "https://www.instagram.com/pelgiuliano/?hl=fr", target: '_blank' do %>
           <i class="fab fa-instagram"></i>
-        </a>
+        <% end %>
       </li>
-      <li class="linkedin-">
-        <a href="https://www.linkedin.com/in/julien-pelegri-448639168/" target="_blank">
+      <li class="media-item">
+        <%= link_to "https://www.linkedin.com/in/julien-pelegri-448639168/", target: '_blank' do %>
           <i class="fab fa-linkedin"></i>
-        </a>
+        <% end %>
       </li>
     </ul>
+
     <% count = 0 %>
     <% airdrop.invites.each do |user| %>
       <% count += 1 %>
       <% if user.user_id == current_user.id %>
-        <div class="profile-card-ctr">
-          <button class="profile-card__button button--blue js-message-btn">
-            <%= link_to "Register", edit_user_registration_path, :style=>"color:white;" %>
-          </button>
-        </div>
+        <%= link_to "Register", edit_user_registration_path, class: 'profile-card__button button--blue js-message-btn' %>
       <% end %>
     <% end %>
-    <div class="profile-card-loc">
-      <span class="profile-card-loc__txt">
-        <h3 class="show-title"> <em> Number of people participating : <%= count %>  </em> </h3>
-      </span>
-    </div>
+
+    <p>Number of people participating : <%= count %></p>
+
+    <%= image_tag 'crypto-wave.png', class: 'fliped' %>
   </div>
+
+  <% if airdrop.user_id == current_user.id %>
+    <div class="form-contain">
+      <div class="form-show">
+        <h3 id="show-h3" style="margin-bottom: 20px;"> Invite people to this Event!</h3>
+        <%= simple_form_for :invite, url: airdrop_invite_users_path(airdrop), html:{style:'width: 100%'}, method: :post do |f| %>
+          <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
+          <div class="email-error" style="display: none;">The email is wrong</div>
+          <div class="email-correct" style="display: none;">The email is correct</div>
+          <%= f.simple_fields_for :file do |a| %>
+            <%= a.input :csv, as: :file %>
+          <% end %>
+          <div class="show-button">
+            <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" disabled>
+              Invite
+            </button>
+            <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
+            <button class="profile-card__button button--blue js-message-btn sweet-alert-release">
+              <%= link_to "Release Airdrop", airdrop_release_path(airdrop), :style=>"color:white;", :class=>""%>
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-

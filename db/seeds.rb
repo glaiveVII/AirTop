@@ -203,7 +203,7 @@ end
     description: "Great third quarter guys, here's a nice suprise for your revolutionary trainer designs - glow in the dark trainers - incredible!",
     quote: "Just do it, what ever it is",
     # photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin",
-    remote_photo_url: "https://thespun.com/wp-content/uploads/2017/08/Screen-Shot-2017-08-16-at-4.37.35-PM-775x465.png"
+    remote_photo_url: "https://static.highsnobiety.com/thumbor/Yb1AO3afH_SdwE891suyLhbL8hM=/fit-in/320x213/smart/static.highsnobiety.com/wp-content/uploads/2012/08/the-cost-of-a-logo-01.jpg"
   )
 
   airdrop.save!

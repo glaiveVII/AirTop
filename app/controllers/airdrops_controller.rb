@@ -69,6 +69,7 @@ class AirdropsController < ApplicationController
     @airdrop = Airdrop.find(params[:id].to_i)
     # raise
     invite = Invite.where(airdrop: @airdrop, email: current_user.email)[0]
+
     if current_user.email != invite.email
       # binding.pry
       invite.status = "decline"

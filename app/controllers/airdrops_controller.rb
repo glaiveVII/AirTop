@@ -114,6 +114,9 @@ class AirdropsController < ApplicationController
       #if invite.find_by_id(x.id).status == "accepted"
       if invite.where(user_id: x.id).first.status == "accepted"
         x.wallet_balance += won
+        y = invite.where(user_id: x.id).first
+        y.jackpot = won
+        y.save!
         x.save!
         amount -= won
       end

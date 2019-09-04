@@ -8,9 +8,8 @@
 <% if @airdrop.amount == 0 %>
 
   <% @airdrop.invites.each do |invite| %>
-    <% raise %>
-    <p> invite.user.nickname </p>
-    <p> invite.user.wallet_balance </p>
+    <p> <%= invite.user.nickname.capitalize %> had receive,
+      <%= invite.jackpot %> <% invite.airdrop.crypto %> !</p>
   <% end %>
 
 

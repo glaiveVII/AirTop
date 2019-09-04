@@ -51,12 +51,16 @@
     }
 
     .fliped {
-      position: absolute;
-      top: inherit;
-      bottom: 0;
-      right: -581px;
-      transform: scaleX(-1);
-      filter: FlipH;
+
+    position: absolute;
+    /* top: -321px; */
+    bottom: 0;
+    right: -1366px;
+    /* transform: rotate(0deg); */
+    -webkit-filter: FlipH;
+    filter: FlipH;
+    top: -364px;
+    transform: rotate(10deg);
     }
   }
 

@@ -36,14 +36,14 @@
       <div class="header-container">
         <%= link_to toggle_path(link: 'airdrops'), class: 'btn profile-card__button button--blue js-message-btn', remote: true  do %>
           My airdrops
-          <div class='badge'>
+          <div class='badge' style="font-size: 100%;">
             <%= @airdrop.where(user: current_user.id).count %>
           </div>
         <% end %>
 
         <%= link_to toggle_path(link: 'invitations'), class: 'btn profile-card__button button--blue js-message-btn', remote: true do %>
           My invites
-          <div class='badge'>
+          <div class='badge' style="font-size: 100%;">
             <%= current_user.invites.count %>
           </div>
         <% end %>

@@ -43,23 +43,28 @@ User.create!(email: 'julien@gmail.com', password: 'airtop',
 
 User.create!(email: 'airtop@hotmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
-    nickname: "Paul")
+    nickname: "Paul",
+    photo: "https://avatars1.githubusercontent.com/u/42438530?v=4")
 
 User.create!(email: 'marco@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
-    nickname: "Marco")
+    nickname: "Marco",
+    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/talgeknkk0sjgepvfezr.jpg")
 
 User.create!(email: 'sam@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
-    nickname: "Sam")
+    nickname: "Sam",
+    photo: "https://avatars3.githubusercontent.com/u/26303419?v=4")
 
 User.create!(email: 'arthur@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
-    nickname: "Arthur")
+    nickname: "Arthur",
+    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/onkzo1zsbde5taheslax.jpg")
 
 User.create!(email: 'lucien@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
-    nickname: "Lucien")
+    nickname: "Lucien",
+    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/tsrufxymkfkjy80nk3ha.jpg")
 
 User.create!(email: 'saunier@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
@@ -96,8 +101,8 @@ User.create!(email: 'saunier@lewagon.com', password: 'airtop',
     amount: rand(1..15),
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
-    description: "Ninja giveaway, a big thank you to my supportive Community. Share love, share Crypto.",
-    quote: "Vitalik where is new ETH?",
+    description: "Crypto continues to remain the king and CryptoKitties is no exception. Here's a small bonus for all the hard work of the dev team over the last 3 months!",
+    quote: "Helping you make your kities purr",
 
     # photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
     remote_photo_url: "https://media.licdn.com/dms/image/C4D0BAQHszSGuo_jTgA/company-logo_200_200/0?e=2159024400&v=beta&t=PsyPmw2ZADCmXsYJKfqgkCxsUbo7l-e_4jS_HkjLj_g"
@@ -126,8 +131,8 @@ end
     amount: rand(1..30),
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
-    description: "Giving away something Lite, not too heavy (like Gold). That you can recieve in the matter of minutes.",
-    quote: "I HODL XRP, lol",
+    description: "Bonjour Monsieurs, je vous offre une petite recompense pour les performances remarquables de ce semestre !",
+    quote: "Kerviel Jerome, rends l'argent!!!",
     # photo: "https://banner2.kisspng.com/20180805/hql/kisspng-litecoin-bitcoin-cryptocurrency-wallet-digital-wal-bitconnect-wallet-mac-bitcoin-cash-transaction-s-5b667f911cfec0.1647560515334439851188.jpg"
     remote_photo_url: "http://www.legrowspot.com/wp-content/uploads/2017/08/LGS__0003_logo_societe-generale.png"
   )
@@ -155,9 +160,8 @@ end
     amount: rand(1..5),
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
-    description: "If you own 1 BTC, you are mathematically guaranteed to be top 3/1000 richest in the world, in BTC terms (21/
-    m/7B)",
-    quote: "in BTC we TRUST",
+    description: "Great third quarter guys, here's a nice suprise for your revolutionary trainer designs - glow in the dark trainers - incredible!",
+    quote: "Just do it, what ever it is",
     # photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin",
     remote_photo_url: "https://thespun.com/wp-content/uploads/2017/08/Screen-Shot-2017-08-16-at-4.37.35-PM-775x465.png"
   )
@@ -185,8 +189,8 @@ end
     amount: rand(1..30),
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
-    description: "Litecoin giveaway, a fork of Bitcoin.",
-    quote: "LTC to the MOON",
+    description: "Congrats deepmind team, the AI deep learning is coming along at a precipitous pace. Here's a small present for opening Pandora's box xD",
+    quote: "Don't be evil, that's our job",
     # photo: "https://banner2.kisspng.com/20180805/hql/kisspng-litecoin-bitcoin-cryptocurrency-wallet-digital-wal-bitconnect-wallet-mac-bitcoin-cash-transaction-s-5b667f911cfec0.1647560515334439851188.jpg"
     remote_photo_url: "https://yt3.ggpht.com/a/AGF-l7-BBIcC888A2qYc3rB44rST01IEYDG3uzbU_A=s900-c-k-c0xffffffff-no-rj-mo"
   )
@@ -215,8 +219,8 @@ end
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
 
-    description: "Bitcoin gaming pool, giving away aidr to E-sports players.",
-    quote: "In POW we DOn't trust",
+    description: "Trading volume was up 42%, enjoy some bitcoin for your hard work",
+    quote: "Binance, but better",
     # photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin",
     remote_photo_url: "https://pbs.twimg.com/profile_images/1139570739747536896/HVEeWmV4.png"
   )
@@ -244,7 +248,7 @@ end
     amount: rand(1..15),
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
-    description: "A public blockchain based distributed computing platform featuring smart contract functionality.",
+    description: "After the sucess of our 999 monitor stand, I want to reward everyone in the design team with the extortionate profits we made.",
     quote: "ETH <3",
     # photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
     remote_photo_url: "https://image.freepik.com/icones-gratuites/mac-os_318-10374.jpg"

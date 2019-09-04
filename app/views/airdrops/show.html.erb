@@ -3,6 +3,52 @@
 
 </div>
 
+
+
+<% if @airdrop.amount == 0 %>
+
+  <% @airdrop.invites.each do |invite| %>
+    <p> <%= invite.user.nickname.capitalize %> had receive,
+      <%= invite.jackpot %> <% invite.airdrop.crypto %> !</p>
+  <% end %>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <% if false %>
 
 <h1 class="heading" style="padding-top:30px;">EVENTS</h1>
@@ -28,9 +74,9 @@
               </button>
 
             <%#= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
-            <button id="release-airdrop-btn" class="profile-card__button button--blue js-message-btn sweet-alert-release">
-              <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white; height: 200px; width: 300px; "%>
-            </button>
+            <!-- <button id="release-airdrop-btn" class="profile-card__button button--blue js-message-btn sweet-alert-release"> -->
+              <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), id: "release-airdrop-btn", :style=>"color:white; height: 200px; width: 300px; "%>
+            <!-- </button> -->
             </div>
           <% end %>
         </div>
@@ -38,8 +84,35 @@
     </div>
   <% end %>
 
-<% end %>
 </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

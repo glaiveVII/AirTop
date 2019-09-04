@@ -4,7 +4,7 @@
 <br>
 <br>
 <br>
-<h2 style="text-align: center;"> Hello <%= @user.nickname %>, fill the form to participate : </h2>
+<h2 class="heading superheading" style="text-align: center;"> Hello <%= @user.nickname %>, fill the form to participate!</h2>
 
 <div class="row airdrop-form d-flex">
   <div class="col-lg-6">
@@ -35,17 +35,18 @@
                       input_html: { autocomplete: "current-password" } %>
         <!-- here fill already the place with his email since we have acces -->
 
-        <p class="text-center"> Be carefull when you add your public key </p>
+
+        <p class="text-center"> Be carefull when you add your public key <i class="fas fa-exclamation-triangle"></i></p>
         <%= f.input :public_key , label: 'Your public key : ',  :input_html => { :value => "paste_your_public_key_here" }%>
-        <p class="text-center"> Your wallet balance : <%= @user.wallet_balance %></p>
+        <p class="text-center-registration"> Your wallet balance : <%= @user.wallet_balance %> BTC</p>
       </div>
         <div class="boutton-show" style="display: flex; justify-content: space-around;">
         <div class="form-actions" style="text-align: center;">
-          <%= f.button :submit, "Participate" ,  :class=>'btn index-button'%>
+          <%= f.button :submit, "Participate" ,  :class=>'btn profile-card__button button--blue js-message-btn'%>
         </div>
         <div class="button-2IFHGCXZW" >
 
-          <%= link_to "BACK", :back,  :class=>'btn index-button'%>
+          <%= link_to "BACK", :back,  :class=>'btn profile-card__button button--blue js-message-btn'%>
         </div>
       </div>
 

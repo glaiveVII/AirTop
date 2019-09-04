@@ -65,6 +65,8 @@
 
   </div>
 
+<% if airdrop.amount != 0 %>
+
   <% if airdrop.user_id == current_user.id %>
     <div class="form-contain">
       <div class="form-show">
@@ -87,4 +89,7 @@
       </div>
     </div>
   <% end %>
+
+<% end %>
+
 </div>

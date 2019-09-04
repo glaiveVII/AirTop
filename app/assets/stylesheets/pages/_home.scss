@@ -44,4 +44,28 @@
 
 .text p{
   font-size: 15px;
+
+.homebutt {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  background: transparent !important;
+   border: 5px solid #167efb !important;
+    color: #167efb !important;
+     box-shadow: 0 0 10px rgba(22,126,251, 0.5) !important;
+}
+
+
+.homebutt:hover {
+  color: #167efb !important;
+
+}
+
+
+.carrot {
+  box-shadow: 0 0 10px rgba(22,126,251, 0.5) !important;
+}
+
+.fa-exclamation-triangle {
+  color: #eed202;
 }

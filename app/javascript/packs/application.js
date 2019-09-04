@@ -51,12 +51,12 @@ initSweetalert('.sweet-alert-demo', {
 });
 
 // homage page initiate search
-initSweetalert('.sweet-alert-release', {
-  icon: "http://giphygifs.s3.amazonaws.com/media/p1v7773GGUJH2/giphy.gif",
-  buttons: false,
-  customClass: 'sweet-gif',
-  width: '100px'
-});
+// initSweetalert('.sweet-alert-release', {
+//   icon: "http://giphygifs.s3.amazonaws.com/media/p1v7773GGUJH2/giphy.gif",
+//   buttons: false,
+//   customClass: 'sweet-gif',
+//   width: '100px'
+// });
 
 apiCall();
 
@@ -74,8 +74,17 @@ if (button) {
   });
 };
 
+const airdropBtn = document.getElementById("release-airdrop-btn");
+let confettiHTML = "";
+for ( var i = 0; i < 100; i++ ) {
+    confettiHTML += `<div class="confetti-piece"></div>`;
+}
 
-
+const confettiBox = document.querySelector(".event-card");
+airdropBtn.addEventListener('click', (event)=> {
+  event.preventDefault();
+  confettiBox.insertAdjacentHTML('afterbegin', confettiHTML);
+});
 
 
 

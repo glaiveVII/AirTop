@@ -3,43 +3,10 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <% if false %>
 
 <h1 class="heading" style="padding-top:30px;">EVENTS</h1>
-<div class="wrapper" id="invite_email">
+  <div class="wrapper" id="invite_email">
   <%= render 'components/airtop_card', airdrop: @airdrop %>
   <% if @airdrop.user_id == current_user.id %>
     <div class="boutton-show" style="display: flex; justify-content: space-around;">
@@ -59,11 +26,12 @@
               <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" disabled>
                 Invite
               </button>
-            <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
-            <button class="profile-card__button button--blue js-message-btn sweet-alert-release">
-          <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white; height: 200px; width: 300px; ", :class=>""%>
-        </button>
-        </div>
+
+            <%#= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
+            <button id="release-airdrop-btn" class="profile-card__button button--blue js-message-btn sweet-alert-release">
+              <%= link_to "Release Airdrop", airdrop_release_path(@airdrop), :style=>"color:white; height: 200px; width: 300px; "%>
+            </button>
+            </div>
           <% end %>
         </div>
       </div>

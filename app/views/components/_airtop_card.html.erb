@@ -44,6 +44,7 @@
       </li>
     </ul>
 
+
     <% count = 0 %>
     <% airdrop.invites.each do |user| %>
       <% count += 1 %>
@@ -52,7 +53,10 @@
       <% end %>
     <% end %>
 
-    <p>Number of people participating : <%= count %></p>
+
+    <p>Number of people participating : <%= count%></p>
+
+
 
     <%= image_tag("wave-ali.svg", {:style => "width:500px; height:500px;", class: 'fliped'})%>
 

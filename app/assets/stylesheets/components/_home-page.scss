@@ -1,13 +1,16 @@
 .button-wraper {
   display: flex;
-  // position: absolute;
-  top: 490px;
-  left: 275px;
   align-items: baseline;
-  margin: 50px;
   width: 396px;
   justify-content: space-between;
+      display: flex;
+    top: 490px;
+    left: 290px;
+    margin: 50px 0;
+    padding-left: -60px;
+    margin-left: -74px;
 }
+
 
 .contain {
   width: 65%;
@@ -108,7 +111,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #1e1a3e;
-  font-family: Raleway;
+  font-family: "Quicksand"
 }
 
 #personal {
@@ -157,6 +160,7 @@ body {
   under the words. Here's also where the transition speed is set.
 */
 
+
 #shape {
   stroke-width: 5px;
   fill: transparent;
@@ -180,7 +184,7 @@ body {
 
 #text a {
   font-size: 20px !important;
-  color: #167efb;
+  // color: #167efb;
   text-decoration: none;
   font-weight: 100;
   font-size: 1.1em;
@@ -190,15 +194,3 @@ body {
     Changing the shape on hover. I change the color of the stroke,
 make it thinner, then set it to again wrap around the entire parent element.
 */
-.svg-wraper {
-  flex: 1;
-  margin-left: 60px;
-  margin-bottom: 10px;
-}
-
-.svg-wraper:hover  #shape{
-  stroke-dasharray: 50 0;
-  stroke-width: 5px;
-  stroke-dashoffset: 0;
-  stroke: #167efb;
-}

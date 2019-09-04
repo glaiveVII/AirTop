@@ -74,10 +74,12 @@
 // }
 .text-center {
   font-weight: bolder;
-  letter-spacing: 1px;
+
+  font-family: 'Quicksand', sans-serif;
+  // letter-spacing: 1px;
   margin-bottom: 40px;
-  font-size: 40px;
-  color: #167efb;
+  font-size: 25px;
+  color: white;
 }
 
 .text-center-registration {

@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    raise
     if current_user.update(user_params)
       @user = current_user
      # raise
@@ -47,7 +46,7 @@ class UsersController < ApplicationController
       invite = Invite.create(user_id: user.id, email: email, airdrop_id: params[:airdrop_id])
       invite.update(status: "accepted")
     end
-    # redirect_to airdrop_path(@airdrop)
+    redirect_to airdrop_path(@airdrop)
   end
 
   def dashboard

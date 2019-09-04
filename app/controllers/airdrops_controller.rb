@@ -3,7 +3,14 @@ class AirdropsController < ApplicationController
 
   def index
     if params[:query].present?
-      @airdrops = Airdrop.where(crypto: params[:query].downcase)
+      if params[:query].downcase === "eth"
+        params[:query] = "Ethereum"
+      elsif params[:query].downcase === "btc"
+        params[:query] = "Bitcoin"
+      elsif params[:query].downcase === "ltc"
+        params[:query] = "Litecoin"
+      end
+      @airdrops = Airdrop.where(crypto: params[:query].downcase.capitalize)
     else
       @airdrops = policy_scope(Airdrop)
     end

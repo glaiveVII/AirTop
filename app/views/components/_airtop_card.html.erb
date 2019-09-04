@@ -11,7 +11,7 @@
         <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
         (<div class="btc-price"></div>)
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
-        <abbr>Ethereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
+        <abbr>Ξthereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
         (<div class="eth-price"></div>)
       <% elsif airdrop.crypto.downcase == 'litecoin' %>
         <abbr><i>Łitecoin: <span class="ltc-parent"><%= airdrop.amount %></i></abbr>
@@ -54,7 +54,8 @@
 
     <p>Number of people participating : <%= count %></p>
 
-    <%= image_tag 'crypto-wave.png', class: 'fliped' %>
+    <%= image_tag("wave-ali.svg", {:style => "width:500px; height:500px;", class: 'fliped'})%>
+
   </div>
 
   <% if airdrop.user_id == current_user.id %>

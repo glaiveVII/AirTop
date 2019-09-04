@@ -36,9 +36,31 @@
   height: 125px;
 }
 
+.photo-2 {
+  background-image: asset-url("register.png");
+  background-size: cover;
+  width: 65%;
+  height: 125px;
+}
+
+.photo-3 {
+  background-image: asset-url("invite.png");
+  background-size: cover;
+  width: 65%;
+  height: 125px;
+}
+
+.photo-4 {
+  background-image: asset-url("release.png");
+  background-size: cover;
+  width: 65%;
+  height: 125px;
+}
+
 .text {
   color: black;
-  font-family: "Quicksand", "sans-serif"
+  font-family: "Quicksand", "sans-serif";
+  padding: 0 5px;
 }
 
 

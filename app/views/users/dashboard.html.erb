@@ -1,7 +1,16 @@
 <div class="wrapper-dash">
+
   <div class="header-first">
     <%= cl_image_tag current_user.photo, class: "dashboard-image border-glow" %>
     <div class="dashboard-writing">
+        <div class="loader">
+          <div class="face face1">
+            <div class="circle"></div>
+          </div>
+        <!--   <div class="face face2">
+            <div class="circle"></div>
+          </div> -->
+      </div>
       <h1> Hello, <%= current_user.nickname %> !</h1>
       <p><strong>Your BITCOIN balance :</strong> <%= current_user.wallet_balance %></p>
       <p><strong>Your ETHEREUM balance :</strong> <%= current_user.wallet_balance_eth %></p>
@@ -10,6 +19,17 @@
       <%= image_tag("parachute2.svg", {:style => "width:50px; ", class: 'falling climber1'}) %>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="user_invitation-user_airdrop">
     <div class="user_airdrop">

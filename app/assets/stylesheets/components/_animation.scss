@@ -1,5 +1,5 @@
 .falling {
-  animation: fall 7s ease infinite;
+  animation: fall 30s ease infinite;
 }
 
 @keyframes fall {
@@ -33,3 +33,54 @@
       transform: translateY(0) rotate(0);
     }
 }
+
+.higher {
+  animation: high 25s ease infinite;
+}
+
+@keyframes high {
+    0% {
+        transform: translateY(0px) rotate(15deg);
+    }
+
+    10% {
+        transform: translateY(100px) rotate(-15deg);
+    }
+
+    20% {
+      transform: translateY(200px) rotate(15deg);
+    }
+    30% {
+        transform: translateY(300px) rotate(-15deg);
+    }
+
+    40% {
+        transform: translateY(400px) rotate(15deg);
+    }
+    50% {
+      transform: translateY(500px) rotate(-15deg);
+    }
+    60% {
+      transform: translateY(400px) rotate(15deg);
+    }
+    70% {
+      transform: translateY(300px) rotate(-15deg);
+    }
+    80% {
+      transform: translateY(200px) rotate(15deg);
+    }
+
+    90% {
+      transform: translateY(100px) rotate(-15deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotate(15deg);
+    }
+}
+
+
+
+
+
+

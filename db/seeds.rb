@@ -67,7 +67,6 @@ User.create!(email: 'lucien@lewagon.com', password: 'airtop',
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/tsrufxymkfkjy80nk3ha.jpg")
 
 User.create!(email: 'saunier@lewagon.com', password: 'airtop',
-    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "SEB",
     public_key: public_key_btc_2,
     public_key_eth: public_key_eth_2,
@@ -79,6 +78,46 @@ User.create!(email: 'saunier@lewagon.com', password: 'airtop',
     last_name: "Saunier",
     photo: "https://avatars1.githubusercontent.com/u/414418?s=460&v=4"
     )
+
+User.create!(email: 'phelim@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Phelim")
+
+User.create!(email: 'ben-fanning@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ben-F")
+
+User.create!(email: 'gonzalo@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Gonzalo")
+
+
+User.create!(email: 'ben-pham@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ben-P")
+
+User.create!(email: 'alex@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Alex")
+
+
+User.create!(email: 'ben-wright@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ben-w")
+
+
+User.create!(email: 'ife@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ife")
+
+
+User.create!(email: 'leonard@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Leonard")
+
+User.create!(email: 'jonny@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Jonny")
 
 
 1.times do |i|
@@ -163,7 +202,7 @@ end
     description: "Great third quarter guys, here's a nice suprise for your revolutionary trainer designs - glow in the dark trainers - incredible!",
     quote: "Just do it, what ever it is",
     # photo: "https://png.icons8.com/dotty/1600/673AB7/bitcoin",
-    remote_photo_url: "https://thespun.com/wp-content/uploads/2017/08/Screen-Shot-2017-08-16-at-4.37.35-PM-775x465.png"
+    remote_photo_url: "https://static.highsnobiety.com/thumbor/Yb1AO3afH_SdwE891suyLhbL8hM=/fit-in/320x213/smart/static.highsnobiety.com/wp-content/uploads/2012/08/the-cost-of-a-logo-01.jpg"
   )
 
   airdrop.save!
@@ -186,7 +225,7 @@ end
 
   airdrop = Airdrop.new(
     crypto: "Litecoin",
-    amount: rand(1..30),
+    amount: 0,
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     description: "Congrats deepmind team, the AI deep learning is coming along at a precipitous pace. Here's a small present for opening Pandora's box xD",
@@ -245,7 +284,7 @@ end
 
   airdrop = Airdrop.new(
     crypto: "Ethereum",
-    amount: rand(1..15),
+    amount: 27,
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     description: "After the sucess of our 999 monitor stand, I want to reward everyone in the design team with the extortionate profits we made.",
@@ -256,6 +295,41 @@ end
 
   airdrop.save!
 end
+
+
+ # end invitation for the seed !!!!!!!!
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job").id,
+               user_id: User.find_by_nickname("Julien").id,
+               status: "accepted",
+               jackpot: 40.0
+               )
+
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job").id,
+               user_id: User.find_by_nickname("SEB").id,
+               status: "accepted",
+               jackpot: 40.0
+               )
+
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job").id,
+               user_id: User.find_by_nickname("Lucien").id,
+               status: "accepted",
+               jackpot: 40.0
+               )
+
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job").id,
+               user_id: User.find_by_nickname("Arthur").id,
+               status: "accepted",
+               jackpot: 40.0
+               )
+
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job").id,
+               user_id: User.find_by_nickname("Marco").id,
+               status: "accepted",
+               jackpot: 40.0
+               )
+
+
+
 
 Invite.create!(airdrop_id: Airdrop.first.id,
                user_id: User.find_by_nickname("Julien").id,

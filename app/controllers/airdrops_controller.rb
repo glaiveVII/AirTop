@@ -69,6 +69,7 @@ class AirdropsController < ApplicationController
     @airdrop = Airdrop.find(params[:id].to_i)
     # raise
     invite = Invite.where(airdrop: @airdrop, email: current_user.email)[0]
+
     if current_user.email != invite.email
       # binding.pry
       invite.status = "decline"
@@ -113,6 +114,9 @@ class AirdropsController < ApplicationController
       #if invite.find_by_id(x.id).status == "accepted"
       if invite.where(user_id: x.id).first.status == "accepted"
         x.wallet_balance += won
+        y = invite.where(user_id: x.id).first
+        y.jackpot = won
+        y.save!
         x.save!
         amount -= won
       end

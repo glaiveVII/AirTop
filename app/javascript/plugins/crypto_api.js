@@ -63,4 +63,30 @@ const apiCall = (selector, options = {}) => {
   }
 };
 
+let result = null;
+const apiCallV2 = (value, crypto) => {
+    $.ajax({
+      url: 'http://api.coinlayer.com/api/' + endpoint + '?access_key=' + access_key,
+      dataType: 'jsonp',
+      success: function(json) {
+          const btcPrice = json.rates.BTC;
+          const ltcPrice = json.rates.LTC;
+          const ethPrice = json.rates.ETH;
+
+          if (crypto === 'Bitcoin') {
+            result = (value + 1) * btcPrice;
+          }
+          else if (crypto == 'Ethereum') {
+            result = (value + 1) * ethPrice;
+          }
+          else if (crypto == 'Litecoin') {
+            result = (value + 1) * ltcPrice;
+          }
+
+      }
+    });
+    return result;
+}
+
 export { apiCall };
+export { apiCallV2 };

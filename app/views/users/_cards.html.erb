@@ -5,7 +5,22 @@
             <%= cl_image_tag airdrop.photo %>
             <div class="airtop-card-content">
               <h1><%= airdrop.crypto.upcase %> </h1>
-              <abbr><%= airdrop.amount %></abbr>
+              <% if airdrop.crypto.downcase == 'bitcoin'%>
+                <abbr> <strong > ₿itcoin : <span class="btc-parent"> <%= airdrop.amount %> </span>  </strong> </abbr>
+                <div class="btc-price">
+
+                </div>
+              <% elsif airdrop.crypto.downcase == 'ethereum' %>
+                <abbr> <strong> Ethereum : <span class="eth-parent"> <%= airdrop.amount %> </span> </strong></abbr>
+                <div class="eth-price">
+
+                </div>
+              <% elsif airdrop.crypto.downcase == 'litecoin' %>
+                <abbr> <strong>Łitecoin : <span class="ltc-parent"> <%= airdrop.amount %> </span> </strong></abbr>
+                <div class="ltc-price">
+
+                </div>
+              <% end %>
               <p><%= airdrop.description %></p>
               <%= link_to 'SEE THIS AIRDROP', airdrop_path(airdrop), :class=>'btn index-button ind-but', style: 'font-size: 15px !important;'%>
             </div>

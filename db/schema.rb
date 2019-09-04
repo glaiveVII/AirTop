@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_113639) do
+ActiveRecord::Schema.define(version: 2019_09_04_085011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,10 @@ ActiveRecord::Schema.define(version: 2019_08_29_113639) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.float "wallet_balance", default: 0.0
+    t.string "public_key_eth"
+    t.string "public_key_ltc"
+    t.string "wallet_balance_eth"
+    t.string "wallet_balance_ltc"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

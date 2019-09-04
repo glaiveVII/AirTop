@@ -56,17 +56,17 @@ align-items: center;
 }
 
 .climber {
-  left: 428px;
+  left: 101%;
   width: 100px;
   position: relative;
-  top: -82px;
+  top: -120px;
 }
 
 .climber1 {
-  left: 425px;
+  left: 115%;
   width: 100px;
   position: relative;
-  top: -82px;
+  top: -125px;
   transform: rotate(20deg);
 }
 
@@ -147,7 +147,7 @@ flex-direction: column;
 }
 
 .header-first {
-  width: 872px;
+  width: 70%;
   display: flex;
   margin-top: 100px !important;
   margin: 0px auto;

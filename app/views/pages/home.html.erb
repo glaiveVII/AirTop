@@ -1,48 +1,56 @@
-<div class="contain">
-  <div class="landing-contain" style="padding-top: 70px;">
-    <div class="landing-text">
-      <h1 class='home-title'>AUTOMATE YOUR</h1>
-      <h1 class='home-title'>AIRDROPS</h1>
-      <div class="button-wraper">
+<div style="height: 100vh">
+  <div class="contain">
+    <div class="landing-contain" style="padding-top: 70px;">
+      <div class="landing-text">
+        <h1 class='home-title'>AUTOMATE YOUR</h1>
+        <h1 class='home-title'>AIRDROPS</h1>
+        <div class="button-wraper">
+          <div class="svg-wraper">
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="40" width="150" />
+          <div id="text">
+            <%= link_to "Create Event", new_airdrop_path, :class=>'spot'%>
+          </div>
+        </svg>
+        </div>
         <div class="svg-wraper">
-        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          <%= link_to "Create Event", new_airdrop_path, :class=>'spot'%>
-        </div>
-      </svg>
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape" height="40" width="150" />
+          <div id="text">
+            <%= link_to "Airdrops", airdrops_path, :class=>'spot'%>
+          </div>
+        </svg>
       </div>
-      <div class="svg-wraper">
-        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          <%= link_to "Airdrops", airdrops_path, :class=>'spot'%>
-        </div>
-      </svg>
-    </div>
 
+    </div>
+      <span class='home-p'> Simplifying your Cryptocurrencies airdrops, let us distribute your cryptos in a hasle free manner.
+        Trust and secure.
+        Requiring no technical knowledge.</span>
+      </div>
+    </div>
   </div>
-    <span class='home-p'> Simplifying your Cryptocurrencies airdrops, let us distribute your cryptos in a hasle free manner.
-      Trust and secure.
-      Requiring no technical knowledge.</span>
+
+
+
+  <div class="photo">
+    <div class="home-svg0">
+      <%= image_tag("parachute1.svg", {:style => "width:310px;", class: 'falling'}) %>
+    </div>
+    <div class="home-svg1">
+      <%= image_tag("parachute1.svg", {:style => "width:250px;", class: 'climbing'}) %>
+    </div>
+    <div class="home-svg2">
+      <%= image_tag("parachute2.svg", {:style => "width:200px;", class: 'falling'}) %>
+    </div>
+    <div class="home-svg3">
+      <%= image_tag("parachute2.svg", {:style => "width:100px;", class: 'climbing'}) %>
     </div>
   </div>
 </div>
 
-
-
-<div class="photo">
-  <div class="home-svg0">
-    <%= image_tag("parachute1.svg", {:style => "width:310px;", class: 'falling'}) %>
-  </div>
-  <div class="home-svg1">
-    <%= image_tag("parachute1.svg", {:style => "width:250px;", class: 'climbing'}) %>
-  </div>
-  <div class="home-svg2">
-    <%= image_tag("parachute2.svg", {:style => "width:200px;", class: 'falling'}) %>
-  </div>
-  <div class="home-svg3">
-    <%= image_tag("parachute2.svg", {:style => "width:100px;", class: 'climbing'}) %>
+<div class="about" style="height: 100vh">
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nesciunt consequatur iure quo laudantium vitae perspiciatis labore voluptatibus accusamus placeat tenetur assumenda aliquam quis autem quisquam, sunt facere eius. Nam.</p>
   </div>
 </div>
 

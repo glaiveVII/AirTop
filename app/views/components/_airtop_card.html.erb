@@ -1,7 +1,7 @@
 <div class="event-card">
   <div class="event-card-content">
     <span>
-      <%= cl_image_tag airdrop.photo, class: 'crypto-picture' %>
+      <%= cl_image_tag airdrop.photo, class: 'crypto-picture', style: "height:20%; width:20%;"%>
       <%= airdrop.crypto.upcase %>
     </span>
     <p><%= airdrop.quote.capitalize %></p>
@@ -9,13 +9,13 @@
     <div class="event-card-crypto">
       <% if airdrop.crypto.downcase == 'bitcoin'%>
         <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
-        (<div class="btc-price"></div>)
+        <div class="btc-price"></div>
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
         <abbr>Ξthereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
-        (<div class="eth-price"></div>)
+        <div class="eth-price"></div>
       <% elsif airdrop.crypto.downcase == 'litecoin' %>
         <abbr><i>Łitecoin: <span class="ltc-parent"><%= airdrop.amount %></i></abbr>
-        (<div class="ltc-price"></div>)
+        <div class="ltc-price"></div>
       <% end %>
     </div>
 
@@ -44,17 +44,20 @@
       </li>
     </ul>
 
+    <div class="register-card">
 
-    <% count = 0 %>
-    <% airdrop.invites.each do |user| %>
-      <% count += 1 %>
-      <% if user.user_id == current_user.id %>
-        <%= link_to "Register", edit_user_registration_path, class: 'profile-card__button button--blue js-message-btn' %>
+      <% count = 0 %>
+      <% airdrop.invites.each do |user| %>
+        <% count += 1 %>
+        <% if user.user_id == current_user.id %>
+          <%= link_to "Register", edit_user_registration_path, class: 'profile-card__button button--blue js-message-btn' %>
+        <% end %>
       <% end %>
-    <% end %>
+
+    </div>
 
 
-    <p>Number of people participating : <%= count%></p>
+    <p> <em>  Number of people participating : <%= count %> </em></p>
 
 
 

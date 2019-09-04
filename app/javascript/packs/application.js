@@ -58,6 +58,14 @@ initSweetalert('.sweet-alert-release', {
   width: '100px'
 });
 
+// keep the code below please !
+// initSweetalert('.sweet-alert-release', {
+//   icon: "http://giphygifs.s3.amazonaws.com/media/p1v7773GGUJH2/giphy.gif",
+//   buttons: false,
+//   customClass: 'sweet-gif',
+//   width: '100px'
+// });
+
 apiCall();
 
 const button = document.querySelector('.clickme');

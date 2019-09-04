@@ -43,10 +43,12 @@ class UsersController < ApplicationController
       # raise
       user = User.find_by_email(params[:invite][:email])
       @airdrop = Airdrop.find(params[:airdrop_id].to_i)
-      invite = Invite.create(user_id: user.id, email: email, airdrop_id: params[:airdrop_id])
-      invite.update(status: "accepted")
+      if user != nil
+        invite = Invite.create(user_id: user.id, email: email, airdrop_id: params[:airdrop_id])
+        invite.update(status: "accepted")
+      end
+      redirect_to airdrop_path(@airdrop)
     end
-    redirect_to airdrop_path(@airdrop)
   end
 
   def dashboard

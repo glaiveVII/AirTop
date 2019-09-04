@@ -101,6 +101,7 @@ class AirdropsController < ApplicationController
     # need to improve randomisation algo !!!!!!!
     # need to improve randomisation algo !!!!!!!
     # need to improve randomisation algo !!!!!!!
+    raise
     won = randomise(amount, number)
     participants.each do |x|
       #if invite.find_by_id(x.id).status == "accepted"

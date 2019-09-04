@@ -10,15 +10,32 @@ require 'faker'
 
 
 puts 'Seed done for airdrop, user'
-array_public_key_1 = " '0x32be343b94f860124dc4fee278fdcbd38c102d88', '93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh', 'a5a91d9970908d73d568b406188accae6d26d302b34dc1d613262eaa26a70579' "
+public_key_btc_1 = '0x32be343b94f860124dc4fee278fdcbd38c102d88'
+public_key_eth_1 = '93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh'
+public_key_ltc_1 = 'a5a91d9970908d73d568b406188accae6d26d302b34dc1d613262eaa26a70579'
 
-array_public_key_2 = [ "0xa910f92acdaf488fa6ef02174fb86208ad7722ba", "372f2f8f815fdb885bc1e6c811c9a4cc9af769e5288f926d7b975e44b6f6cef6", "b18abc40c188e2b7b1caca279192d744c269761aec9857d6c14b417532e669c7"]
+public_key_btc_2 = '0xa910f92acdaf488fa6ef02174fb86208ad7722ba'
+public_key_eth_2 = '372f2f8f815fdb885bc1e6c811c9a4cc9af769e5288f926d7b975e44b6f6cef6'
+public_key_ltc_2 = 'b18abc40c188e2b7b1caca279192d744c269761aec9857d6c14b417532e669c7'
 
-wallet_balance_1 =
+
+wallet_balance_btc_1 = 0.8
+wallet_balance_eth_1 = 14
+wallet_balance_ltc_1 = 56
+
+wallet_balance_btc_2 = 0
+wallet_balance_eth_2 = 1.5
+wallet_balance_ltc_2 = 6
+
+
 User.create!(email: 'julien@gmail.com', password: 'airtop',
-    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    public_key: public_key_btc_1,
+    public_key_eth: public_key_eth_1,
+    public_key_ltc: public_key_ltc_1,
     nickname: "Pel",
-    wallet_balance: 4,
+    wallet_balance: wallet_balance_btc_1,
+    wallet_balance_eth: wallet_balance_eth_1,
+    wallet_balance_ltc: wallet_balance_ltc_1,
     first_name: "Julien",
     last_name: "Pelegri",
     photo: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/67444491_2393169547624893_3356167537644535808_o.jpg?_nc_cat=104&_nc_oc=AQkprhNozYg7lNipYdrhW4D_tV_M9PsQWYKDL1jvVgvzCNNxOIzr_JJ0Zr1p3P_o6pk&_nc_ht=scontent-lhr3-1.xx&oh=5b84eb83e55523fdc327cf40a54eeb10&oe=5DD5F29A"
@@ -47,6 +64,12 @@ User.create!(email: 'lucien@lewagon.com', password: 'airtop',
 User.create!(email: 'saunier@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "CodingMaster",
+    public_key: public_key_btc_2,
+    public_key_eth: public_key_eth_2,
+    public_key_ltc: public_key_ltc_2,
+    wallet_balance: wallet_balance_btc_2,
+    wallet_balance_eth: wallet_balance_eth_2,
+    wallet_balance_ltc: wallet_balance_ltc_2,
     first_name: "Sebastien",
     last_name: "Saunier",
     photo: "https://avatars1.githubusercontent.com/u/414418?s=460&v=4"

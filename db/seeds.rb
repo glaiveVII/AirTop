@@ -10,8 +10,11 @@ require 'faker'
 
 
 puts 'Seed done for airdrop, user'
+array_public_key_1 = " '0x32be343b94f860124dc4fee278fdcbd38c102d88', '93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh', 'a5a91d9970908d73d568b406188accae6d26d302b34dc1d613262eaa26a70579' "
 
+array_public_key_2 = [ "0xa910f92acdaf488fa6ef02174fb86208ad7722ba", "372f2f8f815fdb885bc1e6c811c9a4cc9af769e5288f926d7b975e44b6f6cef6", "b18abc40c188e2b7b1caca279192d744c269761aec9857d6c14b417532e669c7"]
 
+wallet_balance_1 =
 User.create!(email: 'julien@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Pel",

@@ -56,14 +56,14 @@ align-items: center;
 }
 
 .climber {
-  left: 101%;
+      left: 320px;
   width: 100px;
   position: relative;
   top: -120px;
 }
 
 .climber1 {
-  left: 115%;
+  left: 305px;
   width: 100px;
   position: relative;
   top: -125px;
@@ -147,7 +147,7 @@ flex-direction: column;
 }
 
 .header-first {
-  width: 70%;
+  width: 779px;
   display: flex;
   margin-top: 100px !important;
   margin: 0px auto;
@@ -159,7 +159,7 @@ flex-direction: column;
     border: 1px solid rgba(123, 105, 252, 0.9);
     color: white;
   background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
-  height: 260px;
+  height: 280px;
   position: relative;
 
   h1 {
@@ -169,7 +169,7 @@ flex-direction: column;
 
   p {
     margin-bottom: 4px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
 }
@@ -179,14 +179,17 @@ flex-direction: column;
   height: 130px;
   display: flex;
   z-index: 1;
+  position: relative;
+  top: -8px;
   margin-left: 20px;
   justify-content: center;
-      border: 3px solid rgba(123, 105, 252, 0.9);
+  border: 3px solid rgba(123, 105, 252, 0.9);
 }
 
 .dashboard-writing {
-  height: 113px;
-  margin-left: 60px;
+
+  margin-left: 75px;
+  height: 121px;
 
 }
 
@@ -203,8 +206,6 @@ flex-direction: column;
 .border-glow{
   height: 150px;
   width: 150px;
-  top: calc(50% - 150px);
-  left: calc(50% - 150px);
   border-radius: 50%;
   box-shadow:
     inset 0 0 20px #167efb,

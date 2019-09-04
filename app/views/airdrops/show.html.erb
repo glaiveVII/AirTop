@@ -4,19 +4,23 @@
 </div>
 
 
+<div style="display: flex; justify-content: center; ">
 
-<% if @airdrop.amount == 0 %>
+  <div style="background-color: white; color: #9f2fff; width: 70%; text-align: center; border-radius: 14px; margin-bottom: 30px;">
+    <h1  style="padding-bottom: 20px;"=> People rewarded by this airdrop : </h1>
+    <% if @airdrop.amount == 0 %>
 
-  <% @airdrop.invites.each do |invite| %>
-    <p> <%= invite.user.nickname.capitalize %> had receive,
-      <%= invite.jackpot %> <% invite.airdrop.crypto %> !</p>
-  <% end %>
-
-
-<% end %>
-
+      <% @airdrop.invites.each do |invite| %>
+        <h1> <%= invite.user.nickname.capitalize %> had receive,
+          <%= invite.jackpot %> <%= invite.airdrop.crypto %> !</h1>
+      <% end %>
 
 
+    <% end %>
+  </div>
+
+
+</div>
 
 
 

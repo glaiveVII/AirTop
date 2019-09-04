@@ -80,6 +80,46 @@ User.create!(email: 'saunier@lewagon.com', password: 'airtop',
     photo: "https://avatars1.githubusercontent.com/u/414418?s=460&v=4"
     )
 
+User.create!(email: 'phelim@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Phelim")
+
+User.create!(email: 'ben-fanning@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ben-F")
+
+User.create!(email: 'gonzalo@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Gonzalo")
+
+
+User.create!(email: 'ben-pham@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ben-P")
+
+User.create!(email: 'alex@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Alex")
+
+
+User.create!(email: 'ben-wright@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ben-w")
+
+
+User.create!(email: 'ife@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ife")
+
+
+User.create!(email: 'leonard@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "leonard")
+
+User.create!(email: 'jonny@lewagon.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Jonny")
+
 
 1.times do |i|
   user = User.new(

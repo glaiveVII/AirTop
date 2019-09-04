@@ -7,7 +7,7 @@
     <p><%= airdrop.quote.capitalize %></p>
 
     <div class="event-card-crypto">
-      <% if airdrop.crypto.downcase == 'bitcoin'%>
+      <% if airdrop.crypto.downcase == 'bitcoin '%>
         <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
         <div class="btc-price"></div>
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
@@ -50,7 +50,7 @@
       <% airdrop.invites.each do |user| %>
         <% count += 1 %>
         <% if user.user_id == current_user.id %>
-          <%= link_to "Register", edit_user_registration_path, class: 'profile-card__button button--blue js-message-btn' %>
+          <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn' %>
         <% end %>
       <% end %>
 

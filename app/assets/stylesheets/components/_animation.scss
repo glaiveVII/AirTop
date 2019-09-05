@@ -34,6 +34,43 @@
     }
 }
 
+.Mo {
+  animation: moo 7s ease infinite;
+}
+
+@keyframes moo {
+    0% {
+        transform: translateX(0) rotate(0);
+    }
+
+    50% {
+        transform: translateX(25%) rotate(-15deg);
+    }
+
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+}
+
+.move {
+  animation: moo 7s ease infinite;
+}
+
+@keyframes moove {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateX(-25%) rotate(15deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+}
+
+
 .higher {
   animation: high 25s ease infinite;
 }

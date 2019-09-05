@@ -137,10 +137,10 @@ User.create!(email: 'jonny@lewagon.com', password: 'airtop',
 
   airdrop = Airdrop.new(
     crypto: "Ethereum",
-    amount: rand(1..15),
+    amount: 60,
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
-    description: "Crypto continues to remain the king and CryptoKitties is no exception. Here's a small bonus for all the hard work of the dev team over the last 3 months!",
+    description: "Crypto continues to remain the king and CryptoKitties is no exception. Here's a small bonus for all the hard work of the dev team over the last 2 months!",
     quote: "Helping you make your kities purr",
 
     # photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
@@ -338,6 +338,31 @@ Invite.create!(airdrop_id: Airdrop.first.id,
 
 Invite.create!(airdrop_id: Airdrop.last.id,
                user_id: User.find_by_nickname("Julien").id,
+               status: "accepted"
+               )
+
+# the first invitation you want to release for the demo
+
+User.create!(email: 'george@forbes-nixon.com', password: 'airtop',
+    public_key: "93WZu1LBjzdiwQScYpr5JNeIlTKLQ9PbpKIy28zDiwWXXb7drmNh",
+    nickname: "George")
+
+User.create!(email: 'ali-kalkanel@gmail.com', password: 'airtop',
+    public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
+    nickname: "Ali")
+
+Invite.create!(airdrop_id: Airdrop.find_by_amount(60).id,
+               user_id: User.find_by_nickname("Julien").id,
+               status: "accepted"
+               )
+
+Invite.create!(airdrop_id: Airdrop.find_by_amount(60).id,
+               user_id: User.find_by_nickname("George").id,
+               status: "accepted"
+               )
+
+Invite.create!(airdrop_id: Airdrop.find_by_amount(60).id,
+               user_id: User.find_by_nickname("Ali").id,
                status: "accepted"
                )
 

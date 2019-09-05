@@ -1,8 +1,11 @@
 <div class="event-card">
   <div class="event-card-content">
     <span>
+
       <%= cl_image_tag airdrop.photo, class: 'crypto-picture', style: "height:20%; width:20%;"%>
+
       <%= airdrop.crypto.upcase %>
+
     </span>
     <p><%= airdrop.quote.capitalize %></p>
 
@@ -11,7 +14,7 @@
         <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
         <div class="btc-price"></div>
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
-        <abbr>Ξthereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
+        <abbr>Ethereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
         <div class="eth-price"></div>
       <% elsif airdrop.crypto.downcase == 'litecoin' %>
         <abbr><i>Łitecoin: <span class="ltc-parent"><%= airdrop.amount %></i></abbr>
@@ -59,6 +62,7 @@
 
     <p> <em>  Number of people participating : <%= count %> </em></p>
 
+    <%= cl_image_tag User.find_by_id(@airdrop.user_id).photo, class: "dashboard-image", style: "margin-left:180%; margin-top: -120px;" %>
 
 
     <%= image_tag("wave-ali.svg", {class: 'fliped'})%>

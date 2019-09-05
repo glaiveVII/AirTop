@@ -52,22 +52,20 @@
         <% end %>
       </li>
     </ul>
+    <% count = 0 %>
 
     <div class="register-card">
       <% count = 0 %>
       <% airdrop.invites.each do |user| %>
         <% count += 1 %>
         <% if user.user_id == current_user.id %>
-          <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn' %>
+          <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn', style: 'margin: 0px; top: 14px; position: relative;' %>
         <% end %>
       <% end %>
+
     </div>
 
     <p> <em>  Number of people participating : <%= count %> </em></p>
-
-
-    <%= cl_image_tag User.find_by_id(@airdrop.user_id).photo, class: "dashboard-image", style: "margin-left:180%; margin-top: -120px;" %>
-
 
     <%= image_tag("wave-ali.svg", {class: 'fliped'})%>
 

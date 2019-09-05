@@ -13,8 +13,7 @@
 span {
   font-size: 32px;
   font-weight: 600;
-  background: rgba(123,105,252, 0.8);
-  color: white;
+
 
   .crypto-picture {
     width: 30px;
@@ -48,6 +47,17 @@ p {
     i {
 
       font-size: 26px;
+
+
+    position: absolute;
+    /* top: -321px; */
+    bottom: 0;
+    right: -1366px;
+    /* transform: rotate(0deg); */
+    -webkit-filter: FlipH;
+    filter: FlipH;
+    top: -280px;
+    transform: rotate(8deg);
 
     }
   }

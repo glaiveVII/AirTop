@@ -10,15 +10,21 @@
     <p><%= airdrop.quote.capitalize %></p>
 
     <div class="event-card-crypto">
-      <% if airdrop.crypto.downcase == 'bitcoin '%>
+      <% if airdrop.crypto.downcase == 'bitcoin'%>
         <abbr>₿itcoin: <i class="btc-parent"><%= airdrop.amount %></i></abbr>
-        <div class="btc-price"></div>
+        <div class="btc-price">
+
+        </div>
       <% elsif airdrop.crypto.downcase == 'ethereum' %>
         <abbr>Ethereum: <i class="eth-parent"><%= airdrop.amount %></i></abbr>
-        <div class="eth-price"></div>
+        <div class="eth-price">
+
+        </div>
       <% elsif airdrop.crypto.downcase == 'litecoin' %>
-        <abbr><i>Łitecoin: <span class="ltc-parent"><%= airdrop.amount %></i></abbr>
-        <div class="ltc-price"></div>
+        <abbr>Łitecoin: <i class="ltc-parent"><%= airdrop.amount %></i></abbr>
+        <div class="ltc-price">
+
+        </div>
       <% end %>
     </div>
 

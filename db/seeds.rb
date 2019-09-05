@@ -136,12 +136,12 @@ User.create!(email: 'jonny@lewagon.com', password: 'airtop',
   user.save!
 
   airdrop = Airdrop.new(
-    crypto: "Ethereum",
-    amount: 60,
+    crypto: "Bitcoin",
+    amount: 9,
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     description: "Crypto continues to remain the king and CryptoKitties is no exception. Here's a small bonus for all the hard work of the dev team over the last 2 months!",
-    quote: "Helping you make your kities purr",
+    quote: "Crypto FURR-Ever",
 
     # photo: "https://ludu-assets.s3.amazonaws.com/course-icons/26/xEtx9RpWSk24kkXaRicP"
     remote_photo_url: "https://media.licdn.com/dms/image/C4D0BAQHszSGuo_jTgA/company-logo_200_200/0?e=2159024400&v=beta&t=PsyPmw2ZADCmXsYJKfqgkCxsUbo7l-e_4jS_HkjLj_g"
@@ -195,8 +195,8 @@ end
   user.save!
 
   airdrop = Airdrop.new(
-    crypto: "Bitcoin",
-    amount: rand(1..5),
+    crypto: "Ethereum",
+    amount: 60,
     user_id: User.find_by_nickname("Julien").id,
     # address: Faker::Address.street_address,
     description: "Great third quarter guys, here's a nice suprise for your revolutionary trainer designs - glow in the dark trainers - incredible!",
@@ -331,10 +331,10 @@ Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job"
 
 
 
-Invite.create!(airdrop_id: Airdrop.first.id,
-               user_id: User.find_by_nickname("Julien").id,
-               status: "accepted"
-               )
+# Invite.create!(airdrop_id: Airdrop.first.id,
+#                user_id: User.find_by_nickname("Julien").id,
+#                status: "accepted"
+#                )
 
 Invite.create!(airdrop_id: Airdrop.last.id,
                user_id: User.find_by_nickname("Julien").id,
@@ -351,19 +351,22 @@ User.create!(email: 'ali-kalkanel@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Ali")
 
-Invite.create!(airdrop_id: Airdrop.find_by_amount(60).id,
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Crypto FURR-Ever").id,
                user_id: User.find_by_nickname("Julien").id,
-               status: "accepted"
+               status: "accepted",
+               email: "julien@gmail.com"
                )
 
-Invite.create!(airdrop_id: Airdrop.find_by_amount(60).id,
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Crypto FURR-Ever").id,
                user_id: User.find_by_nickname("George").id,
-               status: "accepted"
+               status: "accepted",
+               email: "george@forbes-nixon.com"
                )
 
-Invite.create!(airdrop_id: Airdrop.find_by_amount(60).id,
+Invite.create!(airdrop_id: Airdrop.find_by_quote("Crypto FURR-Ever").id,
                user_id: User.find_by_nickname("Ali").id,
-               status: "accepted"
+               status: "accepted",
+               email: "ali-kalkanel@gmail.com"
                )
 
 puts "Added the Airtop user to make thing easier"

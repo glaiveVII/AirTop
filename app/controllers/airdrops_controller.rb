@@ -124,6 +124,7 @@ class AirdropsController < ApplicationController
     x = Airdrop.find(params[:id])
     x.amount = 0
     x.save!
+    # raise
     redirect_to airdrop_path(Airdrop.find(params[:id]).id)
   end
 

@@ -1,6 +1,6 @@
 let endpoint = 'live'
-let access_key = 'bf9051bf39b60a1a3bcfe5481621f5b7';
-
+let access_key_julien = 'bf9051bf39b60a1a3bcfe5481621f5b7';
+let access_key = 'b93a2f2c2e7899142fc061d693de0dc5'
 
 const apiCall = (selector, options = {}) => {
   // const divRates = document.getElementById("rates");

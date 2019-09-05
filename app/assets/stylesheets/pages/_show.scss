@@ -73,9 +73,6 @@
   margin-top: 50px;
 }
 
-
-/////////////////////////////////////////////////////
-
 .show-button{
   display: flex;
 }
@@ -106,11 +103,10 @@ a, a:hover {
   display: flex;
   justify-content: center;
   @media screen and (max-width: 768px) {
-    height: auto;
-    min-height: 100vh;
-    padding-top: 100px;
+  height: auto;
+  min-height: 100vh;
+  padding-top: 100px;
   }
-
 }
 
 .wrapper-vertical {
@@ -118,10 +114,11 @@ a, a:hover {
   max-width: 1140px;
   margin: 0 auto;
 }
+
 .btn {
-    font-family: 'Quicksand', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 19px !important;
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 19px !important;
 }
 
 
@@ -136,26 +133,26 @@ a, a:hover {
   max-width: 700px;
   transition: all 0.2s ease-in-out;
 
-
   &:hover{
     top: -2px;
-     box-shadow: 3px 3px 5px 6px rgba(107, 74, 255, 0.5);
+    box-shadow: 3px 3px 5px 6px rgba(107, 74, 255, 0.5);
   }
+
   &.active {
     .profile-card__cnt {
       filter: blur(6px);
     }
 
-    .profile-card-message,
-    .profile-card__overlay {
-      opacity: 1;
-      pointer-events: auto;
-      transition-delay: .1s;
+  .profile-card-message,
+  .profile-card__overlay {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: .1s;
     }
 
-    .profile-card-form {
-      transform: none;
-      transition-delay: .1s;
+  .profile-card-form {
+    transform: none;
+    transition-delay: .1s;
     }
   }
 
@@ -183,7 +180,6 @@ a, a:hover {
       object-fit: cover;
       border-radius: 50%;
     }
-
   }
 
   &__cnt {
@@ -211,7 +207,6 @@ a, a:hover {
       //color: #ff2846;
       font-weight: 700;
     }
-
   }
 
   &-loc {
@@ -227,7 +222,6 @@ a, a:hover {
       margin-right: 10px;
       //color: #6944ff;
     }
-
   }
 
   &-inf {
@@ -245,7 +239,6 @@ a, a:hover {
         padding: 10px 20px;
         min-width: 120px;
       }
-
     }
 
     &__title {
@@ -254,8 +247,6 @@ a, a:hover {
       //color: #6944ff;
       color: #324e63;
     }
-
-
   }
 
   &-social {
@@ -312,14 +303,11 @@ a, a:hover {
         background: linear-gradient(45deg, #333333, #626b73);
         box-shadow: 0px 4px 30px rgba(63, 65, 67, 0.6);
       }
-
-
     }
 
     .icon-font {
       display: inline-flex;
     }
-
   }
 
   &-ctr {
@@ -331,7 +319,6 @@ a, a:hover {
     @media screen and (max-width: 576px) {
       flex-wrap: wrap;
     }
-
   }
 
   &__button {

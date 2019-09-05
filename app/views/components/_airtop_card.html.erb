@@ -48,7 +48,6 @@
     </ul>
 
     <div class="register-card">
-
       <% count = 0 %>
       <% airdrop.invites.each do |user| %>
         <% count += 1 %>
@@ -56,11 +55,10 @@
           <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn' %>
         <% end %>
       <% end %>
-
     </div>
 
-
     <p> <em>  Number of people participating : <%= count %> </em></p>
+
 
     <%= cl_image_tag User.find_by_id(@airdrop.user_id).photo, class: "dashboard-image", style: "margin-left:180%; margin-top: -120px;" %>
 
@@ -79,9 +77,9 @@
           <%= f.input :email, placeholder: 'satoshinakamoto@gmail.com' %>
           <div class="email-error" style="display: none;">The email is wrong</div>
           <div class="email-correct" style="display: none;">The email is correct</div>
-          <%= f.simple_fields_for :file do |a| %>
-            <%= a.input :csv, as: :file %>
-          <% end %>
+            <%= f.simple_fields_for :file do |a| %>
+              <%= a.input :csv, as: :file %>
+            <% end %>
           <div class="show-button">
             <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" disabled>
               Invite

@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_161914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
-    t.float "jackpot"
+    t.float "jackpot", default: 0.0
     t.index ["airdrop_id"], name: "index_invites_on_airdrop_id"
     t.index ["user_id"], name: "index_invites_on_user_id"
   end
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2019_09_04_161914) do
     t.float "wallet_balance", default: 0.0
     t.string "public_key_eth"
     t.string "public_key_ltc"
-    t.float "wallet_balance_ltc"
-    t.float "wallet_balance_eth"
+    t.float "wallet_balance_ltc", default: 0.0
+    t.float "wallet_balance_eth", default: 0.0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

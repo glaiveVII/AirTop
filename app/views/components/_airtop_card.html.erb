@@ -54,16 +54,21 @@
     </ul>
     <% count = 0 %>
 
-    <div class="register-card">
-      <% count = 0 %>
-      <% airdrop.invites.each do |user| %>
-        <% count += 1 %>
-        <% if user.user_id == current_user.id %>
-          <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn', style: 'margin: -40px; top: 5px; position: relative;' %>
-        <% end %>
-      <% end %>
+    <% if current_user.invites.find_by_airdrop_id(airdrop.id).status == "accepted" %>
 
-    </div>
+      <div class="register-card">
+        <% count = 0 %>
+        <% airdrop.invites.each do |user| %>
+          <% count += 1 %>
+          <% if user.user_id == current_user.id %>
+            <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn', style: 'margin: -40px; top: 5px; position: relative;' %>
+          <% end %>
+        <% end %>
+
+      </div>
+
+    <% end %>
+
 
     <p> <em>  Number of people participating : <%= count %> </em></p>
 

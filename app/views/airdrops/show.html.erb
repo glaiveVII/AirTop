@@ -8,11 +8,11 @@
 
   <div class="reward-box" style="background-color: white; color: #9f2fff; width: 500px; padding: 30px; text-align: center; border-radius: 14px; margin-bottom: 30px;">
     <% if @airdrop.amount == 0 %>
-      <h1 class="heading reward-title" style="padding-bottom: 20px;"=> People rewarded by this airdrop : </h1>
+      <h1 class="heading reward-title" style="padding-bottom: 10px;"=> People rewarded by this airdrop : </h1>
 
       <% @airdrop.invites.each do |invite| %>
-        <p class="recieved"> <%= invite.user.nickname.capitalize %> has received,
-          <%= invite.jackpot %> <%= invite.airdrop.crypto %> !</p>
+        <h5 class="recieved"> <%= invite.user.nickname.capitalize %> has received
+          <%= invite.jackpot %> <%= invite.airdrop.crypto %> !</h5>
       <% end %>
 
 

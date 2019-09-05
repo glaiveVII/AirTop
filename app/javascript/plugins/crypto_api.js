@@ -74,13 +74,13 @@ const apiCallV2 = (value, crypto) => {
           const ethPrice = json.rates.ETH;
 
           if (crypto === 'Bitcoin') {
-            result = (value + 1) * btcPrice;
+            result = (value + 2) * btcPrice;
           }
           else if (crypto == 'Ethereum') {
-            result = (value + 1) * ethPrice;
+            result = (value + 2) * ethPrice;
           }
           else if (crypto == 'Litecoin') {
-            result = (value + 1) * ltcPrice;
+            result = (value + 2) * ltcPrice;
           }
 
       }

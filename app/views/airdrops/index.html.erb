@@ -33,17 +33,17 @@
               <h1><%= airdrop.crypto.upcase %> </h1>
               <% if airdrop.crypto.downcase == 'bitcoin'%>
                 <abbr> <strong > ₿itcoin : <span class="btc-parent"> <%= airdrop.amount %> </span>  </strong> </abbr>
-                <div class="btc-price">
+                <div class="btc-price" style="position: relative; top: -10px;">
 
                 </div>
               <% elsif airdrop.crypto.downcase == 'ethereum' %>
                 <abbr> <strong> Ethereum : <span class="eth-parent"> <%= airdrop.amount %> </span> </strong></abbr>
-                <div class="eth-price">
+                <div class="eth-price" style="position: relative; top: -10px;">
 
                 </div>
               <% elsif airdrop.crypto.downcase == 'litecoin' %>
                 <abbr> <strong>Łitecoin : <span class="ltc-parent"> <%= airdrop.amount %> </span> </strong></abbr>
-                <div class="ltc-price">
+                <div class="ltc-price" style="position: relative; top: -10px;">
 
                 </div>
               <% end %>

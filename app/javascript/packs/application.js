@@ -82,6 +82,7 @@ if (button) {
   });
 };
 
+
 const airdropBtn = document.getElementById("release-airdrop-btn");
 let confettiHTML = "";
 for ( var i = 0; i < 100; i++ ) {
@@ -89,9 +90,15 @@ for ( var i = 0; i < 100; i++ ) {
 }
 
 const confettiBox = document.querySelector(".event-card");
-airdropBtn.addEventListener('click', (event)=> {
+
+airdropBtn.addEventListener(('click'), (event) => {
   event.preventDefault();
   confettiBox.insertAdjacentHTML('afterbegin', confettiHTML);
+  setTimeout(function(){
+    window.location.href = event.target.href;
+  }, 3000);
+
+  // confettiBox.insertAdjacentHTML('afterbegin', confettiHTML);
 });
 
 

@@ -35,9 +35,10 @@
                       input_html: { autocomplete: "current-password" } %>
         <!-- here fill already the place with his email since we have acces -->
 
+
         <p class="text-center"> Be carefull when you add your public key <i class="fas fa-exclamation-triangle"></i></p>
         <%= f.input :public_key , label: 'Your public key : ',  :input_html => { :value => "paste_your_public_key_here" }%>
-        <p class="text-center"> Your wallet balance : <%= @user.wallet_balance %></p>
+        <p class="text-center-registration"> Your wallet balance : <%= @user.wallet_balance %> BTC</p>
       </div>
         <div class="boutton-show" style="display: flex; justify-content: space-around;">
         <div class="form-actions" style="text-align: center;">

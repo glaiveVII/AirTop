@@ -85,11 +85,11 @@
               <%= a.input :csv, as: :file %>
             <% end %>
           <div class="show-button">
-            <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" disabled>
+            <button id="invite-button" class="profile-card__button button--blue js-message-btn sweet-alert-demo" style="box-shadow: none;" disabled>
               Invite
             </button>
             <%= f.button :submit, 'Invite', class: 'd-none sweet-alert-submit' %>
-              <%= link_to "Release Airdrop", airdrop_release_path(airdrop), :style=>"color:white;", :class=>"profile-card__button button--blue js-message-btn sweet-alert-release", id: "release-airdrop-btn" %>
+              <%= link_to "Release Airdrop", airdrop_release_path(airdrop), :style=>"background: #ebeef8 !important;", :class=>"btn profile-card__button button--blue js-message-btn homebutt", id: "release-airdrop-btn" %>
           </div>
         <% end %>
       </div>

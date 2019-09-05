@@ -34,7 +34,7 @@
 #invite_email {
   background: linear-gradient(45deg, #35394a 0%, #1f222e 100%) !important;
   border: none;
-  border: 1px solid rgba(123, 105, 252, 0.9);
+  border: 3px solid rgba(123, 105, 252, 0.9);
   color: white;
 }
 
@@ -375,10 +375,10 @@ a, a:hover {
     &.button--blue {
       max-height: 56px;
       background: linear-gradient(45deg, rgba(123, 105, 252, 1), #0e71c8);
-      box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.4);
+
 
       &:hover {
-        box-shadow: 0px 7px 30px rgba(19, 127, 212, 0.75);
+
       }
 
       input {

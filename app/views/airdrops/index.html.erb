@@ -16,7 +16,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "magic-bean-form",
-        placeholder: "" %>
+        placeholder: "Search by crypto!" %>
         <div class="gardener-clothes">
           <%= button_tag :submit, :class=>'search-butt' do %>
           <i class="fas fa-search"></i>
@@ -33,17 +33,18 @@
               <h1><%= airdrop.crypto.upcase %> </h1>
               <% if airdrop.crypto.downcase == 'bitcoin'%>
                 <abbr> <strong > ₿itcoin : <span class="btc-parent"> <%= airdrop.amount %> </span>  </strong> </abbr>
-                <div class="btc-price" style="position: relative; top: -10px;">
 
+                <div class="btc-price">
                 </div>
+
               <% elsif airdrop.crypto.downcase == 'ethereum' %>
                 <abbr> <strong> Ethereum : <span class="eth-parent"> <%= airdrop.amount %> </span> </strong></abbr>
-                <div class="eth-price" style="position: relative; top: -10px;">
+                <div class="eth-price">
 
                 </div>
               <% elsif airdrop.crypto.downcase == 'litecoin' %>
                 <abbr> <strong>Łitecoin : <span class="ltc-parent"> <%= airdrop.amount %> </span> </strong></abbr>
-                <div class="ltc-price" style="position: relative; top: -10px;">
+                <div class="ltc-price">
 
                 </div>
               <% end %>

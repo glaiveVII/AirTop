@@ -138,7 +138,7 @@ User.create!(email: 'jonny@lewagon.com', password: 'airtop',
   airdrop = Airdrop.new(
     crypto: "Bitcoin",
     amount: 9,
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("George").id,
     # address: Faker::Address.street_address,
     description: "Crypto continues to remain the king and CryptoKitties is no exception. Here's a small bonus for all the hard work of the dev team over the last 2 months!",
     quote: "Crypto FURR-Ever",
@@ -168,7 +168,7 @@ end
   airdrop = Airdrop.new(
     crypto: "Litecoin",
     amount: rand(1..30),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("George").id,
     # address: Faker::Address.street_address,
     description: "Bonjour Monsieurs, je vous offre une petite recompense pour les performances remarquables de ce semestre !",
     quote: "Kerviel Jerome, rends l'argent!!!",
@@ -197,7 +197,7 @@ end
   airdrop = Airdrop.new(
     crypto: "Ethereum",
     amount: 60,
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("George").id,
     # address: Faker::Address.street_address,
     description: "Great third quarter guys, here's a nice suprise for your revolutionary trainer designs - glow in the dark trainers - incredible!",
     quote: "Just do it, what ever it is",
@@ -226,7 +226,7 @@ end
   airdrop = Airdrop.new(
     crypto: "Litecoin",
     amount: 0,
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("George").id,
     # address: Faker::Address.street_address,
     description: "Congrats deepmind team, the AI deep learning is coming along at a precipitous pace. Here's a small present for opening Pandora's box xD",
     quote: "Don't be evil, that's our job",
@@ -255,7 +255,7 @@ end
   airdrop = Airdrop.new(
     crypto: "Bitcoin",
     amount: rand(1..5),
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("George").id,
     # address: Faker::Address.street_address,
 
     description: "Trading volume was up 42%, enjoy some bitcoin for your hard work",
@@ -285,7 +285,7 @@ end
   airdrop = Airdrop.new(
     crypto: "Ethereum",
     amount: 27,
-    user_id: User.find_by_nickname("Julien").id,
+    user_id: User.find_by_nickname("George").id,
     # address: Faker::Address.street_address,
     description: "After the sucess of our 999 monitor stand, I want to reward everyone in the design team with the extortionate profits we made.",
     quote: "ETH <3",
@@ -299,7 +299,7 @@ end
 
  # end invitation for the seed !!!!!!!!
 Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job").id,
-               user_id: User.find_by_nickname("Julien").id,
+               user_id: User.find_by_nickname("George").id,
                status: "accepted",
                jackpot: 40.0
                )
@@ -332,12 +332,12 @@ Invite.create!(airdrop_id: Airdrop.find_by_quote("Don't be evil, that's our job"
 
 
 # Invite.create!(airdrop_id: Airdrop.first.id,
-#                user_id: User.find_by_nickname("Julien").id,
+#                user_id: User.find_by_nickname("George").id,
 #                status: "accepted"
 #                )
 
 Invite.create!(airdrop_id: Airdrop.last.id,
-               user_id: User.find_by_nickname("Julien").id,
+               user_id: User.find_by_nickname("George").id,
                status: "accepted"
                )
 

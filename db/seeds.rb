@@ -32,13 +32,13 @@ User.create!(email: 'julien@gmail.com', password: 'airtop',
     public_key: public_key_btc_1,
     public_key_eth: public_key_eth_1,
     public_key_ltc: public_key_ltc_1,
-    nickname: "Julien",
+    nickname: "George",
     wallet_balance: wallet_balance_btc_1,
     wallet_balance_eth: wallet_balance_eth_1,
     wallet_balance_ltc: wallet_balance_ltc_1,
-    first_name: "Julien",
+    first_name: "George",
     last_name: "Pelegri",
-    photo: "https://avatars3.githubusercontent.com/u/52655562?s=460&v=4"
+    photo: "https://avatars1.githubusercontent.com/u/52655562?s=400&u=e014fa4064ab406ccb7a15b44c750430c3a28959&v=4"
     )
 
 User.create!(email: 'julien@hotmail.com', password: 'airtop',

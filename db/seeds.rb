@@ -345,20 +345,20 @@ Invite.create!(airdrop_id: Airdrop.last.id,
 
 User.create!(email: 'george@forbes-nixon.com', password: 'airtop',
     public_key: "93WZu1LBjzdiwQScYpr5JNeIlTKLQ9PbpKIy28zDiwWXXb7drmNh",
-    nickname: "George")
+    nickname: "GeorgeF")
 
 User.create!(email: 'ali-kalkanel@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Ali")
 
 Invite.create!(airdrop_id: Airdrop.find_by_quote("Crypto FURR-Ever").id,
-               user_id: User.find_by_nickname("Julien").id,
+               user_id: User.find_by_nickname("George").id,
                status: "accepted",
                email: "julien@gmail.com"
                )
 
 Invite.create!(airdrop_id: Airdrop.find_by_quote("Crypto FURR-Ever").id,
-               user_id: User.find_by_nickname("George").id,
+               user_id: User.find_by_nickname("GeorgeF").id,
                status: "accepted",
                email: "george@forbes-nixon.com"
                )

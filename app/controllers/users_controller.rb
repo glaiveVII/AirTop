@@ -31,7 +31,8 @@ class UsersController < ApplicationController
 
         @airdrop = Airdrop.find(params[:airdrop_id].to_i)
         invite = Invite.create(user_id: user.id, email: row[0], airdrop_id: params[:airdrop_id])
-        invite.update(status: "accepted")
+        # need to let the status pending while they are not register
+        # invite.update(status: "accepted")
       end
     else
       email = params[:invite][:email]
@@ -45,7 +46,8 @@ class UsersController < ApplicationController
       @airdrop = Airdrop.find(params[:airdrop_id].to_i)
       if user != nil
         invite = Invite.create(user_id: user.id, email: email, airdrop_id: params[:airdrop_id])
-        invite.update(status: "accepted")
+        # need to let the status pending while they are not register
+        # invite.update(status: "accepted")
       end
       redirect_to airdrop_path(@airdrop)
     end

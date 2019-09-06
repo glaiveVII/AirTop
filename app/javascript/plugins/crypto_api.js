@@ -9,6 +9,9 @@ const apiCall = (selector, options = {}) => {
   const divETH = document.querySelectorAll(".eth-price");
   // const divLTC = document.getElementById("ltc-price");
   // const divETH = document.getElementById("eth-price");
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
   if(divBTC || divLTC || divETH) {
     $.ajax({
@@ -22,7 +25,7 @@ const apiCall = (selector, options = {}) => {
             let constant = element.parentElement.querySelector(".btc-parent").innerHTML;
             // console.log(constant);
             constant = constant*btcPrice;
-            element.insertAdjacentHTML("beforeend", "$" + " " + Math.floor(constant));
+            element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
 
           const ltcPrice = json.rates.LTC;
@@ -31,7 +34,7 @@ const apiCall = (selector, options = {}) => {
             let constant = element.parentElement.querySelector(".ltc-parent").innerHTML;
             // console.log(constant);
             constant = constant*ltcPrice;
-            element.insertAdjacentHTML("beforeend", "$" + " " + Math.floor(constant));
+            element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
 
           const ethPrice = json.rates.ETH;
@@ -40,7 +43,7 @@ const apiCall = (selector, options = {}) => {
             let constant = element.parentElement.querySelector(".eth-parent").innerHTML;
             // console.log(constant);
             constant = constant*ethPrice;
-            element.insertAdjacentHTML("beforeend", "$" + " " + Math.floor(constant));
+            element.insertAdjacentHTML("beforeend", "Current value : $" + " " + numberWithCommas(Math.floor(constant)));
           })
 
           // const ltcPrice = json.rates.LTC;
@@ -74,13 +77,13 @@ const apiCallV2 = (value, crypto) => {
           const ethPrice = json.rates.ETH;
 
           if (crypto === 'Bitcoin') {
-            result = (value + 2) * btcPrice;
+            result = value*btcPrice;
           }
           else if (crypto == 'Ethereum') {
-            result = (value + 2) * ethPrice;
+            result = value*ethPrice;
           }
           else if (crypto == 'Litecoin') {
-            result = (value + 2) * ltcPrice;
+            result = value*ltcPrice;
           }
 
       }

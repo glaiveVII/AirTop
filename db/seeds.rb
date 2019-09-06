@@ -38,10 +38,10 @@ User.create!(email: 'julien@gmail.com', password: 'airtop',
     wallet_balance_ltc: wallet_balance_ltc_1,
     first_name: "Julien",
     last_name: "Pelegri",
-    photo: "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/67444491_2393169547624893_3356167537644535808_o.jpg?_nc_cat=104&_nc_oc=AQkprhNozYg7lNipYdrhW4D_tV_M9PsQWYKDL1jvVgvzCNNxOIzr_JJ0Zr1p3P_o6pk&_nc_ht=scontent-lhr3-1.xx&oh=5b84eb83e55523fdc327cf40a54eeb10&oe=5DD5F29A"
+    photo: "https://avatars3.githubusercontent.com/u/52655562?s=460&v=4"
     )
 
-User.create!(email: 'airtop@hotmail.com', password: 'airtop',
+User.create!(email: 'julien@hotmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Paul",
     photo: "https://avatars1.githubusercontent.com/u/42438530?v=4")

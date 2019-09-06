@@ -46,22 +46,22 @@ User.create!(email: 'julien@hotmail.com', password: 'airtop',
     nickname: "Paul",
     photo: "https://avatars1.githubusercontent.com/u/42438530?v=4")
 
-User.create!(email: 'marco@lewagon.com', password: 'airtop',
+User.create!(email: 'marco@outlook.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Marco",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/talgeknkk0sjgepvfezr.jpg")
 
-User.create!(email: 'sam@lewagon.com', password: 'airtop',
+User.create!(email: 'sam@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Sam",
     photo: "https://avatars3.githubusercontent.com/u/26303419?v=4")
 
-User.create!(email: 'arthur@lewagon.com', password: 'airtop',
+User.create!(email: 'arthur@hotmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Arthur",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/onkzo1zsbde5taheslax.jpg")
 
-User.create!(email: 'lucien@lewagon.com', password: 'airtop',
+User.create!(email: 'lucien@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Lucien",
     photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/tsrufxymkfkjy80nk3ha.jpg")
@@ -83,16 +83,16 @@ User.create!(email: 'phelim@lewagon.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Phelim")
 
-User.create!(email: 'ben-fanning@lewagon.com', password: 'airtop',
+User.create!(email: 'ben-fanning@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Ben-F")
 
-User.create!(email: 'gonzalo@lewagon.com', password: 'airtop',
+User.create!(email: 'gonzalo@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Gonzalo")
 
 
-User.create!(email: 'ben-pham@lewagon.com', password: 'airtop',
+User.create!(email: 'ben-pham@outlook.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Ben-P")
 
@@ -101,7 +101,7 @@ User.create!(email: 'alex@lewagon.com', password: 'airtop',
     nickname: "Alex")
 
 
-User.create!(email: 'ben-wright@lewagon.com', password: 'airtop',
+User.create!(email: 'ben-wright@outlook.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Ben-w")
 
@@ -111,7 +111,7 @@ User.create!(email: 'ife@lewagon.com', password: 'airtop',
     nickname: "Ife")
 
 
-User.create!(email: 'leonard@lewagon.com', password: 'airtop',
+User.create!(email: 'leonard@gmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Leonard")
 

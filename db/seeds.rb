@@ -41,7 +41,7 @@ User.create!(email: 'julien@gmail.com', password: 'airtop',
     photo: "https://avatars3.githubusercontent.com/u/52655562?s=460&v=4"
     )
 
-User.create!(email: 'airtop@hotmail.com', password: 'airtop',
+User.create!(email: 'julien@hotmail.com', password: 'airtop',
     public_key: "93WZu1LBjzjiwQScYpr5JNeIlTKLQ3BbpKIy28zDiwWXXb7drmNh",
     nickname: "Paul",
     photo: "https://avatars1.githubusercontent.com/u/42438530?v=4")

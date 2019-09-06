@@ -57,6 +57,13 @@
   .airtop-card-content {
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+
+    .card-aidrop-description {
+      flex: 1;
+    }
 
     h1 {
       font-weight: bolder;

@@ -1,12 +1,10 @@
 <div class="event-card">
   <div class="event-card-content">
     <span>
-
       <%= cl_image_tag airdrop.photo, class: 'crypto-picture', style: "height:20%; width:20%;"%>
-
       <%= airdrop.crypto.upcase %>
-
     </span>
+
     <p><%= airdrop.quote.capitalize %></p>
 
     <div class="event-card-crypto">
@@ -64,7 +62,6 @@
                 <%= link_to "Register", edit_user_registration_path, class: 'hoover profile-card__button button--blue js-message-btn', style: 'margin: -40px; top: 5px; position: relative;' %>
               <% end %>
             <% end %>
-
           </div>
 
         <% end %>
@@ -80,9 +77,7 @@
         <div class="register-card">
           <% airdrop.invites.each do |user| %>
             <% count += 1 %>
-
           <% end %>
-
         </div>
 
       <% end %>

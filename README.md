@@ -24,3 +24,6 @@
 <p align="center">  
   <img src="create-event.png" alt="drawing" width="250" align="center"/>
 </p>
+
+
+Legend
